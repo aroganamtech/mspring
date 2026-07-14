@@ -93,7 +93,7 @@ export default function Home() {
       <section className="hm-hero">
         <span className="hm-hero__arc" aria-hidden="true" />
         <div className="container hm-hero__inner">
-          <h1>Accelerate the SHIFT</h1>
+          <h1>Accelerate the CHANGE</h1>
           <p className="hm-hero__sub">From legacy to modern business models</p>
 
           <div className="hm-hero__arrows" aria-hidden="true">
