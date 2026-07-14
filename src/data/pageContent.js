@@ -98,6 +98,18 @@ export const pageContent = {
       "Harness AI & machine learning for smarter operations, data science for actionable insights, and automation for measurable efficiency gains.",
     intro:
       "Data is only as valuable as the decisions it enables. We help organizations build the pipelines, models and intelligent applications that turn raw data into a genuine competitive advantage — from predictive analytics to production-grade AI features.",
+    ctaLabel: "Learn More",
+    ctaPath: "/ai-data/learn-more",
+  },
+  "/ai-data/learn-more": {
+    type: "detail",
+    eyebrow: "AI & Data",
+    title: "Drive Efficiency and Innovation with AI and ML Solutions",
+    description:
+      "Our tailored AI and ML solutions are designed to integrate seamlessly into your operations, enhancing efficiency and fostering innovation to drive long-term success.",
+    body: [
+      "Our tailored AI and ML solutions are designed to integrate seamlessly into your operations, enhancing efficiency and fostering innovation to drive long-term success.",
+    ],
   },
   "/ai-data/ai-ml": {
     type: "detail",
