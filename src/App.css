@@ -2732,3 +2732,97 @@
   margin: -15px 0 0 -15px;
   background: rgba(255, 255, 255, 0.28);
 }
+
+/* ---------- Cloud Services showcase (/cloud page only) ---------- */
+.cloud-showcase {
+  background: var(--navy-900);
+  padding: 88px 0;
+}
+
+.cloud-showcase__head h2,
+.cloud-showcase__head .section-lede {
+  color: #fff;
+}
+
+.cloud-showcase__head .section-lede {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.cloud-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cloud-showcase-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  min-height: 220px;
+  background: linear-gradient(150deg, var(--navy-700) 0%, var(--navy-800) 60%, var(--navy-900) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cloud-showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--olive);
+}
+
+.cloud-showcase-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--olive-light);
+  background: rgba(164, 176, 72, 0.16);
+  margin-bottom: 40px;
+  transition: transform 0.25s ease, margin 0.25s ease;
+}
+
+.cloud-showcase-card:hover .cloud-showcase-card__icon {
+  transform: scale(0.92);
+  margin-bottom: 14px;
+}
+
+.cloud-showcase-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+}
+
+.cloud-showcase-card__text {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14.5px;
+  margin: 10px 0 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+
+.cloud-showcase-card:hover .cloud-showcase-card__text {
+  max-height: 120px;
+  opacity: 1;
+}
+
+@media (max-width: 860px) {
+  .cloud-showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cloud-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+max-width: 560px) {
+  .cloud-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}

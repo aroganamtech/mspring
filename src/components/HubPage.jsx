@@ -3,7 +3,7 @@ import Icon from "./Icons";
 import PageHeader from "./PageHeader";
 import { Link } from "../router";
 
-export default function HubPage({ content, children: menuChildren }) {
+export default function HubPage({ content, children: menuChildren, extra }) {
   return (
     <>
       <PageHeader
@@ -13,6 +13,8 @@ export default function HubPage({ content, children: menuChildren }) {
         ctaLabel={content.ctaLabel}
         ctaPath={content.ctaPath}
       />
+
+      {extra}
 
       <section className="section hub">
         <div className="container">
