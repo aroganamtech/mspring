@@ -3,7 +3,9 @@ import Icon from "./Icons";
 import PageHeader from "./PageHeader";
 import { Link } from "../router";
 
-export default function HubPage({ content, children: menuChildren, extra }) {
+export default function HubPage({ content, path, children: menuChildren }) {
+  const hubSlug = path ? path.replace(/^\//, "").replace(/\//g, "-") : "";
+
   return (
     <>
       <PageHeader
@@ -14,9 +16,7 @@ export default function HubPage({ content, children: menuChildren, extra }) {
         ctaPath={content.ctaPath}
       />
 
-      {extra}
-
-      <section className="section hub">
+      <section className={`section hub ${hubSlug ? `hub--${hubSlug}` : ""}`}>
         <div className="container">
           {content.intro && <p className="hub__intro">{content.intro}</p>}
 

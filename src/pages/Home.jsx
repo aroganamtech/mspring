@@ -1,5 +1,5 @@
+import Clients from "../components/Clients";
 import Icon from "../components/Icons";
-import { clientsRowOne, clientsRowTwo } from "../data/content";
 import { Link, usePageTitle } from "../router";
 
 import badge13 from "../assets/badge-13-years.jpg";
@@ -81,8 +81,6 @@ const industryTiles = [
   { label: "Automotive", path: "/industries/automotive", icon: "compass" },
   { label: "Oil, Gas & Energy", path: "/industries/oil-gas-energy", icon: "layers" },
 ];
-
-const logoStrip = [...clientsRowOne, ...clientsRowTwo.slice(0, 9)];
 
 export default function Home() {
   usePageTitle(null);
@@ -179,14 +177,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Client logo strip ---------- */}
-      <section className="hm-logostrip" aria-label="Our clients">
-        <div className="hm-logostrip__track">
-          {[...logoStrip, ...logoStrip].map((name, i) => (
-            <span key={`${name}-${i}`}>{name}</span>
-          ))}
-        </div>
-      </section>
+      {/* ---------- Our Clienteles logo wall ---------- */}
+      <Clients />
 
       {/* ---------- Benefits / Case studies ---------- */}
       <section className="section hm-benefits">

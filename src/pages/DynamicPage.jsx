@@ -1,4 +1,3 @@
-import CloudServicesShowcase from "../components/CloudServicesShowcase";
 import CVForm from "../components/CVForm";
 import DetailPage from "../components/DetailPage";
 import HubPage from "../components/HubPage";
@@ -29,13 +28,7 @@ export default function DynamicPage({ path }) {
 
   if (content.type === "hub") {
     const menuEntry = menu.find((m) => m.path === path);
-    return (
-      <HubPage
-        content={content}
-        children={menuEntry?.children || []}
-        extra={path === "/cloud" ? <CloudServicesShowcase /> : null}
-      />
-    );
+    return <HubPage content={content} path={path} children={menuEntry?.children || []} />;
   }
 
   if (content.type === "form") {

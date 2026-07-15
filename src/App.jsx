@@ -4,12 +4,14 @@ import CustomCursor from "./components/CustomCursor";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AboutPage from "./pages/AboutPage";
+import ApplyJobPage from "./pages/ApplyJobPage";
 import CloudSolutionsPage from "./pages/CloudSolutionsPage";
 import ContactPage from "./pages/ContactPage";
 import DynamicPage from "./pages/DynamicPage";
 import Home from "./pages/Home";
 import IndustriesPage from "./pages/IndustriesPage";
 import StaffingPage from "./pages/StaffingPage";
+import VisitorBadge from "./components/VisitorBadge";
 import { useHashPath } from "./router";
 
 const staticRoutes = {
@@ -19,6 +21,7 @@ const staticRoutes = {
   "/industries": IndustriesPage,
   "/talent-solutions": StaffingPage,
   "/cloud-solutions": CloudSolutionsPage,
+  "/careers/apply": ApplyJobPage,
 };
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
       <Navbar />
       <main>{StaticPage ? <StaticPage /> : <DynamicPage path={path} />}</main>
       <Footer />
+      <VisitorBadge />
     </>
   );
 }
