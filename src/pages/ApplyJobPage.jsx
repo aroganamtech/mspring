@@ -1,7 +1,14 @@
 import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { CLIENTS } from "../data/clients";
-import { company } from "../data/content";
 import { usePageTitle } from "../router";
+
+/* EmailJS credentials — set in .env (VITE_ prefix required by Vite).
+   Service ID / Template ID come from the EmailJS dashboard; the Public Key
+   is safe to expose client-side (it's not a secret key). */
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 /* Job-post age filters shown in the left rail (matches the reference layout). */
 const JOB_FILTERS = [
@@ -46,6 +53,7 @@ export default function ApplyJobPage() {
   const [activeFilter, setActiveFilter] = useState("Immediate");
   const [form, setForm] = useState(EMPTY_FORM);
   const [fileName, setFileName] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const formRef = useRef(null);
 
   const handleChange = (e) => {
@@ -62,29 +70,45 @@ export default function ApplyJobPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const experience = `${form.expYear || "0"} Year(s) ${form.expMonth} Month(s)`;
-    const subject = encodeURIComponent(
-      `Job Application — ${form.title || "General"} (${activeFilter})`
-    );
-    const body = encodeURIComponent(
-      [
-        `Full Name: ${form.fullName}`,
-        `Title / Designation: ${form.title}`,
-        `Mobile Number: ${form.mobile}`,
-        `Email Id: ${form.email}`,
-        `Skills: ${form.skills}`,
-        `Experience: ${experience}`,
-        `Availability: ${activeFilter}`,
-        "",
-        "Message:",
-        form.message,
-        "",
-        fileName
-          ? `(Resume selected: ${fileName} — please attach it to this email before sending.)`
-          : "(Please remember to attach your resume before sending this email.)",
-      ].join("\n")
-    );
-    window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error(
+        "EmailJS is not configured — check VITE_EMAILJS_SERVICE_ID / VITE_EMAILJS_TEMPLATE_ID / VITE_EMAILJS_PUBLIC_KEY in .env"
+      );
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
+
+    const templateParams = {
+      fullName: form.fullName,
+      title: form.title || "Not specified",
+      mobile: form.mobile,
+      email: form.email,
+      skills: form.skills || "Not specified",
+      expYear: form.expYear || "0",
+      expMonth: form.expMonth || "0",
+      message: form.message || "—",
+      availability: activeFilter,
+      resume_name: fileName || "No resume attached",
+    };
+
+    emailjs
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      })
+      .then(() => {
+        setStatus("sent");
+        setForm(EMPTY_FORM);
+        setFileName("");
+        setActiveFilter("Immediate");
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS send failed:", error);
+        setStatus("error");
+      });
   };
 
   return (
@@ -220,9 +244,19 @@ export default function ApplyJobPage() {
             </label>
 
             <div className="apply-form__actions">
-              <button type="submit" className="apply-form__send">
-                Send
+              <button type="submit" className="apply-form__send" disabled={status === "sending"}>
+                {status === "sending" ? "Sending…" : "Send"}
               </button>
+              {status === "sent" && (
+                <p className="apply-form__status apply-form__status--ok">
+                  Thanks! Your application has been sent — we'll be in touch soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="apply-form__status apply-form__status--error">
+                  Something went wrong sending your application. Please try again, or email us directly.
+                </p>
+              )}
             </div>
           </form>
         </div>

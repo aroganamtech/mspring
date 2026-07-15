@@ -226,6 +226,69 @@ export function Icon({ name, className = "", size = 22 }) {
           <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18" />
         </svg>
       );
+    case "brain":
+      return (
+        <svg {...props}>
+          <path d="M9 4.5a2.5 2.5 0 0 0-2.5 2.5v.3A2.7 2.7 0 0 0 5 9.7v1a2.7 2.7 0 0 0 1 2.1v1.2a3 3 0 0 0 3 3h.5" />
+          <path d="M15 4.5a2.5 2.5 0 0 1 2.5 2.5v.3A2.7 2.7 0 0 1 19 9.7v1a2.7 2.7 0 0 1-1 2.1v1.2a3 3 0 0 1-3 3h-.5" />
+          <path d="M9 4.5V18a2 2 0 0 0 4 0V6.8" />
+          <circle cx="7" cy="10" r="0.6" fill="currentColor" stroke="none" />
+          <circle cx="17" cy="10" r="0.6" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "chart":
+      return (
+        <svg {...props}>
+          <path d="M4 20V4" />
+          <path d="M4 20h16" />
+          <rect x="7" y="13" width="2.6" height="7" />
+          <rect x="12" y="9" width="2.6" height="11" />
+          <rect x="17" y="5.5" width="2.6" height="14.5" />
+        </svg>
+      );
+    case "database":
+      return (
+        <svg {...props}>
+          <ellipse cx="12" cy="6" rx="7" ry="3" />
+          <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+          <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+        </svg>
+      );
+    case "bot":
+      return (
+        <svg {...props}>
+          <rect x="5" y="9" width="14" height="10" rx="3" />
+          <path d="M12 9V5.5" />
+          <circle cx="12" cy="4" r="1.1" fill="currentColor" stroke="none" />
+          <circle cx="9.5" cy="14" r="1" fill="currentColor" stroke="none" />
+          <circle cx="14.5" cy="14" r="1" fill="currentColor" stroke="none" />
+          <path d="M3.5 12.5v3M20.5 12.5v3" />
+        </svg>
+      );
+    case "eye":
+      return (
+        <svg {...props}>
+          <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+          <circle cx="12" cy="12" r="3.2" />
+        </svg>
+      );
+    case "cube":
+      return (
+        <svg {...props}>
+          <path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z" />
+          <path d="M4 7.5 12 12l8-4.5" />
+          <path d="M12 12v9" />
+        </svg>
+      );
+    case "grid":
+      return (
+        <svg {...props}>
+          <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+          <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+          <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+          <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+        </svg>
+      );
     default:
       return null;
   }

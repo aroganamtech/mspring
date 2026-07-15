@@ -194,6 +194,60 @@ export const pageContent = {
     intro:
       "Enterprise systems are the backbone of daily operations. Our ERP and CRM practice helps you implement, customize, integrate and support the platforms your teams rely on — reducing manual work and giving leadership a single, accurate view of the business.",
   },
+  "/erp/advisory": {
+    type: "detail",
+    eyebrow: "ERP",
+    title: "ERP Advisory and Consulting",
+    description:
+      "Independent advisory to shape the right ERP roadmap, from platform selection through change management.",
+    body: [
+      "Choosing and rolling out an ERP platform is a multi-year commitment. Our advisory practice helps leadership teams make that decision with confidence — evaluating platforms against your processes, budget and growth plans before a single line of configuration is written.",
+      "Once a direction is set, we stay involved through implementation governance, program management and change management, so the rollout lands on time and the organization actually adopts it.",
+    ],
+    highlights: [
+      "ERP platform evaluation & selection",
+      "Implementation roadmap & program governance",
+      "Business process re-engineering",
+      "Change management & user adoption planning",
+    ],
+    tags: ["ERP Advisory", "Digital Transformation", "Change Management"],
+  },
+  "/erp/finance-accounting": {
+    type: "detail",
+    eyebrow: "ERP",
+    title: "Finance and Accounting Process Optimization",
+    description:
+      "Streamlined finance workflows, controls and reporting that close the books faster and cleaner.",
+    body: [
+      "We help finance teams simplify and automate the processes running inside their ERP — accounts payable and receivable, reconciliations, month-end close and financial reporting — so fewer hours go into manual work and more go into analysis.",
+      "That includes tightening internal controls and audit trails alongside the process changes, so speed doesn't come at the cost of accuracy or compliance.",
+    ],
+    highlights: [
+      "Accounts payable / receivable automation",
+      "Month-end close acceleration",
+      "Financial reporting & controls redesign",
+      "Audit-ready process documentation",
+    ],
+    tags: ["Finance Transformation", "Process Optimization", "Financial Controls"],
+  },
+  "/erp/netsuite": {
+    type: "detail",
+    eyebrow: "ERP",
+    title: "NetSuite Solutions",
+    description:
+      "End-to-end NetSuite implementation, customization and managed support for growing businesses.",
+    body: [
+      "We implement and configure NetSuite across finance, inventory, order management and CRM modules, tailoring the platform to how fast-growing businesses actually operate rather than forcing a generic template.",
+      "Beyond go-live, our managed support keeps NetSuite current — new modules, integrations and customizations — as the business scales.",
+    ],
+    highlights: [
+      "NetSuite implementation & module configuration",
+      "Custom SuiteScript development & integrations",
+      "Data migration from legacy systems",
+      "Ongoing managed support & optimization",
+    ],
+    tags: ["NetSuite", "SuiteScript", "Cloud ERP"],
+  },
   "/erp/sap": {
     type: "detail",
     eyebrow: "ERP",

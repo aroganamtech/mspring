@@ -2879,55 +2879,92 @@
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
-  padding: 28px 24px;
-  min-height: 220px;
-  background: linear-gradient(150deg, var(--navy-700) 0%, var(--navy-800) 60%, var(--navy-900) 100%);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px 22px 24px;
+  background-color: var(--navy-800);
+  background-size: cover;
+  background-position: center;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .cloud-showcase-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: var(--olive);
 }
 
+.cloud-showcase-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 14, 26, 0.92) 0%,
+    rgba(10, 14, 26, 0.45) 45%,
+    rgba(10, 14, 26, 0.35) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.cloud-showcase-card:hover .cloud-showcase-card__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 14, 26, 0.96) 0%,
+    rgba(10, 14, 26, 0.55) 55%,
+    rgba(10, 14, 26, 0.3) 100%
+  );
+}
+
 .cloud-showcase-card__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--olive-light);
-  background: rgba(164, 176, 72, 0.16);
-  margin-bottom: 40px;
-  transition: transform 0.25s ease, margin 0.25s ease;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .cloud-showcase-card:hover .cloud-showcase-card__icon {
-  transform: scale(0.92);
-  margin-bottom: 14px;
+  transform: scale(1.06);
+  background: rgba(164, 176, 72, 0.35);
+}
+
+.cloud-showcase-card__body {
+  position: relative;
+  z-index: 1;
 }
 
 .cloud-showcase-card h3 {
   color: #fff;
   font-size: 18px;
   margin: 0;
+  line-height: 1.3;
 }
 
 .cloud-showcase-card__text {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 14.5px;
-  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 8px 0 0;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.25s ease;
+  transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.3s ease;
 }
 
 .cloud-showcase-card:hover .cloud-showcase-card__text {
-  max-height: 120px;
+  max-height: 110px;
   opacity: 1;
 }
 
@@ -2939,6 +2976,169 @@
 
 @media (max-width: 560px) {
   .cloud-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* AI & Data showcase reuses the cloud-showcase card styles but with a
+   4-up grid (4 services instead of 6). */
+.ai-showcase__grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .ai-showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .ai-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- ERP photo-card showcase (/erp page only) ----------
+   Distinct from the dark .cloud-showcase-card treatment used on
+   /cloud and /ai-data — this mirrors a reference layout of real/photo
+   imagery cards on a light page, with a blue "highlighted title" chip
+   and a soft purple accent-circle decoration overlapping the photo. */
+.erp-photo-showcase {
+  background: var(--bg);
+  padding: 88px 0;
+}
+
+.erp-photo-showcase__head h2 {
+  color: var(--navy-900);
+}
+
+.erp-photo-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 24px;
+  margin-top: 44px;
+}
+
+.erp-photo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: visible;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.erp-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.erp-photo-card__media {
+  position: relative;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+}
+
+.erp-photo-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(19, 28, 48, 0.78) 0%, rgba(19, 28, 48, 0.05) 55%, rgba(19, 28, 48, 0) 100%);
+}
+
+.erp-photo-card__accent {
+  position: absolute;
+  z-index: 1;
+  top: -18px;
+  right: -18px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(176, 107, 255, 0.55), rgba(176, 107, 255, 0.08) 70%);
+  border: 1px solid rgba(176, 107, 255, 0.4);
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.erp-photo-card:hover .erp-photo-card__accent {
+  transform: scale(1.12) rotate(12deg);
+}
+
+.erp-photo-card__icon {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  bottom: -22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  box-shadow: 0 8px 18px rgba(38, 58, 92, 0.35);
+}
+
+.erp-photo-card__body {
+  padding: 34px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.erp-photo-card__title-chip {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15.5px;
+  line-height: 1.35;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 var(--olive);
+}
+
+.erp-photo-card__text {
+  color: var(--text-soft);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 4px 0 0;
+}
+
+.erp-photo-card__link {
+  margin-top: auto;
+  padding-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--olive-dark);
+  transition: gap 0.2s ease;
+}
+
+.erp-photo-card:hover .erp-photo-card__link {
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .erp-photo-showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .erp-photo-showcase__grid {
     grid-template-columns: 1fr;
   }
 }
@@ -3087,7 +3287,9 @@
 
 .apply-form__actions {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
 .apply-form__send {
@@ -3107,6 +3309,26 @@
 .apply-form__send:hover {
   background: var(--olive-light);
   transform: translateY(-2px);
+}
+
+.apply-form__send:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.apply-form__status {
+  margin: 0;
+  font-size: 13.5px;
+  text-align: right;
+}
+
+.apply-form__status--ok {
+  color: var(--olive-light);
+}
+
+.apply-form__status--error {
+  color: #ff9b8a;
 }
 
 /* --- Right rail: clients --- */
@@ -3209,5 +3431,109 @@
 
   .apply-clients__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Visitor badge (fixed, bottom-right, every page) ---------- */
+.visitor-badge {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 60;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: #c2c6cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+/* Expanding "live" ping ring, echoing off the outer gray ring. */
+.visitor-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #c2c6cc;
+  animation: visitorBadgePing 2.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+.visitor-badge__inner {
+  position: relative;
+  z-index: 1;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--navy-900);
+  border: 2px solid var(--navy-800);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: visitorBadgePulse 2.6s ease-in-out infinite;
+}
+
+.visitor-badge__count {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.visitor-badge__icon {
+  color: #fff;
+}
+
+@keyframes visitorBadgePing {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  75% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes visitorBadgePulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(164, 176, 72, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 6px rgba(164, 176, 72, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .visitor-badge {
+    width: 90px;
+    height: 90px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .visitor-badge__inner {
+    width: 62px;
+    height: 62px;
+  }
+
+  .visitor-badge__count {
+    font-size: 10.5px;
+  }
+
+  .visitor-badge__icon {
+    width: 14px;
+    height: 14px;
   }
 }
