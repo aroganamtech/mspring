@@ -203,41 +203,49 @@ export const industries = [
     title: "Telecommunications, Media & Entertainment",
     description: "Scalable IT infrastructure, AI-driven solutions, and cloud-first strategies for connectivity and digital content delivery.",
     path: "/industries/telecom",
+    icon: "phone",
   },
   {
     title: "Banking & Financial Services",
     description: "Secure, data-driven, and AI-powered solutions for banks, fintechs, insurers and financial institutions.",
     path: "/industries/bfsi",
+    icon: "chart",
   },
   {
     title: "Automotive",
     description: "Supporting digital transformation in mobility, manufacturing, and autonomous technology.",
     path: "/industries/automotive",
+    icon: "settings",
   },
   {
     title: "Public Sector & Government",
     description: "Enabling efficient, transparent, and citizen-centric digital governance.",
     path: "/industries/public-sector",
+    icon: "shield",
   },
   {
     title: "Retail & E-Commerce",
     description: "Driving customer engagement, inventory intelligence, and seamless digital experiences.",
     path: "/industries/retail",
+    icon: "grid",
   },
   {
     title: "Healthcare & Life Sciences",
     description: "Accelerating innovation in patient care, medical research, and digital health systems.",
     path: "/industries/healthcare",
+    icon: "checkCircle",
   },
   {
     title: "Oil, Gas & Energy",
     description: "Supporting sustainable operations with IoT, predictive analytics, and cloud-based energy solutions.",
     path: "/industries/oil-gas-energy",
+    icon: "target",
   },
   {
     title: "Manufacturing",
     description: "Digitizing operations with smart factory solutions, ERP integrations, and real-time data visibility.",
     path: "/industries/manufacturing",
+    icon: "cube",
   },
 ];
 
@@ -245,26 +253,44 @@ export const roleCategories = [
   {
     title: "Cloud, DevOps & Data",
     roles: ["DevOps Engineer", "Multi-Cloud Engineer", "Data Engineer", "Cloud Architect", "Site Reliability Engineer", "GIS Developer"],
+    icon: "layers",
+    image: "cloud-devops-data",
   },
   {
     title: "Software & Engineering",
     roles: ["Full-Stack Developer", "Front-End Engineer", "API Engineer", "Software Architect", "Salesforce Developer", "Dynamics 365 Developer"],
+    icon: "code",
+    image: "software-engineering",
   },
   {
-    title: "AI, Data & Automation",
-    roles: ["Data Scientist", "AI Research Engineer", "ML Engineer", "Prompt Engineer", "RPA Developer", "Process Engineer"],
+    title: "AI & Data Science",
+    roles: ["Data Scientist", "AI Research Engineer", "Prompt Engineer"],
+    icon: "brain",
+    image: "ai-data-science",
+  },
+  {
+    title: "ML & Automation",
+    roles: ["ML Engineer", "RPA Developer", "Process Engineer"],
+    icon: "bot",
+    image: "ml-automation",
   },
   {
     title: "Security & Compliance",
     roles: ["CISO", "SOC Analyst", "VAPT Specialist", "IAM Engineer", "SIEM Specialist", "ITGC / SOX Consultant"],
+    icon: "shield",
+    image: "security-compliance",
   },
   {
     title: "Enterprise & ERP",
     roles: ["SAP Consultant (Technical/Functional)", "Oracle Apps & DBA", "Presales Consultant", "Business Development Manager"],
+    icon: "database",
+    image: "enterprise-erp",
   },
   {
     title: "Corporate & Support Functions",
     roles: ["HR Manager", "Finance Controller", "US Taxation Specialist", "Technical Support Engineer", "Quality Manager"],
+    icon: "users",
+    image: "corporate-support",
   },
 ];
 

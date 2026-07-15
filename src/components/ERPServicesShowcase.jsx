@@ -73,7 +73,7 @@ export default function ERPServicesShowcase() {
         <div className="erp-photo-showcase__grid">
           {erpServices.map((s) => (
             <Link to={s.path} className="erp-photo-card" key={s.title}>
-              <div className="erp-photo-card__media" style={{ backgroundImage: `url(${s.img})` }}>
+              <div className="erp-photo-card__media" style={{ backgroundImage: `url("${s.img}")` }}>
                 <span className="erp-photo-card__accent" aria-hidden="true" />
               </div>
               <div className="erp-photo-card__icon">

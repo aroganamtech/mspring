@@ -60,7 +60,7 @@ export default function AIDataServicesShowcase() {
               to={s.path}
               className="cloud-showcase-card"
               key={s.title}
-              style={{ backgroundImage: `url(${s.bg})` }}
+              style={{ backgroundImage: `url("${s.bg}")` }}
             >
               <span className="cloud-showcase-card__overlay" aria-hidden="true" />
               <div className="cloud-showcase-card__icon">
