@@ -165,32 +165,35 @@
   align-items: center;
   justify-content: space-between;
   height: 78px;
-  gap: 24px;
+  gap: 10px;
 }
 
 .navbar__brand {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .navbar__brand img {
   height: 40px;
   width: auto;
+  min-width: 116px;
+  flex-shrink: 0;
 }
 
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
   margin-left: auto;
 }
 
 .navbar__links a {
   font-family: var(--font-head);
   font-weight: 500;
-  font-size: 14.5px;
+  font-size: 12.5px;
   color: #0d1226;
-  padding: 9px 14px;
+  padding: 7px 7px;
   border-radius: 8px;
   transition: color 0.2s ease, background 0.2s ease;
   white-space: nowrap;
@@ -226,7 +229,7 @@
 .nav-item__row {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
 }
 
 .nav-item__chevron {
@@ -261,7 +264,7 @@
   display: none;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1151px) {
   .nav-dropdown {
     display: flex;
     flex-direction: column;
@@ -310,17 +313,17 @@
 .navbar__utility {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 6px;
 }
 
 .navbar__cta {
   display: inline-flex;
   align-items: center;
-  padding: 10px 22px;
+  padding: 8px 14px;
   border-radius: 999px;
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12.5px;
   color: #fff;
   background: var(--olive);
   white-space: nowrap;
@@ -336,7 +339,7 @@
 .navbar__employee-login {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 11.5px;
   color: var(--navy-800);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -358,8 +361,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   background: none;
   border: none;
   border-radius: 50%;
@@ -408,6 +411,107 @@
   border: none;
   color: #0d1226;
   padding: 6px;
+}
+
+/* Dedicated navbar collapse breakpoint — deliberately separate from the
+   generic 900px layout breakpoint below (hero/about/timeline grids etc).
+   With 9 top-level items + Apply Job + Employee Login + search, the inline
+   nav needs real room. Sizing here is a deliberate trade-off between
+   readability and how narrow a screen can still show the full desktop nav —
+   1150px is the true minimum width the full row fits at this comfortable
+   size without Employee Login/search getting pushed off-screen. */
+@media (max-width: 1150px) {
+  .navbar__links {
+    position: fixed;
+    inset: 78px 0 0 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+    gap: 22px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    margin-left: 0;
+  }
+
+  .navbar__links--open {
+    transform: translateX(0);
+  }
+
+  .navbar__links a {
+    font-size: 17px;
+    padding: 9px 14px;
+    color: var(--navy-800);
+  }
+
+  .navbar__links a:hover {
+    color: var(--olive-dark);
+    background: var(--bg-alt);
+  }
+
+  .navbar__links a.navbar__link--active {
+    color: var(--olive-dark);
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__search {
+    display: none;
+  }
+
+  .navbar__utility .navbar__cta,
+  .navbar__employee-login {
+    display: none;
+  }
+
+  .navbar__cta {
+    margin-top: 6px;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item__row {
+    justify-content: space-between;
+  }
+
+  .nav-item__chevron {
+    display: none;
+  }
+
+  .nav-item__mobile-toggle {
+    display: flex;
+  }
+
+  .nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .nav-dropdown--mobile-open {
+    max-height: 600px;
+  }
+
+  .nav-dropdown a {
+    padding: 10px 0 10px 16px;
+    font-size: 15px;
+    color: var(--text-soft);
+    border-left: 2px solid var(--border);
+    margin-top: 4px;
+  }
+
+  .nav-dropdown a:hover,
+  .nav-dropdown a.nav-dropdown__link--active {
+    color: var(--olive-dark);
+    border-color: var(--olive-dark);
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -2100,97 +2204,6 @@
     order: -1;
   }
 
-  .navbar__links {
-    position: fixed;
-    inset: 78px 0 0 0;
-    background: #fff;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 28px 24px;
-    gap: 22px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    margin-left: 0;
-  }
-
-  .navbar__links--open {
-    transform: translateX(0);
-  }
-
-  .navbar__links a {
-    font-size: 17px;
-    color: var(--navy-800);
-  }
-
-  .navbar__links a:hover {
-    color: var(--olive-dark);
-    background: var(--bg-alt);
-  }
-
-  .navbar__links a.navbar__link--active {
-    color: var(--olive-dark);
-  }
-
-  .navbar__toggle {
-    display: flex;
-  }
-
-  .navbar__search {
-    display: none;
-  }
-
-  .navbar__utility .navbar__cta,
-  .navbar__employee-login {
-    display: none;
-  }
-
-  .navbar__cta {
-    margin-top: 6px;
-  }
-
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-item__row {
-    justify-content: space-between;
-  }
-
-  .nav-item__chevron {
-    display: none;
-  }
-
-  .nav-item__mobile-toggle {
-    display: flex;
-  }
-
-  .nav-dropdown {
-    display: flex;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease;
-  }
-
-  .nav-dropdown--mobile-open {
-    max-height: 600px;
-  }
-
-  .nav-dropdown a {
-    padding: 10px 0 10px 16px;
-    font-size: 15px;
-    color: var(--text-soft);
-    border-left: 2px solid var(--border);
-    margin-top: 4px;
-  }
-
-  .nav-dropdown a:hover,
-  .nav-dropdown a.nav-dropdown__link--active {
-    color: var(--olive-dark);
-    border-color: var(--olive-dark);
-  }
-
   .timeline::before {
     left: 18px;
   }
@@ -3405,8 +3418,12 @@
   }
 }
 
-/* --- Responsive --- */
-@media (max-width: 1024px) {
+/* --- Responsive ---
+   Matched to the navbar's 1150px hamburger breakpoint (see the navbar
+   section above) so the page layout switches to its compact form at the
+   same width the nav does — otherwise you get a mobile-style hamburger nav
+   sitting above a still-3-column desktop grid on tablet-ish widths. */
+@media (max-width: 1150px) {
   .apply-page__inner {
     grid-template-columns: 200px minmax(0, 1fr);
   }

@@ -78,7 +78,7 @@ export default function Navbar() {
                 </Link>
                 {item.children && (
                   <>
-                    <Icon name="chevronDown" size={14} className="nav-item__chevron" />
+                    <Icon name="chevronDown" size={12} className="nav-item__chevron" />
                     <button
                       type="button"
                       className="nav-item__mobile-toggle"

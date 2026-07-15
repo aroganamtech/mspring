@@ -10,6 +10,36 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+// One-time startup diagnostic: logs exactly which EmailJS env vars Vite
+// actually picked up, so a missing/misnamed/misplaced .env file is obvious
+// from the browser console instead of a generic "not configured" error.
+if (import.meta.env.DEV) {
+  const missing = [
+    !EMAILJS_SERVICE_ID && "VITE_EMAILJS_SERVICE_ID",
+    !EMAILJS_TEMPLATE_ID && "VITE_EMAILJS_TEMPLATE_ID",
+    !EMAILJS_PUBLIC_KEY && "VITE_EMAILJS_PUBLIC_KEY",
+  ].filter(Boolean);
+
+  if (missing.length) {
+    console.warn(
+      `[ApplyJobPage] EmailJS env vars NOT loaded: ${missing.join(", ")}. ` +
+        "This means Vite didn't find a .env file with these keys in the project root " +
+        "(same folder as package.json) — or the dev server was started before the " +
+        ".env file was created/saved. Fix the file, then fully stop and restart " +
+        "`npm run dev` (Vite only reads .env at startup, not on hot-reload)."
+    );
+  } else {
+    console.log(
+      "[ApplyJobPage] EmailJS env vars loaded OK — service:",
+      EMAILJS_SERVICE_ID,
+      "template:",
+      EMAILJS_TEMPLATE_ID,
+      "publicKey:",
+      EMAILJS_PUBLIC_KEY ? `${EMAILJS_PUBLIC_KEY.slice(0, 4)}…` : EMAILJS_PUBLIC_KEY
+    );
+  }
+}
+
 /* Job-post age filters shown in the left rail (matches the reference layout). */
 const JOB_FILTERS = [
   "Immediate",
@@ -72,8 +102,14 @@ export default function ApplyJobPage() {
     e.preventDefault();
 
     if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      const missing = [
+        !EMAILJS_SERVICE_ID && "VITE_EMAILJS_SERVICE_ID",
+        !EMAILJS_TEMPLATE_ID && "VITE_EMAILJS_TEMPLATE_ID",
+        !EMAILJS_PUBLIC_KEY && "VITE_EMAILJS_PUBLIC_KEY",
+      ].filter(Boolean);
       console.error(
-        "EmailJS is not configured — check VITE_EMAILJS_SERVICE_ID / VITE_EMAILJS_TEMPLATE_ID / VITE_EMAILJS_PUBLIC_KEY in .env"
+        `[ApplyJobPage] EmailJS is not configured — missing from .env: ${missing.join(", ")}. ` +
+          "Check the .env file is in the project root and restart `npm run dev`."
       );
       setStatus("error");
       return;
@@ -106,7 +142,16 @@ export default function ApplyJobPage() {
         e.target.reset();
       })
       .catch((error) => {
-        console.error("EmailJS send failed:", error);
+        // Log every detail EmailJS gives us — status code + message when the
+        // API responded (e.g. bad service/template ID, over the free-plan
+        // limit), or the raw error when the request couldn't reach EmailJS
+        // at all (network/CORS/ad-blocker issues).
+        console.error(
+          "[ApplyJobPage] EmailJS send failed —",
+          "status:", error?.status,
+          "text:", error?.text,
+          "raw error:", error
+        );
         setStatus("error");
       });
   };
@@ -240,6 +285,7 @@ export default function ApplyJobPage() {
                 accept=".pdf,.doc,.docx,.rtf,.txt"
                 onChange={handleFileChange}
                 className="apply-form__file"
+                required
               />
             </label>
 
