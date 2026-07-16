@@ -1,4 +1,5 @@
 import AIDataServicesShowcase from "./AIDataServicesShowcase";
+import CareersServicesShowcase from "./CareersServicesShowcase";
 import CloudServicesShowcase from "./CloudServicesShowcase";
 import CTASection from "./CTASection";
 import ERPServicesShowcase from "./ERPServicesShowcase";
@@ -11,7 +12,8 @@ export default function HubPage({ content, path, children: menuChildren }) {
   const isCloudHub = path === "/cloud";
   const isAiDataHub = path === "/ai-data";
   const isErpHub = path === "/erp";
-  const hasPhotoShowcase = isCloudHub || isAiDataHub || isErpHub;
+  const isCareersHub = path === "/careers";
+  const hasPhotoShowcase = isCloudHub || isAiDataHub || isErpHub || isCareersHub;
 
   return (
     <>
@@ -27,8 +29,9 @@ export default function HubPage({ content, path, children: menuChildren }) {
         <div className="container">
           {content.intro && <p className="hub__intro">{content.intro}</p>}
 
-          {/* Cloud, AI & Data and ERP get a dedicated photo-card showcase
-              instead of the plain text-link grid used by the other hubs. */}
+          {/* Cloud, AI & Data, ERP and Careers get a dedicated photo-card
+              showcase instead of the plain text-link grid used by the
+              other hubs. */}
           {!hasPhotoShowcase && (
             <div className="hub__grid">
               {menuChildren.map((child) => (
@@ -50,6 +53,7 @@ export default function HubPage({ content, path, children: menuChildren }) {
       {isCloudHub && <CloudServicesShowcase />}
       {isAiDataHub && <AIDataServicesShowcase />}
       {isErpHub && <ERPServicesShowcase />}
+      {isCareersHub && <CareersServicesShowcase />}
 
       <CTASection />
     </>
