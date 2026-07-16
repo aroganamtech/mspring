@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CLIENTS } from "../data/clients";
 import { usePageTitle } from "../router";
+import { saveJobApplication } from "../utils/cookies";
 
 /* EmailJS credentials — set in .env (VITE_ prefix required by Vite).
    Service ID / Template ID come from the EmailJS dashboard; the Public Key
@@ -135,6 +136,7 @@ export default function ApplyJobPage() {
         publicKey: EMAILJS_PUBLIC_KEY,
       })
       .then(() => {
+        saveJobApplication({ ...form, availability: activeFilter, resumeName: fileName });
         setStatus("sent");
         setForm(EMPTY_FORM);
         setFileName("");

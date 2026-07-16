@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { company } from "../data/content";
 import Icon from "./Icons";
+import { saveContactMessage } from "../utils/cookies";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -11,6 +12,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveContactMessage(form);
     const subject = encodeURIComponent(`Website enquiry from ${form.name || "a visitor"}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`

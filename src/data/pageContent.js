@@ -3,6 +3,16 @@
 // Detail pages render an intro + highlight bullets + optional technology tags.
 
 import securityBadges from "../assets/security-badges.jpg";
+import complianceBadges from "../assets/compliance-badges.png";
+import dnbBadge from "../assets/dun-and-bradstreet-badge.png";
+import aiHumanCollaboration from "../assets/ai-human-collaboration.jpg";
+import teamOfficeWindow from "../assets/team-office-window.jpg";
+import officeTeamCulture from "../assets/office-team-culture.jpg";
+import leadershipArrowYellow from "../assets/leadership-arrow-yellow.jpg";
+import leadershipArrowBlue from "../assets/leadership-arrow-blue.jpg";
+import aiBrainNetwork from "../assets/ai-brain-network.jpg";
+import teamworkLightbulbs from "../assets/teamwork-lightbulbs.jpg";
+import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
 
 export const pageContent = {
   /* ---------------- Cloud ---------------- */
@@ -33,6 +43,8 @@ export const pageContent = {
       "Migration roadmap & risk planning",
     ],
     tags: ["AWS", "Microsoft Azure", "Google Cloud", "Well-Architected Reviews"],
+    badgeImage: leadershipArrowYellow,
+    badgeImageAlt: "One path breaking away from the crowd, representing a clear cloud strategy",
   },
   "/cloud/migration": {
     type: "detail",
@@ -51,6 +63,8 @@ export const pageContent = {
       "Post-migration performance tuning & validation",
     ],
     tags: ["AWS (EC2, S3, Lambda, RDS)", "Terraform", "Ansible", "Azure", "Google Cloud"],
+    badgeImage: cloudAbstractSphere,
+    badgeImageAlt: "Abstract flowing cloud infrastructure visual",
   },
   "/cloud/devops": {
     type: "detail",
@@ -69,6 +83,8 @@ export const pageContent = {
       "Monitoring, logging and alerting setup",
     ],
     tags: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Terraform"],
+    badgeImage: leadershipArrowBlue,
+    badgeImageAlt: "A gold paper plane leading the way, representing pioneering DevOps practices",
   },
   "/cloud/managed-services": {
     type: "detail",
@@ -110,6 +126,8 @@ export const pageContent = {
     body: [
       "Our tailored AI and ML solutions are designed to integrate seamlessly into your operations, enhancing efficiency and fostering innovation to drive long-term success.",
     ],
+    badgeImage: aiHumanCollaboration,
+    badgeImageAlt: "A humanoid robot and a professional walking side by side",
   },
   "/ai-data/ai-ml": {
     type: "detail",
@@ -128,6 +146,8 @@ export const pageContent = {
       "Model deployment, monitoring & retraining pipelines",
     ],
     tags: ["Python (scikit-learn)", "TensorFlow", "PyTorch", "NLP", "Computer Vision", "OpenAI / GPT"],
+    badgeImage: aiBrainNetwork,
+    badgeImageAlt: "A digital brain wrapped in orbiting data rings, representing AI and machine learning",
   },
   "/ai-data/data-science": {
     type: "detail",
@@ -182,6 +202,8 @@ export const pageContent = {
       "Conversation analytics & continuous improvement",
     ],
     tags: ["Chatbots", "Dialogflow", "Rasa", "RPA", "NLP"],
+    badgeImage: teamworkLightbulbs,
+    badgeImageAlt: "Two lightbulbs coming together, representing collaborative automation ideas",
   },
 
   /* ---------------- ERP ---------------- */
@@ -340,6 +362,12 @@ export const pageContent = {
     ],
     tags: ["IAM", "Penetration Testing", "SIEM", "Encryption (AES/RSA)"],
     badgeImage: securityBadges,
+    complianceBadge: complianceBadges,
+    complianceBadgeAlt: "HIPAA Compliant and GDPR Compliant certification badges",
+    verificationBadge: dnbBadge,
+    verificationBadgeUrl:
+      "https://www.dnb.com/business-directory/company-profiles.mspring_info_tech_india_private_limited.cd70563af56042d581bab312bb053ee5.html",
+    verificationBadgeAlt: "View Mspring Infotech's verified Dun & Bradstreet company profile",
   },
 
   /* ---------------- Careers ---------------- */
@@ -385,6 +413,8 @@ export const pageContent = {
       "Flat, delivery-focused team culture",
       "ISO 27001-certified processes and clear ways of working",
     ],
+    badgeImage: teamOfficeWindow,
+    badgeImageAlt: "A Mspring Infotech professional overlooking the city skyline",
   },
   "/careers/submit-cv": {
     type: "form",
@@ -426,6 +456,8 @@ export const pageContent = {
       "Offer negotiation & resignation follow-up support",
       "Post-joining check-ins to confirm a strong fit",
     ],
+    badgeImage: officeTeamCulture,
+    badgeImageAlt: "A team collaborating in a modern office setting",
   },
   "/talent-solutions/contract-to-hire": {
     type: "detail",

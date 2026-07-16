@@ -198,6 +198,59 @@ export const accountManagement = [
   "Regular Review Meetings to Monitor Performance",
 ];
 
+export const aiOutcomesIntro = [
+  "There is a difference between a tool that uses AI and a system that is built around it. Every Mspring Infotech AI solution is designed from the outcome backwards, not feature-first. The question we start with is never “what can AI do here?” It is “what result does your business need, and how do we build AI that delivers exactly that?”",
+  "The result is AI that fits how your operations actually run, not a generic platform you spend six months configuring.",
+];
+
+export const aiProcessSteps = [
+  {
+    icon: "search",
+    title: "Assess",
+    description:
+      "We start with your operation, not a product sheet. Before any build begins, our team maps what you actually need — the systems you run, the outcomes you need, and the gaps between them.",
+  },
+  {
+    icon: "globe",
+    title: "Connect",
+    description:
+      "We integrate with what you already have. ERP, ATS, SCADA, HRMS, job boards — everything feeds in. Nothing gets replaced.",
+  },
+  {
+    icon: "settings",
+    title: "Automate",
+    description:
+      "AI takes over the work your team should not be doing manually. Screening, scoring, monitoring, alerting, reporting — done automatically, at scale, without errors.",
+  },
+  {
+    icon: "chart",
+    title: "Improve",
+    description:
+      "Every action generates data. Every cycle, the system gets smarter. Hiring quality improves with every role filled. Plant performance improves with every anomaly caught.",
+  },
+];
+
+export const aiOutcomes = [
+  {
+    icon: "target",
+    title: "Outcome-First Design",
+    description:
+      "Every solution is scoped around a measurable business result — OEE improvement, time-to-hire reduction, cost savings you can report to your board.",
+  },
+  {
+    icon: "layers",
+    title: "No Rip-and-Replace",
+    description:
+      "Our AI solutions connect to what you already have — your ERP, your ATS, your SCADA. You don't need to rebuild your stack to start seeing value.",
+  },
+  {
+    icon: "checkCircle",
+    title: "Built for Real Operations",
+    description:
+      "Not demos. Not pilots that never scale. Mspring Infotech AI solutions are live in manufacturing plants and enterprise hiring teams, delivering results today.",
+  },
+];
+
 export const industries = [
   {
     title: "Telecommunications, Media & Entertainment",

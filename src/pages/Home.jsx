@@ -2,18 +2,13 @@ import Clients from "../components/Clients";
 import Icon from "../components/Icons";
 import { Link, usePageTitle } from "../router";
 
-import badge13 from "../assets/badge-13-years.jpg";
+import badge14 from "../assets/badge-14-years.jpg";
 import expCloud from "../assets/exp-cloud.png";
 import expCyber from "../assets/exp-cyber.png";
 import expAi from "../assets/exp-ai.png";
 import expEngineering from "../assets/exp-engineering.png";
 import expApplications from "../assets/exp-applications.png";
 import expDesign from "../assets/exp-design.png";
-import caseBulb from "../assets/case-bulb.jpg";
-import caseNetsuite from "../assets/case-netsuite.jpg";
-import insightAiHealthcare from "../assets/insight-ai-healthcare.jpg";
-import insightEcommerce from "../assets/insight-ecommerce.jpg";
-import insightAiRoi from "../assets/insight-ai-roi.jpg";
 import ctaConnect from "../assets/cta-connect.jpg";
 import ctaMspring from "../assets/cta-mspring.jpg";
 
@@ -24,51 +19,6 @@ const expertise = [
   { title: "Engineering", path: "/cloud/devops", icon: expEngineering, theme: "red" },
   { title: "Applications", path: "/erp", icon: expApplications, theme: "blue" },
   { title: "Design Services", path: "/ai-data/automation", icon: expDesign, theme: "graphite" },
-];
-
-const caseStudies = [
-  {
-    title: "Driving Sales with Seamless Payment Integration on Shopify",
-    path: "/industries/retail",
-    image: caseBulb,
-    style: "photo",
-  },
-  {
-    title: "Custom warehouse management system on NetSuite improves inventory management",
-    path: "/erp",
-    image: caseNetsuite,
-    style: "panel",
-  },
-  {
-    title: "AWS Cloud for the streamlining school accreditation process",
-    path: "/cloud",
-    image: caseBulb,
-    style: "photo",
-  },
-];
-
-const insights = [
-  {
-    title: "Scaling AI Strategies in Healthcare Success",
-    snippet:
-      "Scaling AI in healthcare transforms patient care. Discover strategies for success and learn how AI drives innovation!",
-    path: "/industries/healthcare",
-    image: insightAiHealthcare,
-  },
-  {
-    title: "Is Your eCommerce Platform Slowing Down Your Growth?",
-    snippet:
-      "Whether you're frustrated with day-to-day inefficiencies or planning for long-term scale, this guide will give you the clarity you need to move forward.",
-    path: "/industries/retail",
-    image: insightEcommerce,
-  },
-  {
-    title: "Maximizing AI's Impact: Implementation Strategies & ROI in Healthcare",
-    snippet:
-      "Download this whitepaper to gain a clear understanding of AI's potential in healthcare.",
-    path: "/ai-data/ai-ml",
-    image: insightAiRoi,
-  },
 ];
 
 const industryTiles = [
@@ -151,7 +101,7 @@ export default function Home() {
       <section className="section hm-experience">
         <div className="container hm-experience__inner">
           <div className="hm-experience__badge">
-            <img src={badge13} alt="13 years of experience" />
+            <img src={badge14} alt="14 years of experience" />
           </div>
           <div className="hm-experience__copy">
             <p>
@@ -161,7 +111,7 @@ export default function Home() {
             </p>
             <div className="hm-experience__stats">
               <div>
-                <strong>13</strong>
+                <strong>14</strong>
                 <span>Years of experience</span>
               </div>
               <div>
@@ -179,60 +129,6 @@ export default function Home() {
 
       {/* ---------- Our Clienteles logo wall ---------- */}
       <Clients />
-
-      {/* ---------- Benefits / Case studies ---------- */}
-      <section className="section hm-benefits">
-        <div className="container">
-          <h2 className="hm-benefits__head">Benefits Delivered to the Customers</h2>
-          <div className="hm-benefits__grid">
-            {caseStudies.map((c) => (
-              <Link
-                to={c.path}
-                className={`hm-case-card hm-case-card--${c.style}`}
-                key={c.title}
-              >
-                {c.style === "photo" ? (
-                  <>
-                    <img src={c.image} alt="" className="hm-case-card__bg" />
-                    <span className="hm-case-card__pill">Click here</span>
-                    <span className="hm-case-card__plate">{c.title}</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="hm-case-card__pill hm-case-card__pill--dark">
-                      Click here
-                    </span>
-                    <span className="hm-case-card__paneltitle">{c.title}</span>
-                    <img src={c.image} alt="" className="hm-case-card__panelimg" />
-                  </>
-                )}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- Trending Insights ---------- */}
-      <section className="section hm-insights">
-        <div className="container">
-          <h2 className="hm-insights__head">Trending Insights</h2>
-          {insights.map((ins, i) => (
-            <div key={ins.title}>
-              {i > 0 && <hr className="hm-insights__rule" />}
-              <div className="hm-insight">
-                <img src={ins.image} alt="" className="hm-insight__thumb" />
-                <h3 className="hm-insight__title">{ins.title}</h3>
-                <div className="hm-insight__body">
-                  <p>{ins.snippet}</p>
-                  <Link to={ins.path} className="hm-insight__link">
-                    Read the blog
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ---------- Industries (dark) ---------- */}
       <section className="section hm-industries">

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { company } from "../data/content";
 import Icon from "./Icons";
 import PageHeader from "./PageHeader";
+import { saveJobApplication } from "../utils/cookies";
+import getThingsDone from "../assets/cta-get-things-done.jpg";
 
 export default function CVForm({ content, parent, current }) {
   const [form, setForm] = useState({ name: "", email: "", phone: "", role: "", message: "" });
@@ -12,6 +14,7 @@ export default function CVForm({ content, parent, current }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveJobApplication(form);
     const subject = encodeURIComponent(`CV Submission — ${form.role || "General Application"}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nRole interested in: ${form.role}\n\nMessage:\n${form.message}\n\n(Please remember to attach your resume/CV before sending this email.)`
@@ -50,6 +53,8 @@ export default function CVForm({ content, parent, current }) {
                 <span>{company.phone}</span>
               </a>
             </div>
+
+            <img src={getThingsDone} alt="Get things done — Mspring Infotech" className="contact__visual" />
           </div>
 
           <form className="contact__form" onSubmit={handleSubmit}>

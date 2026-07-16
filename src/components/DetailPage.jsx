@@ -44,7 +44,35 @@ export default function DetailPage({ content, parent, current }) {
           <aside className="detail__aside">
             {content.badgeImage && (
               <div className="detail__panel detail__panel--badge">
-                <img src={content.badgeImage} alt="Security certifications: AES 256-bit SSL Secured, ISO 27001 Certified" />
+                <img
+                  src={content.badgeImage}
+                  alt={
+                    content.badgeImageAlt ||
+                    "Security certifications: AES 256-bit SSL Secured, ISO 27001 Certified"
+                  }
+                />
+              </div>
+            )}
+
+            {content.complianceBadge && (
+              <div className="detail__panel detail__panel--badge">
+                <img
+                  src={content.complianceBadge}
+                  alt={content.complianceBadgeAlt || "HIPAA and GDPR compliance badges"}
+                />
+              </div>
+            )}
+
+            {content.verificationBadge && content.verificationBadgeUrl && (
+              <div className="detail__panel detail__panel--badge">
+                <a
+                  href={content.verificationBadgeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={content.verificationBadgeAlt || "View verified company profile"}
+                >
+                  <img src={content.verificationBadge} alt={content.verificationBadgeAlt || ""} />
+                </a>
               </div>
             )}
 

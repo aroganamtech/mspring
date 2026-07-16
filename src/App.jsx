@@ -7,10 +7,14 @@ import AboutPage from "./pages/AboutPage";
 import ApplyJobPage from "./pages/ApplyJobPage";
 import CloudSolutionsPage from "./pages/CloudSolutionsPage";
 import ContactPage from "./pages/ContactPage";
+import CookiePolicyPage from "./pages/CookiePolicyPage";
 import DynamicPage from "./pages/DynamicPage";
 import Home from "./pages/Home";
 import IndustriesPage from "./pages/IndustriesPage";
+import JobScamAlertPage from "./pages/JobScamAlertPage";
 import StaffingPage from "./pages/StaffingPage";
+import CookieConsent from "./components/CookieConsent";
+import JobScamAlert from "./components/JobScamAlert";
 import VisitorBadge from "./components/VisitorBadge";
 import { useHashPath } from "./router";
 
@@ -22,6 +26,8 @@ const staticRoutes = {
   "/talent-solutions": StaffingPage,
   "/cloud-solutions": CloudSolutionsPage,
   "/careers/apply": ApplyJobPage,
+  "/job-scam-alert": JobScamAlertPage,
+  "/cookie-policy": CookiePolicyPage,
 };
 
 function App() {
@@ -39,6 +45,8 @@ function App() {
       <main>{StaticPage ? <StaticPage /> : <DynamicPage path={path} />}</main>
       <Footer />
       <VisitorBadge />
+      <JobScamAlert />
+      <CookieConsent />
     </>
   );
 }

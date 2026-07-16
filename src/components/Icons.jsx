@@ -289,6 +289,14 @@ export function Icon({ name, className = "", size = 22 }) {
           <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
         </svg>
       );
+    case "alertTriangle":
+      return (
+        <svg {...props}>
+          <path d="M12 3.5 21.5 20h-19L12 3.5Z" />
+          <path d="M12 9.75v4.5" />
+          <path d="M12 17.25h.01" />
+        </svg>
+      );
     default:
       return null;
   }

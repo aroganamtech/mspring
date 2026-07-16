@@ -9,9 +9,6 @@ const searchIndex = menu.flatMap((item) => [
   ...(item.children || []),
 ]);
 
-// TODO: replace with the real employee portal URL (e.g. an HRMS/intranet login).
-const EMPLOYEE_LOGIN_URL = "#";
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -116,15 +113,6 @@ export default function Navbar() {
           <Link to="/careers/apply" className="navbar__cta">
             Apply Job
           </Link>
-
-          <a
-            href={EMPLOYEE_LOGIN_URL}
-            className="navbar__employee-login"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Employee Login
-          </a>
 
           <div className={`navbar__search ${searchOpen ? "navbar__search--open" : ""}`}>
             <form onSubmit={handleSearchSubmit} className="navbar__search-form">
