@@ -9,6 +9,9 @@
 .section {
   padding: 96px 0;
 }
+.ourclients{
+  background-image:linear-gradient(rgb(16, 5, 38),rgb(6, 3, 37)) !important;
+}
 
 .section-head {
   max-width: 720px;
@@ -3706,11 +3709,11 @@
     opacity: 0.55;
   }
   75% {
-    transform: scale(1.5);
+    transform: scale(1.18);
     opacity: 0;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.18);
     opacity: 0;
   }
 }
@@ -3748,63 +3751,79 @@
   }
 }
 
-/* ---------- Job scam alert badge (fixed, bottom-left, every page) ---------- */
+/* ---------- Job scam alert banner (in normal flow, below the navbar, every page) ---------- */
+/* Floating pill button, fixed to the top-right of the viewport on every
+   screen size. Sits OUTSIDE normal document flow (position: fixed) so it
+   never affects header height or pushes other elements around, and its
+   z-index (90) is deliberately lower than .navbar's (100) so the mobile
+   fullscreen nav overlay — a descendant of .navbar's stacking context —
+   always paints above it instead of the two overlapping. */
 .job-scam-alert {
   position: fixed;
-  left: 22px;
-  bottom: 22px;
-  z-index: 60;
+  top: 90px;
+  right: 20px;
+  z-index: 90;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 20px 12px 14px;
-  border-radius: 999px;
-  background: #1e93d4;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  background: #a3af48;
+  color: #fff;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.job-scam-alert:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
-}
-
-.job-scam-alert__icon {
-  flex-shrink: 0;
-}
-
-.job-scam-alert__text {
   font-family: var(--font-head);
   font-weight: 800;
   font-size: 13px;
   letter-spacing: 0.02em;
-  color: #fff;
   text-transform: uppercase;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+  transition: background 0.2s ease, transform 0.2s ease;
+  max-width: calc(100vw - 24px);
+}
+
+.job-scam-alert:hover {
+  background: #8f9a3d;
+  transform: translateY(-2px);
+}
+
+.job-scam-alert__text {
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 640px) {
   .job-scam-alert {
-    left: 14px;
-    bottom: 14px;
-    padding: 10px 16px 10px 12px;
-    gap: 8px;
-  }
-
-  .job-scam-alert__text {
+    top: 84px;
+    right: 12px;
+    padding: 10px 14px;
     font-size: 11px;
   }
+}
 
-  .job-scam-alert__icon {
-    width: 17px;
-    height: 17px;
+@media (max-width: 380px) {
+  .job-scam-alert {
+    top: 80px;
+    right: 8px;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 0.01em;
+    max-width: calc(100vw - 16px);
   }
 }
 
 /* ---------- Job Scam Alert page (recruitment fraud advisory) ---------- */
+.section.scam-alert {
+  background-color: #a3af48;
+}
+
 .scam-alert__container {
   max-width: 880px;
+}
+
+.scam-alert__container > p,
+.scam-alert h2,
+.scam-alert h3 {
+  color: var(--navy-900);
 }
 
 .scam-alert__container > p {
@@ -3812,10 +3831,10 @@
 }
 
 .scam-alert__container a:not(.btn) {
-  color: var(--olive-dark);
+  color: var(--navy-900);
   text-decoration: underline;
   text-underline-offset: 2px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .scam-alert__heading {
@@ -3990,4 +4009,110 @@
 
 .policy-page__list li span {
   flex: 1;
+}
+
+/* ---------- Footer policy modal (Privacy Policy / ISMS Policy) ---------- */
+.footer__legal-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.footer__legal-btn:hover {
+  color: var(--olive-light);
+}
+
+.policy-modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(13, 18, 38, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.policy-modal {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  max-width: 760px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.policy-modal__close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: -16px -16px 0 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-alt);
+  color: var(--navy-900);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.policy-modal__close:hover {
+  background: #e4e6ea;
+}
+
+.policy-modal__content h2 {
+  font-family: var(--font-head);
+  font-size: 24px;
+  color: var(--navy-900);
+  margin: 0 0 18px;
+  clear: both;
+}
+
+.policy-modal__content h3 {
+  font-family: var(--font-head);
+  font-size: 16px;
+  color: var(--navy-900);
+  margin: 26px 0 10px;
+}
+
+.policy-modal__content p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin: 0 0 12px;
+}
+
+.policy-modal__content ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.policy-modal__content li {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+
+@media (max-width: 640px) {
+  .policy-modal {
+    padding: 28px 20px;
+    max-height: 90vh;
+  }
+
+  .policy-modal__content h2 {
+    font-size: 20px;
+  }
 }

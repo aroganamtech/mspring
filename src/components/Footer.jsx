@@ -2,6 +2,7 @@ import logo from "../assets/logo.png";
 import { company } from "../data/content";
 import Icon from "./Icons";
 import { Link } from "../router";
+import { PrivacyPolicyLink, IsmsPolicyLink } from "./PolicyModal";
 
 const socials = ["facebook", "instagram", "linkedin", "youtube"];
 
@@ -86,8 +87,8 @@ export default function Footer() {
         <div className="container footer__bottom-inner">
           <span>Copyright {year}, {company.name}. All Rights Reserved.</span>
           <div className="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">ISMS Policy</a>
+            <PrivacyPolicyLink />
+            <IsmsPolicyLink />
             <a href="#">Cookies Policy</a>
           </div>
         </div>

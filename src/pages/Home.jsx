@@ -2,7 +2,7 @@ import Clients from "../components/Clients";
 import Icon from "../components/Icons";
 import { Link, usePageTitle } from "../router";
 
-import badge14 from "../assets/badge-14-years.jpg";
+import badge14 from "../assets/badge-14-years.png";
 import expCloud from "../assets/exp-cloud.png";
 import expCyber from "../assets/exp-cyber.png";
 import expAi from "../assets/exp-ai.png";
@@ -111,7 +111,7 @@ export default function Home() {
             </p>
             <div className="hm-experience__stats">
               <div>
-                <strong>14</strong>
+                <strong>14+</strong>
                 <span>Years of experience</span>
               </div>
               <div>

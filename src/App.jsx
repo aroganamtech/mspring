@@ -42,10 +42,10 @@ function App() {
     <>
       <CustomCursor />
       <Navbar />
+      <JobScamAlert />
       <main>{StaticPage ? <StaticPage /> : <DynamicPage path={path} />}</main>
       <Footer />
       <VisitorBadge />
-      <JobScamAlert />
       <CookieConsent />
     </>
   );
