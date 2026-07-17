@@ -2,8 +2,6 @@
 // Hub pages render an intro + cards linking to their children (pulled from menu.js).
 // Detail pages render an intro + highlight bullets + optional technology tags.
 
-import securityBadges from "../assets/security-badges.jpg";
-import complianceBadges from "../assets/compliance-badges.png";
 import dnbBadge from "../assets/dun-and-bradstreet-badge.png";
 import aiHumanCollaboration from "../assets/ai-human-collaboration.jpg";
 import teamOfficeWindow from "../assets/team-office-window.jpg";
@@ -13,6 +11,7 @@ import leadershipArrowBlue from "../assets/leadership-arrow-blue.jpg";
 import aiBrainNetwork from "../assets/ai-brain-network.jpg";
 import teamworkLightbulbs from "../assets/teamwork-lightbulbs.jpg";
 import staffingMeeting from "../assets/staffing-meeting.jpg";
+import cyberBadges from "../assets/cyber-badges.png";
 import recruitmentProcess from "../assets/recruitment-process.jpg";
 import ctaConnect from "../assets/cta-connect.jpg";
 import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
@@ -484,9 +483,9 @@ export const pageContent = {
       "SIEM monitoring & incident response (Splunk, IBM QRadar)",
     ],
     tags: ["IAM", "Penetration Testing", "SIEM", "Encryption (AES/RSA)"],
-    badgeImage: securityBadges,
-    complianceBadge: complianceBadges,
-    complianceBadgeAlt: "HIPAA Compliant and GDPR Compliant certification badges",
+    badgeImage: cyberBadges,
+    badgeImageAlt:
+      "HIPAA Compliant, GDPR Compliant, AES 256-bit SSL Secured and ISO 27001 Certified badges",
     verificationBadge: dnbBadge,
     verificationBadgeUrl:
       "https://www.dnb.com/business-directory/company-profiles.mspring_info_tech_india_private_limited.cd70563af56042d581bab312bb053ee5.html",

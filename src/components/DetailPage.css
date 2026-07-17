@@ -118,6 +118,38 @@
   margin-top: 8px;
 }
 
+/* Certification badge grid in the aside (rendered only when a page's
+   content defines `certBadges`) — each logo in its own uniform white tile. */
+.detail__panel--certs {
+  padding: 16px;
+  background: var(--bg-alt);
+}
+
+.detail__certs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.detail__cert {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail__cert img {
+  max-width: 100%;
+  max-height: 84px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 /* Optional alternating feature rows (rendered only when a page's content
    defines `features`) — two-tone heading + paragraphs, photo on the other
    side, sides alternating row by row. */

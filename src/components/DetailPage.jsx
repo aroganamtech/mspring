@@ -315,6 +315,18 @@ export default function DetailPage({ content, parent, current }) {
           </div>
 
           <aside className="detail__aside">
+            {content.certBadges && (
+              <div className="detail__panel detail__panel--certs">
+                <div className="detail__certs">
+                  {content.certBadges.map((badge) => (
+                    <div className="detail__cert" key={badge.alt}>
+                      <img src={badge.image} alt={badge.alt} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {content.badgeImage && (
               <div className="detail__panel detail__panel--badge">
                 <img
