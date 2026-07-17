@@ -118,6 +118,260 @@
   margin-top: 8px;
 }
 
+/* Optional alternating feature rows (rendered only when a page's content
+   defines `features`) — two-tone heading + paragraphs, photo on the other
+   side, sides alternating row by row. */
+.detail-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.detail-feature + .detail-feature {
+  margin-top: 72px;
+}
+
+.detail-feature:nth-child(even) .detail-feature__img {
+  order: -1;
+}
+
+.detail-feature__title {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.12;
+  margin-bottom: 22px;
+}
+
+.detail-feature__title strong {
+  display: block;
+  color: #111827;
+  font-weight: 800;
+}
+
+.detail-feature__title span {
+  display: block;
+  color: #4b5563;
+  font-weight: 400;
+}
+
+.detail-feature__text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.detail-feature__img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 900px) {
+  .detail-feature {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .detail-feature:nth-child(even) .detail-feature__img {
+    order: 0;
+  }
+
+  .detail-feature + .detail-feature {
+    margin-top: 48px;
+  }
+}
+
+/* Optional centered "Partner with us" section with icon cards (rendered
+   only when a page's content defines `partner`). */
+.detail-partner__heading {
+  text-align: center;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.detail-partner__lede {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.detail-partner__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.detail-partner__card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 32px 30px;
+}
+
+.detail-partner__card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.detail-partner__card svg {
+  color: var(--navy-800);
+  margin-bottom: 18px;
+}
+
+.detail-partner__card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .detail-partner__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Optional service-cards section (rendered only when a page's content
+   defines `serviceCards`) — heading + lede, then a dark band with gradient
+   title tiles. */
+.detail-service-cards {
+  padding-bottom: 0;
+}
+
+.detail-service-cards__heading {
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.detail-service-cards__lede {
+  max-width: 900px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 44px;
+}
+
+.detail-service-cards__band {
+  background: #1b1b23;
+  padding: 72px 0;
+}
+
+.detail-service-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.detail-service-cards__card {
+  border-radius: 6px;
+  min-height: 180px;
+  padding: 30px 28px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail-service-cards__card:nth-child(3n + 1) {
+  background: linear-gradient(135deg, #1d2bd8 0%, #3a0ca3 100%);
+}
+
+.detail-service-cards__card:nth-child(3n + 2) {
+  background: linear-gradient(135deg, #2b46e8 0%, #4361ee 100%);
+}
+
+.detail-service-cards__card:nth-child(3n) {
+  background: linear-gradient(135deg, #274bdb 0%, #123a8f 100%);
+}
+
+.detail-service-cards__card h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Optional gradient banner rows (rendered only when a page's content
+   defines `bands`). */
+.detail-bands__heading {
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.detail-bands__lede {
+  max-width: 820px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+.detail-bands__item {
+  border-radius: 4px;
+  padding: 48px 52px;
+  color: #fff;
+}
+
+.detail-bands__item + .detail-bands__item {
+  margin-top: 32px;
+}
+
+.detail-bands__item:nth-child(odd) {
+  background: linear-gradient(90deg, #0b24c4 0%, #4b0f9e 65%, #800080 100%);
+}
+
+.detail-bands__item:nth-child(even) {
+  background: linear-gradient(90deg, #06b6d4 0%, #2563eb 60%, #7c3aed 100%);
+}
+
+.detail-bands__item h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.detail-bands__item p {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Left-aligned variant of the partner section (cards without icons) */
+.detail-partner--left .detail-partner__heading,
+.detail-partner--left .detail-partner__lede {
+  text-align: left;
+  margin-left: 0;
+}
+
+.detail-partner--left .detail-partner__card {
+  background: #f8f9fb;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .detail-service-cards__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-bands__item {
+    padding: 32px 26px;
+  }
+}
+
 /* Optional "key markets" band (rendered only when a page's content defines
    `markets`) — heading on the left, country list in columns on the right. */
 .detail-markets {

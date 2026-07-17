@@ -2,6 +2,7 @@ import "./ApplyJobPage.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CLIENTS } from "../data/clients";
+import { JOBS } from "../data/jobs";
 import { usePageTitle } from "../router";
 import { saveJobApplication } from "../utils/cookies";
 
@@ -83,10 +84,21 @@ export default function ApplyJobPage() {
   usePageTitle("Apply for a Job");
 
   const [activeFilter, setActiveFilter] = useState("Immediate");
+  const [jobsOpen, setJobsOpen] = useState(false);
   const [form, setForm] = useState(EMPTY_FORM);
   const [fileName, setFileName] = useState("");
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const formRef = useRef(null);
+
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+    setJobsOpen(true);
+  };
+
+  const applyForJob = (role) => {
+    setForm((prev) => ({ ...prev, title: role }));
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -161,6 +173,57 @@ export default function ApplyJobPage() {
 
   return (
     <section className="apply-page">
+      {jobsOpen && (
+        <div className="apply-jobs">
+          <div className="apply-jobs__head">
+            <h3 className="apply-page__heading">
+              Current Openings <span className="apply-jobs__count">({JOBS.length} roles)</span>
+            </h3>
+            <button
+              type="button"
+              className="apply-jobs__close"
+              aria-label="Close job openings"
+              onClick={() => setJobsOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+          <div className="apply-jobs__list">
+            {JOBS.map((job, i) => (
+              <article className="apply-job" key={job.role}>
+                <div className="apply-job__top">
+                  <span className="apply-job__num">{i + 1}</span>
+                  <h4 className="apply-job__role">{job.role}</h4>
+                  <span className="apply-job__exp">{job.experience}</span>
+                </div>
+                <p className="apply-job__desc">{job.description}</p>
+                <dl className="apply-job__meta">
+                  <div>
+                    <dt>Role-Specific Skills</dt>
+                    <dd>{job.roleSkills}</dd>
+                  </div>
+                  <div>
+                    <dt>Common Skills</dt>
+                    <dd>{job.commonSkills}</dd>
+                  </div>
+                  <div>
+                    <dt>Preferred Locations</dt>
+                    <dd>{job.locations}</dd>
+                  </div>
+                </dl>
+                <button
+                  type="button"
+                  className="apply-job__apply"
+                  onClick={() => applyForJob(job.role)}
+                >
+                  Apply for this role
+                </button>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="apply-page__inner">
         {/* ---------- Left rail: job filters ---------- */}
         <aside className="apply-page__filters">
@@ -173,7 +236,7 @@ export default function ApplyJobPage() {
                   className={`apply-filters__item ${
                     activeFilter === filter ? "apply-filters__item--active" : ""
                   }`}
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => handleFilterClick(filter)}
                 >
                   <ClockIcon />
                   {filter}

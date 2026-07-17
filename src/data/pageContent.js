@@ -294,38 +294,158 @@ export const pageContent = {
   "/erp/oracle": {
     type: "detail",
     eyebrow: "ERP",
-    title: "Oracle Services",
+    title: "Oracle Communication OSS/BSS",
     description:
-      "Oracle Applications and database expertise across implementation, administration and support.",
+      "What if you could get access to OSS/BSS solutions that enhance your core business value by uplifting enterprise service levels? Yes, Oracle OSS/BSS does that and much more by minimizing cost, improving focus on communication affiliates, extending the focus on communication affiliates, exploring the scope and depth of Mspring's solution architecture, and much more.",
+    headerCtaLabel: "Lets Talk",
+    serviceCards: {
+      heading: "OSS/BSS Services",
+      text: "Oracle OSS can also help you simplify industrial design, technical implementations, and test the complexity of business use cases. Besides, you can stay miles ahead of our competitors and improve customer experience by bracing yourself for the 5G era and taking your Telecom expertise to a whole new level.",
+      cards: [
+        { title: "Service Provisioning & Order Management" },
+        { title: "Billing and Revenue Management" },
+        { title: "Network and Service Management" },
+      ],
+    },
+    bands: {
+      heading: "Oracle OSS/BSS Services In Action",
+      text: "With skill development, consulting, and systems integration expertise, we are enabling communication service providers to become more agile and cost-efficient.",
+      items: [
+        {
+          title: "System Design And Architecture",
+          text: "Designing scalable, robust, and high-performance solutions using Oracle Communications OSS/BSS products like Oracle Communications Billing and Revenue Management (BRM), Oracle Communications Order and Service Management (OSM), and Oracle Communications Network Inventory (ONI).",
+        },
+        {
+          title: "Customization And Development",
+          text: "Implementing automation, scripting, and complex logic to streamline processes such as service ordering, billing, customer management, and network management.",
+        },
+        {
+          title: "Configuration And Integration",
+          text: "Integrating OSS/BSS applications with legacy systems, third-party applications, and network elements. Ensuring effective data synchronization and troubleshooting any integration issues.",
+        },
+        {
+          title: "Performance Optimization",
+          text: "Tuning the OSS/BSS applications for optimal performance, reliability, and scalability. Analyzing bottlenecks and implementing solutions to ensure smooth operations.",
+        },
+        {
+          title: "Testing And Quality Assurance",
+          text: "Ensuring the OSS/BSS systems are bug-free and comply with both functional and technical requirements. Performing regression testing and conducting system integration tests after updates or patches.",
+        },
+      ],
+    },
+    partner: {
+      align: "left",
+      heading: "How Can Mspring Infotech Helps In OSS/BSS?",
+      text: "Mspring Infotech has completed 20+ Oracle OSS/BSS Solutions implementations worldwide and has top-notch project management capabilities to implement complex projects in both the offshore and onshore models.",
+      cards: [
+        {
+          title: "Automated Workflows",
+          text: "Mspring Infotech can implement advanced automation in your OSS/BSS processes, helping to reduce manual intervention and errors. This includes automating service provisioning, order management and routine operational tasks end to end.",
+        },
+        {
+          title: "AI & Machine Learning",
+          text: "Leveraging AI and ML technologies, Mspring Infotech can optimize decision-making in OSS/BSS, such as predictive maintenance, automated issue detection, and customer experience personalization.",
+        },
+        {
+          title: "Collaboration With Stakeholders",
+          text: "Working with cross-functional teams (network engineers, product managers, and business units) to ensure the OSS/BSS solution aligns with both technical and business goals.",
+        },
+      ],
+    },
+  },
+  "/erp/oracle/oss": {
+    type: "detail",
+    eyebrow: "Oracle Services",
+    title: "OSS",
+    description:
+      "Operations Support Systems that keep your network services running — from provisioning to assurance.",
     body: [
-      "Our team supports Oracle Applications and databases across the full lifecycle — implementation, customization, administration and performance tuning — helping enterprises keep mission-critical systems reliable.",
-      "We also support Oracle CRM implementations, aligning sales and service processes with the rest of your technology stack.",
+      "Operations Support Systems (OSS) are the backbone of a communication service provider's network operations — covering service provisioning, order management, network inventory, fault management and performance monitoring.",
+      "Our Oracle OSS expertise spans Oracle Communications Order and Service Management (OSM) and Oracle Communications Network Inventory (ONI) — designing, implementing and integrating the systems that let you launch services faster and operate them reliably at scale.",
     ],
     highlights: [
-      "Oracle Apps implementation & administration",
-      "Oracle CRM configuration & customization",
-      "Database performance tuning & DBA support",
-      "Oracle-to-cloud migration planning",
+      "Service provisioning & order management (OSM)",
+      "Network inventory & resource management (ONI)",
+      "Fault management & service assurance workflows",
+      "Integration with legacy and third-party systems",
     ],
-    tags: ["Oracle", "Oracle CRM", "Database Administration"],
+    tags: ["Oracle OSM", "Oracle ONI", "Service Assurance"],
+  },
+  "/erp/oracle/bss": {
+    type: "detail",
+    eyebrow: "Oracle Services",
+    title: "BSS",
+    description:
+      "Business Support Systems that power your revenue — billing, charging, and customer management.",
+    body: [
+      "Business Support Systems (BSS) handle the commercial side of a communication service provider — billing and revenue management, charging, product catalogs and customer management.",
+      "Our Oracle BSS expertise centers on Oracle Communications Billing and Revenue Management (BRM) — implementing, customizing and optimizing the systems that turn network usage into accurate, timely revenue while keeping the customer experience smooth.",
+    ],
+    highlights: [
+      "Billing & Revenue Management (BRM) implementation",
+      "Online & offline charging configuration",
+      "Product catalog & pricing management",
+      "Revenue assurance & billing accuracy audits",
+    ],
+    tags: ["Oracle BRM", "Billing", "Revenue Management"],
   },
   "/erp/salesforce": {
     type: "detail",
     eyebrow: "ERP",
     title: "Salesforce CRM",
     description:
-      "Salesforce implementation and customization to help sales, service and marketing teams work from one source of truth.",
-    body: [
-      "We implement and customize Salesforce to match your sales and service processes — from lead management and pipeline configuration to service cloud workflows and CPQ.",
-      "Where Salesforce needs to talk to other systems in your stack, we build the integrations that keep data consistent across the business.",
+      "Siebel CRM consulting, implementation, customization and support that make the most of your CRM investment.",
+    features: [
+      {
+        titleBold: "Siebel",
+        titleLight: "Consulting",
+        text: "Our Siebel Consulting services provide expert guidance at every stage of your CRM journey, helping businesses align their CRM strategy with their overall business goals. Our team assists in defining the roadmap for Siebel CRM integration, ensuring optimal utilization of the platform's capabilities to drive business growth.",
+        image: aiBrainNetwork,
+        imageAlt: "A digital profile overlaid with a connected network",
+      },
+      {
+        titleBold: "Siebel",
+        titleLight: "Implementation",
+        text: "Our Siebel Implementation services focus on setting up and configuring the Siebel CRM system according to your business needs. We guide you through the entire implementation process, from planning and designing to deployment, ensuring a smooth and efficient transition.",
+        image: cloudAbstractSphere,
+        imageAlt: "A connected cloud hovering over a digital city",
+      },
+      {
+        titleBold: "Siebel",
+        titleLight: "Customization",
+        text: "We understand that each business has unique needs. Our Customization and Migration services cater to this uniqueness, tailoring Salesforce to suit your specific requirements. We facilitate a smooth transition from your existing CRM to Salesforce, managing the complex process of data migration while ensuring complete data security.",
+        image: aiHumanCollaboration,
+        imageAlt: "Hands typing on a laptop with digital service icons",
+      },
+      {
+        titleBold: "Siebel Support and",
+        titleLight: "Maintenance",
+        text: "Our Siebel Support and Maintenance services ensure that your Siebel CRM system remains updated and continues to perform at its best. We provide proactive maintenance, troubleshoot issues, and offer continuous support to keep your system running smoothly and efficiently.",
+        image: teamOfficeWindow,
+        imageAlt: "A professional working on a laptop in a bright office",
+      },
     ],
-    highlights: [
-      "Salesforce implementation & customization",
-      "Salesforce CPQ (Configure, Price, Quote) setup",
-      "Third-party integrations & data migration",
-      "Ongoing admin support & user training",
-    ],
-    tags: ["Salesforce", "Salesforce CPQ", "CRM Integration"],
+    partner: {
+      heading: "Partner with Mspring Infotech for Siebel CRM Services",
+      text: "Partnering with Mspring Infotech for Siebel CRM consulting services ensures you are working with a team that blends deep technical expertise with strategic insights. We understand the critical role that Siebel CRM plays in your business. Our unique approach to consulting, implementation, customization, and support ensures your CRM solution is tailored to your needs, enhancing productivity and driving business growth. Choose Mspring Infotech, and make the most of your Siebel CRM investment.",
+      cards: [
+        {
+          icon: "code",
+          title: "Experienced Developers",
+          text: "We have a team of experienced professionals to fulfil your niche requirements and deliver on every engagement.",
+        },
+        {
+          icon: "handshake",
+          title: "Collaborative Approach",
+          text: "We follow a very open and collaborative way of working with clients, keeping you involved at every stage.",
+        },
+        {
+          icon: "shield",
+          title: "Decade long experience",
+          text: "A decade long experience in delivering top-grade solutions across industries and technologies.",
+        },
+      ],
+    },
   },
   "/erp/dynamics-365": {
     type: "detail",

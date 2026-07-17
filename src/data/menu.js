@@ -30,10 +30,15 @@ export const menu = [
     label: "ERP",
     path: "/erp",
     children: [
-      { label: "SAP Services", path: "/erp/sap" },
-      { label: "Oracle Services", path: "/erp/oracle" },
+      {
+        label: "Oracle Services",
+        path: "/erp/oracle",
+        children: [
+          { label: "OSS", path: "/erp/oracle/oss" },
+          { label: "BSS", path: "/erp/oracle/bss" },
+        ],
+      },
       { label: "Salesforce CRM", path: "/erp/salesforce" },
-      { label: "Microsoft Dynamics 365", path: "/erp/dynamics-365" },
     ],
   },
   {

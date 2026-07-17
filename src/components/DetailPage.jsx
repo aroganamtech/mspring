@@ -151,6 +151,64 @@ export default function DetailPage({ content, parent, current }) {
         </section>
       )}
 
+      {content.features && (
+        <section className="section detail-features">
+          <div className="container">
+            {content.features.map((feature) => (
+              <div className="detail-feature" key={feature.titleBold + feature.titleLight}>
+                <div className="detail-feature__text">
+                  <h2 className="detail-feature__title">
+                    <strong>{feature.titleBold}</strong>
+                    {feature.titleLight && <span>{feature.titleLight}</span>}
+                  </h2>
+                  {(feature.paragraphs || [feature.text]).map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+                <img
+                  className="detail-feature__img"
+                  src={feature.image}
+                  alt={feature.imageAlt || ""}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {content.serviceCards && (
+        <section className="section detail-service-cards">
+          <div className="container">
+            <h2 className="detail-service-cards__heading">{content.serviceCards.heading}</h2>
+            <p className="detail-service-cards__lede">{content.serviceCards.text}</p>
+          </div>
+          <div className="detail-service-cards__band">
+            <div className="container detail-service-cards__grid">
+              {content.serviceCards.cards.map((card) => (
+                <div className="detail-service-cards__card" key={card.title}>
+                  <h3>{card.title}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {content.bands && (
+        <section className="section detail-bands">
+          <div className="container">
+            <h2 className="detail-bands__heading">{content.bands.heading}</h2>
+            <p className="detail-bands__lede">{content.bands.text}</p>
+            {content.bands.items.map((item) => (
+              <div className="detail-bands__item" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {content.markets && (
         <section className="section detail-markets">
           <div className="container detail-markets__inner">
@@ -181,6 +239,28 @@ export default function DetailPage({ content, parent, current }) {
             </div>
           </section>
         )
+      )}
+
+      {content.partner && (
+        <section
+          className={`section detail-partner ${
+            content.partner.align === "left" ? "detail-partner--left" : ""
+          }`}
+        >
+          <div className="container">
+            <h2 className="detail-partner__heading">{content.partner.heading}</h2>
+            <p className="detail-partner__lede">{content.partner.text}</p>
+            <div className="detail-partner__cards">
+              {content.partner.cards.map((card) => (
+                <div className="detail-partner__card" key={card.title}>
+                  <h3>{card.title}</h3>
+                  {card.icon && <Icon name={card.icon} size={34} />}
+                  <p>{card.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       {hasDetailBody && (
