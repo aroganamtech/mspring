@@ -1,0 +1,147 @@
+/* ERP photo-card showcase (/erp page only) — split from App.css, content unchanged */
+
+/* ---------- ERP photo-card showcase (/erp page only) ----------
+   Distinct from the dark .cloud-showcase-card treatment used on
+   /cloud and /ai-data — this mirrors a reference layout of real/photo
+   imagery cards on a light page, with a blue "highlighted title" chip
+   and a soft purple accent-circle decoration overlapping the photo. */
+.erp-photo-showcase {
+  background: var(--bg);
+  padding: 88px 0;
+}
+
+.erp-photo-showcase__head h2 {
+  color: var(--navy-900);
+}
+
+.erp-photo-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 24px;
+  margin-top: 44px;
+}
+
+.erp-photo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: visible;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.erp-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.erp-photo-card__media {
+  position: relative;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+}
+
+.erp-photo-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(19, 28, 48, 0.78) 0%, rgba(19, 28, 48, 0.05) 55%, rgba(19, 28, 48, 0) 100%);
+}
+
+.erp-photo-card__accent {
+  position: absolute;
+  z-index: 1;
+  top: -18px;
+  right: -18px;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(176, 107, 255, 0.55), rgba(176, 107, 255, 0.08) 70%);
+  border: 1px solid rgba(176, 107, 255, 0.4);
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.erp-photo-card:hover .erp-photo-card__accent {
+  transform: scale(1.12) rotate(12deg);
+}
+
+.erp-photo-card__icon {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  bottom: -22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+  box-shadow: 0 8px 18px rgba(38, 58, 92, 0.35);
+}
+
+.erp-photo-card__body {
+  padding: 34px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.erp-photo-card__title-chip {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15.5px;
+  line-height: 1.35;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 var(--olive);
+}
+
+.erp-photo-card__text {
+  color: var(--text-soft);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 4px 0 0;
+}
+
+.erp-photo-card__link {
+  margin-top: auto;
+  padding-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--olive-dark);
+  transition: gap 0.2s ease;
+}
+
+.erp-photo-card:hover .erp-photo-card__link {
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .erp-photo-showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .erp-photo-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+

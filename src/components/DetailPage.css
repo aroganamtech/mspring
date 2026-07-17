@@ -1,0 +1,336 @@
+/* Detail pages (service / industry sub-pages) — split from App.css, content unchanged */
+
+/* ---------- Detail pages (service / industry sub-pages) ---------- */
+.detail__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detail__body p {
+  font-size: 15.5px;
+  margin-bottom: 18px;
+}
+
+.detail__body .btn {
+  margin-top: 8px;
+}
+
+/* Optional "About This Service" section (rendered only when a page's
+   content defines `about`) — eyebrow + big heading on the left, rounded
+   photo on the right, divider, then full-width paragraphs. */
+.detail-about {
+  background: linear-gradient(135deg, #e9f2ee 0%, #f7faf8 55%, #f4f8f6 100%);
+  padding-bottom: 24px;
+}
+
+.detail-about__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.detail-about__eyebrow {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+
+.detail-about__intro h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+.detail-about__photo {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.detail-about__divider {
+  border: none;
+  border-top: 1px solid rgba(13, 18, 38, 0.12);
+  margin: 40px 0 34px;
+}
+
+.detail-about__text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.detail-about__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .detail-about__top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* Optional "Why ... Matter" section (rendered only when a page's content
+   defines `why`) — eyebrow + heading, a row of key features with check
+   marks, then two tinted "value" columns side by side. */
+.detail-why {
+  padding-top: 24px;
+}
+
+.detail-why__heading {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.3;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.detail-why__features-label {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy-900);
+  margin-bottom: 14px;
+}
+
+.detail-why__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.detail-why__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.detail-why__feature svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.detail-why__values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.detail-why__col {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.detail-why__col-title {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--navy-900);
+  text-align: center;
+  padding: 22px 18px;
+  margin: 0;
+}
+
+.detail-why__cell {
+  text-align: center;
+  padding: 20px 18px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.5;
+  border-top: 1px solid rgba(13, 18, 38, 0.06);
+}
+
+.detail-why__col:nth-child(1) .detail-why__col-title {
+  background: #b3cfee;
+}
+
+.detail-why__col:nth-child(1) .detail-why__cell {
+  background: #e3eefb;
+}
+
+.detail-why__col:nth-child(2) .detail-why__col-title {
+  background: #a4d6cd;
+}
+
+.detail-why__col:nth-child(2) .detail-why__cell {
+  background: #ddf0ec;
+}
+
+@media (max-width: 900px) {
+  .detail-why__features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .detail-why__values {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Optional data table (rendered only when a page's content defines `table`) */
+.detail__table-wrap {
+  margin: 28px 0;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.detail__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.detail__table th,
+.detail__table td {
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.detail__table th {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy-900);
+}
+
+.detail__table th:nth-child(1) {
+  background: #d9e8f2;
+}
+
+.detail__table th:nth-child(2) {
+  background: #b3cfee;
+}
+
+.detail__table th:nth-child(3) {
+  background: #a4cfcb;
+}
+
+.detail__table td {
+  color: var(--text);
+  border-top: 1px solid rgba(13, 18, 38, 0.06);
+}
+
+.detail__table td:nth-child(1) {
+  background: #f4f8fb;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.detail__table td:nth-child(2) {
+  background: #e3eefb;
+}
+
+.detail__table td:nth-child(3) {
+  background: #e0f0ee;
+}
+
+.detail__clients {
+  margin: 28px 0;
+  padding: 20px 22px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.detail__clients-label {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--navy-800);
+  margin-bottom: 12px;
+}
+
+.detail__clients-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail__aside {
+  display: grid;
+  gap: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.detail__panel {
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  padding: 26px;
+}
+
+.detail__panel--badge {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.detail__panel--badge img {
+  width: 100%;
+  display: block;
+}
+
+.detail__panel h4 {
+  font-size: 14.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--olive-dark);
+  margin-bottom: 16px;
+}
+
+.detail__panel ul {
+  display: grid;
+  gap: 12px;
+}
+
+.detail__panel li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.detail__panel li svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail__tags .chip {
+  background: #fff;
+}
+
+
+@media (max-width: 900px) {
+    .detail__inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px) {
+    .detail__aside {
+    position: static;
+  }
+}

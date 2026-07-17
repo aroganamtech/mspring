@@ -1,3 +1,4 @@
+import "./WhyUs.css";
 import { advantages, awards } from "../data/content";
 import Icon from "./Icons";
 

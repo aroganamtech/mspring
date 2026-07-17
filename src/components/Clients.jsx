@@ -1,3 +1,4 @@
+import "./Clients.css";
 import { CLIENTS } from "../data/clients";
 
 /* "Our Clienteles" logo wall — 6 × 4 grid matching the reference design.

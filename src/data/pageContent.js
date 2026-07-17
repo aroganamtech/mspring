@@ -425,6 +425,206 @@ export const pageContent = {
   },
 
   /* ---------------- Talent Solutions detail children ---------------- */
+  "/talent-solutions/general-staffing": {
+    type: "detail",
+    eyebrow: "Talent Solutions",
+    title: "General Staffing",
+    description: "Reliable workforce solutions across functions, delivered at the pace your business demands.",
+    body: [
+      "From front-office and back-office roles to operations, support and administrative positions, our general staffing practice supplies dependable, pre-screened talent across a wide range of functions and industries.",
+      "Whether you need temporary cover, project-based staff or long-term contract resources, we tailor the engagement model to your requirement and manage the entire process end to end.",
+    ],
+    highlights: [
+      "Pre-screened candidates across functions & industries",
+      "Temporary, contract & long-term staffing models",
+      "Rapid turnaround on high-volume requirements",
+      "End-to-end payroll & compliance management",
+    ],
+  },
+  "/talent-solutions/general-staffing/sourcing-and-recruitment": {
+    type: "detail",
+    eyebrow: "General Staffing",
+    title: "Sourcing and Recruitment",
+    description: "Multi-channel sourcing and structured recruitment that keeps your talent pipeline full.",
+    body: [
+      "Our sourcing engine combines headhunting, job portals, social channels, referral networks and our own talent database to reach both active and passive candidates across locations and experience levels.",
+      "Every candidate is taken through structured screening — skills validation, background alignment and interest confirmation — before being presented, so your hiring managers spend time only on genuinely suitable profiles.",
+    ],
+    table: {
+      columns: ["Channel", "Description", "Best For"],
+      rows: [
+        ["Internal Database", "10+ lacs pre-screened candidates", "Quick turnaround requirements"],
+        ["Campus Recruitment", "100+ college partnerships", "Entry-level and fresher hiring"],
+        ["Job Fairs", "Large-scale hiring events", "Volume recruitment"],
+        ["Newspaper Ads", "Traditional media outreach", "Diverse demographic reach"],
+        ["Digital Portals", "Online job listings and applications", "Tech-savvy candidates"],
+        ["Field Recruitment", "Local market sourcing", "Location-specific hiring"],
+        ["Industry Networks", "Professional associations and groups", "Specialized skill sets"],
+        ["Education Camps", "Training center partnerships", "Skilled trade recruitment"],
+      ],
+    },
+    highlights: [
+      "Multi-channel sourcing: portals, social, referrals & database",
+      "Structured screening & skills validation before submission",
+      "Coverage across locations, functions and experience levels",
+      "Consistent pipeline reporting throughout the engagement",
+    ],
+  },
+  "/talent-solutions/general-staffing/apprenticeship-program": {
+    type: "detail",
+    eyebrow: "General Staffing",
+    title: "Apprenticeship Program",
+    description: "Structured apprenticeships that build job-ready talent while meeting your compliance goals.",
+    about: {
+      eyebrow: "About This Service",
+      heading: "Future-ready workforce, developed through apprenticeship programs.",
+      image: officeTeamCulture,
+      imageAlt: "A team of professionals in conversation at a modern office",
+      paragraphs: [
+        "Mspring Infotech helps organizations build a steady pipeline of skilled talent through government-aligned apprenticeship programs. Employers benefit from cost-effective, work-ready talent, while apprentices gain paid, hands-on experience that enhances their career prospects.",
+        "With a focus on compliance and efficiency, we ensure seamless management of apprenticeship programs, empowering both employers and apprentices to succeed in today's dynamic workforce landscape.",
+      ],
+    },
+    why: {
+      eyebrow: "Why Apprenticeships Matter",
+      heading:
+        "Create a steady pipeline of skilled talent while giving apprentices real-world experience and long-term career opportunities.",
+      featuresLabel: "Key Features",
+      features: [
+        "Nationwide reach across India's key sectors",
+        "Digital-first onboarding, payroll, and training on secure platforms",
+        "Smart compliance support on Acts, PF/ESI exemptions, and incentives",
+      ],
+      valueColumns: [
+        {
+          title: "Value for Employers",
+          items: [
+            "Reduce hiring and training costs",
+            "Build future-ready teams in manufacturing, retail, logistics, BFSI, and more",
+            "Simplified apprentice lifecycle management from sourcing to certification",
+          ],
+        },
+        {
+          title: "Value for Apprentices",
+          items: [
+            "Earn while you learn with paid, hands-on experience",
+            "Gain skills and credentials recognized by employers",
+            "Open pathways to jobs or further education",
+          ],
+        },
+      ],
+    },
+    body: [
+      "Our apprenticeship program helps organizations engage fresh talent through structured, on-the-job training engagements — building a pipeline of job-ready professionals while managing enrolment, stipends and statutory compliance end to end.",
+      "Apprentices are sourced, screened and matched to your requirements, and we handle the program administration throughout, giving you a low-risk way to develop and evaluate future permanent hires.",
+    ],
+    highlights: [
+      "End-to-end apprenticeship enrolment & administration",
+      "Sourcing & screening matched to your requirements",
+      "Stipend management & statutory compliance handled",
+      "A low-risk pathway to future permanent hires",
+    ],
+  },
+  "/talent-solutions/it-solutions": {
+    type: "detail",
+    eyebrow: "Talent Solutions",
+    title: "IT Solutions",
+    description: "Specialized technology talent and delivery capability for your critical IT initiatives.",
+    body: [
+      "We connect you with experienced IT professionals — developers, cloud engineers, data specialists, ERP consultants and more — matched precisely to your technology stack and project needs.",
+      "Beyond individual placements, we can stand up complete delivery teams that integrate with your organization, bringing both the skills and the accountability your initiatives require.",
+    ],
+    highlights: [
+      "Technical talent across cloud, data, ERP & engineering",
+      "Individual specialists or fully-formed delivery teams",
+      "Rigorous technical screening before every submission",
+      "Flexible engagement models scaled to project needs",
+    ],
+  },
+  "/talent-solutions/it-solutions/digital-engineering-rd": {
+    type: "detail",
+    eyebrow: "IT Solutions",
+    title: "Digital Engineering and R&D Solutions",
+    description:
+      "Product engineering and R&D talent that accelerates your innovation roadmap.",
+    body: [
+      "From concept to launch, our digital engineering practice supplies the specialized talent and delivery capability behind modern product development — software engineering, embedded systems, data platforms, QA automation and DevOps.",
+      "Whether you're modernizing a legacy platform or building something entirely new, we assemble engineering pods that plug into your R&D organization and deliver against your roadmap with full accountability.",
+    ],
+    highlights: [
+      "Product & platform engineering across the full stack",
+      "Embedded, IoT & device engineering capability",
+      "QA automation, DevOps & SRE built into delivery",
+      "Dedicated engineering pods aligned to your roadmap",
+    ],
+  },
+  "/talent-solutions/it-solutions/managed-services": {
+    type: "detail",
+    eyebrow: "IT Solutions",
+    title: "Managed Services",
+    description:
+      "Outcome-driven management of your IT functions, so your team can focus on the core business.",
+    body: [
+      "We take end-to-end ownership of defined IT functions — application support, infrastructure operations, service desk, monitoring and more — delivering them against agreed SLAs with transparent reporting.",
+      "Our managed services model converts unpredictable staffing overhead into a reliable, outcome-based engagement, with continuous improvement built into every review cycle.",
+    ],
+    highlights: [
+      "SLA-backed ownership of defined IT functions",
+      "Application support, infra ops & service desk coverage",
+      "Transparent reporting & governance cadence",
+      "Continuous improvement baked into the engagement",
+    ],
+  },
+  "/talent-solutions/it-solutions/managed-service-provider": {
+    type: "detail",
+    eyebrow: "IT Solutions",
+    title: "Managed Solutions Provider (MSP)",
+    description:
+      "A single accountable partner to manage your entire contingent workforce program.",
+    body: [
+      "As your Managed Solutions Provider, we run the complete contingent workforce program — vendor management, requisition-to-onboarding workflows, compliance, rate governance and consolidated reporting — through a single point of accountability.",
+      "The result is faster fulfilment, consistent quality across suppliers, and full visibility into the cost and performance of your extended workforce.",
+    ],
+    highlights: [
+      "Single point of accountability for contingent hiring",
+      "Vendor management & rate governance",
+      "Compliance and onboarding workflows handled end to end",
+      "Consolidated reporting across your entire program",
+    ],
+  },
+  "/talent-solutions/it-solutions/hire-train-deploy": {
+    type: "detail",
+    eyebrow: "IT Solutions",
+    title: "Hire-Train-Deploy | Hire-Deploy-Train",
+    description:
+      "Custom-skilled talent pipelines — trained on your stack before (or right after) they join your team.",
+    body: [
+      "Our Hire-Train-Deploy model sources high-potential candidates, puts them through an intensive training program built around your technology stack and ways of working, and deploys them ready to contribute from day one.",
+      "Prefer speed? The Hire-Deploy-Train variant places candidates immediately and runs structured upskilling on the job — either way, you get a predictable pipeline of talent shaped precisely to your requirements.",
+    ],
+    highlights: [
+      "Training curriculum built around your technology stack",
+      "Job-ready talent from day one of deployment",
+      "Flexible HTD or HDT sequencing to match your timelines",
+      "A predictable, scalable pipeline of custom-skilled talent",
+    ],
+  },
+  "/talent-solutions/recruitment-services": {
+    type: "detail",
+    eyebrow: "Talent Solutions",
+    title: "Recruitment Services",
+    description: "End-to-end recruitment that finds, screens and secures the right people for your team.",
+    body: [
+      "Our recruitment services cover the complete hiring lifecycle — sourcing through headhunting, job portals and social channels, first-level screening, interview coordination, offer management and post-joining follow-up.",
+      "You only meet candidates who are genuinely qualified and interested, and we stay involved after the offer to make sure every placement sticks.",
+    ],
+    highlights: [
+      "Headhunting, job portal & social sourcing",
+      "Rigorous first-level screening before client interviews",
+      "Offer negotiation & resignation follow-up support",
+      "Post-joining check-ins to confirm a strong fit",
+    ],
+  },
   "/talent-solutions/staff-augmentation": {
     type: "detail",
     eyebrow: "Talent Solutions",

@@ -40,10 +40,44 @@ export const menu = [
     label: "Talent Solutions",
     path: "/talent-solutions",
     children: [
-      { label: "Staff Augmentation", path: "/talent-solutions/staff-augmentation" },
-      { label: "Full-Time Placements", path: "/talent-solutions/full-time-placements" },
-      { label: "Contract to Hire", path: "/talent-solutions/contract-to-hire" },
-      { label: "Volume Hiring", path: "/talent-solutions/volume-hiring" },
+      {
+        label: "General Staffing",
+        path: "/talent-solutions/general-staffing",
+        children: [
+          { label: "Overview", path: "/talent-solutions/general-staffing" },
+          {
+            label: "Sourcing and Recruitment",
+            path: "/talent-solutions/general-staffing/sourcing-and-recruitment",
+          },
+          {
+            label: "Apprenticeship Program",
+            path: "/talent-solutions/general-staffing/apprenticeship-program",
+          },
+        ],
+      },
+      {
+        label: "IT Solutions",
+        path: "/talent-solutions/it-solutions",
+        children: [
+          {
+            label: "Digital Engineering and R&D Solutions",
+            path: "/talent-solutions/it-solutions/digital-engineering-rd",
+          },
+          {
+            label: "Managed Services",
+            path: "/talent-solutions/it-solutions/managed-services",
+          },
+          {
+            label: "Managed Solutions Provider (MSP)",
+            path: "/talent-solutions/it-solutions/managed-service-provider",
+          },
+          {
+            label: "Hire-Train-Deploy | Hire-Deploy-Train",
+            path: "/talent-solutions/it-solutions/hire-train-deploy",
+          },
+        ],
+      },
+      { label: "Recruitment Services", path: "/talent-solutions/recruitment-services" },
     ],
   },
   {
@@ -72,15 +106,18 @@ export const menu = [
   },
 ];
 
-// Flat lookup: path -> { label, parent } for breadcrumbs.
+// Flat lookup: path -> { label, parent } for breadcrumbs. Walks the tree to
+// any depth; if two entries share a path (e.g. an "Overview" child that
+// points back at its parent's page), the first one registered wins.
 export const menuIndex = (() => {
   const index = {};
-  menu.forEach((item) => {
-    index[item.path] = { label: item.label };
-    (item.children || []).forEach((child) => {
-      index[child.path] = { label: child.label, parent: item };
-    });
-  });
+  const add = (item, parent) => {
+    if (!index[item.path]) {
+      index[item.path] = parent ? { label: item.label, parent } : { label: item.label };
+    }
+    (item.children || []).forEach((child) => add(child, item));
+  };
+  menu.forEach((item) => add(item, null));
   return index;
 })();
 

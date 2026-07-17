@@ -1,13 +1,14 @@
+import "./Navbar.css";
 import { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
 import { menu } from "../data/menu";
 import Icon from "./Icons";
 import { Link, navigate, useHashPath } from "../router";
 
-const searchIndex = menu.flatMap((item) => [
-  item,
-  ...(item.children || []),
-]);
+const flattenMenu = (items) =>
+  items.flatMap((item) => [item, ...flattenMenu(item.children || [])]);
+
+const searchIndex = flattenMenu(menu);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +52,10 @@ export default function Navbar() {
   const isActive = (item) => {
     if (item.path === "/") return path === "/";
     if (path === item.path) return true;
-    if (item.children) return item.children.some((c) => c.path === path);
+    if (item.children)
+      return item.children.some(
+        (c) => c.path === path || (c.children || []).some((g) => g.path === path)
+      );
     return false;
   };
 
@@ -94,15 +98,56 @@ export default function Navbar() {
 
               {item.children && (
                 <div className={`nav-dropdown ${mobileExpanded[item.path] ? "nav-dropdown--mobile-open" : ""}`}>
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.path}
-                      to={child.path}
-                      className={path === child.path ? "nav-dropdown__link--active" : ""}
-                    >
-                      {child.label}
-                    </Link>
-                  ))}
+                  {item.children.map((child) =>
+                    child.children ? (
+                      <div key={child.path} className="nav-subitem">
+                        <div className="nav-subitem__row">
+                          <Link
+                            to={child.path}
+                            className={path === child.path ? "nav-dropdown__link--active" : ""}
+                          >
+                            {child.label}
+                          </Link>
+                          <Icon name="chevronDown" size={12} className="nav-subitem__chevron" />
+                          <button
+                            type="button"
+                            className="nav-subitem__mobile-toggle"
+                            aria-label={`Toggle ${child.label} submenu`}
+                            onClick={() => toggleMobile(child.path)}
+                          >
+                            <Icon
+                              name="chevronDown"
+                              size={16}
+                              className={mobileExpanded[child.path] ? "is-open" : ""}
+                            />
+                          </button>
+                        </div>
+                        <div
+                          className={`nav-subdropdown ${
+                            mobileExpanded[child.path] ? "nav-subdropdown--mobile-open" : ""
+                          }`}
+                        >
+                          {child.children.map((grandchild) => (
+                            <Link
+                              key={grandchild.label}
+                              to={grandchild.path}
+                              className={path === grandchild.path ? "nav-dropdown__link--active" : ""}
+                            >
+                              {grandchild.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        key={child.path}
+                        to={child.path}
+                        className={path === child.path ? "nav-dropdown__link--active" : ""}
+                      >
+                        {child.label}
+                      </Link>
+                    )
+                  )}
                 </div>
               )}
             </div>

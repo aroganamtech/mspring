@@ -1,3 +1,4 @@
+import "./DetailPage.css";
 import CTASection from "./CTASection";
 import Icon from "./Icons";
 import PageHeader from "./PageHeader";
@@ -14,12 +15,97 @@ export default function DetailPage({ content, parent, current }) {
         description={content.description}
       />
 
+      {content.about && (
+        <section className="section detail-about">
+          <div className="container">
+            <div className="detail-about__top">
+              <div className="detail-about__intro">
+                <span className="detail-about__eyebrow">{content.about.eyebrow}</span>
+                <h2>{content.about.heading}</h2>
+              </div>
+              <img
+                className="detail-about__photo"
+                src={content.about.image}
+                alt={content.about.imageAlt || ""}
+              />
+            </div>
+            <hr className="detail-about__divider" />
+            <div className="detail-about__text">
+              {content.about.paragraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {content.why && (
+        <section className="section detail-why">
+          <div className="container">
+            <span className="detail-about__eyebrow">{content.why.eyebrow}</span>
+            <h2 className="detail-why__heading">{content.why.heading}</h2>
+
+            {content.why.features && (
+              <>
+                <h4 className="detail-why__features-label">{content.why.featuresLabel}</h4>
+                <div className="detail-why__features">
+                  {content.why.features.map((feature) => (
+                    <div className="detail-why__feature" key={feature}>
+                      <Icon name="checkCircle" size={16} />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {content.why.valueColumns && (
+              <div className="detail-why__values">
+                {content.why.valueColumns.map((col) => (
+                  <div className="detail-why__col" key={col.title}>
+                    <h5 className="detail-why__col-title">{col.title}</h5>
+                    {col.items.map((item) => (
+                      <div className="detail-why__cell" key={item}>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       <section className="section detail">
         <div className="container detail__inner">
           <div className="detail__body">
             {content.body?.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
+
+            {content.table && (
+              <div className="detail__table-wrap">
+                <table className="detail__table">
+                  <thead>
+                    <tr>
+                      {content.table.columns.map((col) => (
+                        <th key={col}>{col}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {content.table.rows.map((row, i) => (
+                      <tr key={i}>
+                        {row.map((cell, j) => (
+                          <td key={j}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
 
             {content.clients && content.clients.length > 0 && (
               <div className="detail__clients">

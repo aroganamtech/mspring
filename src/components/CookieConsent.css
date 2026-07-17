@@ -1,0 +1,63 @@
+/* Cookie consent banner — split from App.css, content unchanged */
+
+/* ---------- Cookie consent banner (fixed, bottom, every page) ---------- */
+.cookie-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: var(--navy-900);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.cookie-consent__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.cookie-consent__inner p {
+  color: #fff;
+  font-size: 13.5px;
+  margin: 0;
+  max-width: 760px;
+}
+
+.cookie-consent__inner a {
+  color: var(--olive-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-consent__actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-consent .btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cookie-consent .btn--ghost:hover {
+  border-color: #fff;
+}
+
+@media (max-width: 760px) {
+  .cookie-consent__inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 18px;
+  }
+
+  .cookie-consent__actions {
+    justify-content: flex-end;
+  }
+}
+

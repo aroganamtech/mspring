@@ -1,3 +1,4 @@
+import "./JobScamAlert.css";
 import { Link } from "../router";
 
 // Floating pill button, fixed to the top-right corner on every page and

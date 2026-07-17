@@ -1,3 +1,4 @@
+import "./CustomCursor.css";
 import { useEffect, useRef } from "react";
 
 // A lightweight, dependency-free custom cursor:

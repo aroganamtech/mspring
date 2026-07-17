@@ -1,3 +1,4 @@
+import "./ShowcaseCard.css";
 import Icon from "./Icons";
 
 import bgConsulting from "../assets/cloud-services/cloud-consulting.svg";

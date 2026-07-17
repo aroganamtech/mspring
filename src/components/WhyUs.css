@@ -1,0 +1,70 @@
+/* Why Us — split from App.css, content unchanged */
+
+/* ---------- Why Us ---------- */
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 88px;
+}
+
+.advantage-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--navy-900);
+}
+
+.advantage-card svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+}
+
+.awards__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.award-card {
+  background: linear-gradient(155deg, #fff, var(--bg-alt));
+  border-radius: var(--radius-md);
+  padding: 26px 22px;
+  border: 1px solid var(--border);
+}
+
+.award-card svg {
+  color: var(--olive-dark);
+  margin-bottom: 14px;
+}
+
+.award-card h4 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.award-card p {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+
+@media (max-width: 1080px) {
+    .awards__grid,
+  .advantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 720px) {
+    .awards__grid,
+  .advantages {
+    grid-template-columns: 1fr;
+  }
+}

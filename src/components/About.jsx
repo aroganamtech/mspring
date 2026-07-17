@@ -1,3 +1,4 @@
+import "./About.css";
 import { aboutFacts, company } from "../data/content";
 import Icon from "./Icons";
 

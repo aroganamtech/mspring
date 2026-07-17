@@ -1,0 +1,97 @@
+/* Vision / Mission — split from App.css, content unchanged */
+
+/* ---------- Vision / Mission ---------- */
+.vision-mission {
+  background: var(--navy-900);
+  padding: 96px 0;
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 32px;
+}
+
+.vm-card {
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.vm-card--vision {
+  background: linear-gradient(155deg, var(--navy-800), var(--navy-700));
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.vm-card--vision h3 {
+  color: #fff;
+  font-size: 22px;
+}
+
+.vm-card--vision p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.vm-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.vm-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.vm-list li svg {
+  color: var(--olive-light);
+  flex-shrink: 0;
+}
+
+.vm-card--mission {
+  background: #fff;
+}
+
+.vm-card--mission h3 {
+  font-size: 22px;
+}
+
+.vm-pillars {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.vm-pillar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.vm-pillar svg {
+  color: var(--olive-dark);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.vm-pillar strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 15.5px;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+}
+
+.vm-pillar p {
+  font-size: 14.5px;
+  margin: 0;
+}
+
+
+@media (max-width: 900px) {
+    .vm-grid {
+    grid-template-columns: 1fr;
+  }
+}

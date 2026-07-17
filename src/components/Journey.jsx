@@ -1,3 +1,4 @@
+import "./Journey.css";
 import { journey } from "../data/content";
 
 export default function Journey() {

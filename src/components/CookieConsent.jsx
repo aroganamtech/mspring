@@ -1,3 +1,4 @@
+import "./CookieConsent.css";
 import { useEffect, useState } from "react";
 import { getConsent, setConsent } from "../utils/cookies";
 import { Link } from "../router";

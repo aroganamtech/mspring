@@ -1,3 +1,4 @@
+import "../components/PolicyPage.css";
 import CTASection from "../components/CTASection";
 import Icon from "../components/Icons";
 import PageHeader from "../components/PageHeader";

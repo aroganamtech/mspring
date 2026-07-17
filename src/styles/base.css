@@ -1,0 +1,141 @@
+/* Shared layout/base utilities — split from App.css, content unchanged */
+
+/* ---------- Layout utilities ---------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-head {
+  max-width: 720px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.section-head--compact {
+  margin-bottom: 36px;
+}
+
+.section-head h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+}
+
+.section-head h3 {
+  font-size: clamp(22px, 2.6vw, 28px);
+}
+
+.section-lede {
+  font-size: 17px;
+  margin-top: 4px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+  background: rgba(164, 176, 72, 0.14);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.section-eyebrow--light {
+  color: var(--olive-light);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--olive-dark), var(--navy));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--navy-900);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background: var(--olive-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--navy-900);
+  border-color: var(--border);
+}
+
+.btn--ghost:hover {
+  border-color: var(--navy-900);
+  transform: translateY(-2px);
+}
+
+.btn--light {
+  background: #fff;
+  color: var(--navy-900);
+}
+
+.btn--light:hover {
+  background: var(--olive-light);
+  transform: translateY(-2px);
+}
+
+
+/* ---------- Chips ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--navy-800);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  border-radius: 100px;
+}
+
+.chip--outline {
+  background: transparent;
+  border-color: var(--olive);
+  color: var(--olive-dark);
+  font-weight: 600;
+}
+
+
+@media (max-width: 720px) {
+    .section {
+    padding: 64px 0;
+  }
+}

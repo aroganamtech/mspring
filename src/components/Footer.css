@@ -1,0 +1,110 @@
+/* Footer — split from App.css, content unchanged */
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--navy-900);
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 0.9fr 1fr 0.9fr;
+  gap: 32px;
+  padding: 64px 24px 48px;
+}
+
+.footer__brand img {
+  height: 40px;
+  margin-bottom: 16px;
+  background: #fff;
+  padding: 7px 14px;
+  border-radius: 10px;
+}
+
+.footer__brand p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 320px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.footer__social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer__social:hover {
+  background: var(--olive-dark);
+  transform: translateY(-2px);
+}
+
+.footer__col h5 {
+  font-family: var(--font-head);
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.footer__col ul {
+  display: grid;
+  gap: 10px;
+}
+
+.footer__col li,
+.footer__col a {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer__col a:hover {
+  color: var(--olive-light);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px 24px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__legal {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__legal a:hover {
+  color: var(--olive-light);
+}
+
+
+@media (max-width: 1080px) {
+    .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 720px) {
+    .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,3 +1,4 @@
+import "./ShowcaseCard.css";
 import Icon from "./Icons";
 import { Link } from "../router";
 

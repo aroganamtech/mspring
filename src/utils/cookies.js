@@ -1,5 +1,5 @@
 // Small, dependency-free helpers for cookies + the client-side "storage"
-// features (message log, job application log, returning-visitor id) that
+// features (message log, job application log, live visitor counter) that
 // only run once the visitor has accepted the cookie banner.
 //
 // This is a static site with no backend, so "storing" a message/application
@@ -8,12 +8,25 @@
 // nothing is uploaded anywhere.
 
 const CONSENT_COOKIE = "mspring_cookie_consent"; // "accepted" | "rejected"
-const VISITOR_ID_COOKIE = "mspring_visitor_id";
-const VISITED_COUNTED_COOKIE = "mspring_visitor_counted";
 
 const MESSAGES_KEY = "mspring_contact_messages";
 const APPLICATIONS_KEY = "mspring_job_applications";
-const VISITOR_TOTAL_KEY = "mspring_visitor_total";
+
+// Real, shared, cross-visitor counter (every browser that visits hits the
+// SAME key on a public counting service), instead of the old approach which
+// only tracked a number inside this one browser's own localStorage and
+// therefore never reflected the site's actual total visitor count.
+// countapi.xyz (the original free counter API) is no longer online, so this
+// tries two actively-maintained community replacements in order — if the
+// first is down or blocked (ad blocker, network filter), the second is
+// tried; if both fail, the badge falls back to the last total this browser
+// saw and still bumps it by 1 so it never looks frozen.
+const VISITOR_COUNTER_KEY = "mspring-infotech-website-visitors";
+const COUNTER_HIT_URLS = [
+  `https://countapi.mileshilliard.com/api/v1/hit/${VISITOR_COUNTER_KEY}`,
+  `https://abacus.jasoncameron.dev/hit/mspring-infotech/${VISITOR_COUNTER_KEY}`,
+];
+const LAST_KNOWN_TOTAL_KEY = "mspring_visitor_last_known_total";
 
 /* ---------------- low-level cookie helpers ---------------- */
 
@@ -41,44 +54,52 @@ export function hasAcceptedCookies() {
   return getConsent() === "accepted";
 }
 
-/* ---------------- returning-visitor id + count ----------------
-   Only ever created/read once cookies are accepted. Used so the visitor
-   badge's displayed count increases once per unique visitor, not on every
-   page load / repeat visit from the same browser. */
-
-function getOrCreateVisitorId() {
-  let id = getCookie(VISITOR_ID_COOKIE);
-  if (!id) {
-    id =
-      typeof crypto !== "undefined" && crypto.randomUUID
-        ? crypto.randomUUID()
-        : `visitor-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-    setCookie(VISITOR_ID_COOKIE, id, 365);
+// localStorage helpers that never throw (private mode, quota, etc.) — the
+// counter still works without them, it just can't remember the last total.
+function readLastKnownTotal() {
+  try {
+    return Number(localStorage.getItem(LAST_KNOWN_TOTAL_KEY));
+  } catch {
+    return NaN;
   }
-  return id;
 }
 
-// Returns the visitor total to display, incrementing the stored baseline
-// exactly once for a never-seen-before browser. Safe to call on every
-// render — it only writes on the first call for a given visitor.
-export function getVisitorCount(baseline) {
-  if (!hasAcceptedCookies()) {
-    return baseline;
+function writeLastKnownTotal(total) {
+  try {
+    localStorage.setItem(LAST_KNOWN_TOTAL_KEY, String(total));
+  } catch {
+    // ignore — purely a cache
+  }
+}
+
+// Returns (async) the visitor total to display. Every single page load /
+// refresh hits a public counting service, which does a real +1 on a counter
+// shared by every visitor on every device — this runs regardless of the
+// cookie banner, because the count lives on the counting service's server
+// and stores nothing on the visitor's device (the small localStorage cache
+// of the last seen total is just cosmetic). Two services are tried in
+// order; if both are unreachable (ad blocker, offline, both services down),
+// the badge falls back to the last total this browser saw plus 1, so the
+// number still visibly increases instead of silently freezing.
+export async function getVisitorCount(baseline) {
+  for (const url of COUNTER_HIT_URLS) {
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      if (typeof data.value === "number") {
+        const total = baseline + data.value;
+        writeLastKnownTotal(total);
+        return total;
+      }
+    } catch {
+      // try the next service / fall through to the local fallback
+    }
   }
 
-  getOrCreateVisitorId();
-
-  const stored = Number(localStorage.getItem(VISITOR_TOTAL_KEY));
+  const stored = readLastKnownTotal();
   const currentTotal = Number.isFinite(stored) && stored > 0 ? stored : baseline;
-  const alreadyCounted = getCookie(VISITED_COUNTED_COOKIE) === "1";
-
-  if (alreadyCounted) {
-    return currentTotal;
-  }
-
   const nextTotal = currentTotal + 1;
-  localStorage.setItem(VISITOR_TOTAL_KEY, String(nextTotal));
-  setCookie(VISITED_COUNTED_COOKIE, "1", 365);
+  writeLastKnownTotal(nextTotal);
   return nextTotal;
 }
 

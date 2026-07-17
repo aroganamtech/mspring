@@ -1,3 +1,4 @@
+import "./ContactForm.css";
 import { useState } from "react";
 import { company } from "../data/content";
 import Icon from "./Icons";

@@ -1,3 +1,4 @@
+import "./Industries.css";
 import { clientSectors, industries, roleCategories } from "../data/content";
 import Icon from "./Icons";
 import { Link } from "../router";
