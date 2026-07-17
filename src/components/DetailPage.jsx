@@ -1,10 +1,75 @@
 import "./DetailPage.css";
+import { useState } from "react";
 import CTASection from "./CTASection";
 import Icon from "./Icons";
 import PageHeader from "./PageHeader";
 import { Link } from "../router";
 
+// Accordion used by the optional "deliver" section — one item open at a
+// time; when there are several items the second starts open (matching the
+// reference layout this section was built from).
+function DeliverAccordion({ items, defaultOpen }) {
+  const [openIndex, setOpenIndex] = useState(
+    typeof defaultOpen === "number" ? defaultOpen : items.length > 1 ? 1 : 0
+  );
+
+  return (
+    <div className="detail-deliver__accordion">
+      {items.map((item, i) => {
+        const open = openIndex === i;
+        return (
+          <div
+            key={item.title}
+            className={`detail-deliver__item ${open ? "detail-deliver__item--open" : ""}`}
+          >
+            <button
+              type="button"
+              className="detail-deliver__item-head"
+              aria-expanded={open}
+              onClick={() => setOpenIndex(open ? -1 : i)}
+            >
+              <span>{item.title}</span>
+              <Icon name="chevronDown" size={16} />
+            </button>
+            {open && (
+              <div className="detail-deliver__item-body">
+                {item.intro && <p>{item.intro}</p>}
+                {item.bullets && (
+                  <ul>
+                    {item.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                )}
+                {item.outro && <p>{item.outro}</p>}
+                {item.ctaLabel && item.ctaPath && (
+                  <Link to={item.ctaPath} className="btn btn--primary detail-deliver__cta">
+                    {item.ctaLabel}
+                  </Link>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function DetailPage({ content, parent, current }) {
+  // The classic two-column body (paragraphs + "What We Deliver" aside) only
+  // renders when the page actually defines any of its content — pages built
+  // entirely from the optional sections (about / why / deliver) skip it.
+  const hasDetailBody =
+    (content.body && content.body.length > 0) ||
+    (content.clients && content.clients.length > 0) ||
+    content.highlights ||
+    content.tags ||
+    content.badgeImage ||
+    content.complianceBadge ||
+    content.verificationBadge ||
+    (content.ctaLabel && content.ctaPath);
+
   return (
     <>
       <PageHeader
@@ -13,7 +78,16 @@ export default function DetailPage({ content, parent, current }) {
         breadcrumbCurrent={parent ? current : undefined}
         title={content.title}
         description={content.description}
+        ctaLabel={content.headerCtaLabel}
       />
+
+      {content.heroImage && (
+        <img
+          className="detail-hero-photo"
+          src={content.heroImage}
+          alt={content.heroImageAlt || ""}
+        />
+      )}
 
       {content.about && (
         <section className="section detail-about">
@@ -77,6 +151,39 @@ export default function DetailPage({ content, parent, current }) {
         </section>
       )}
 
+      {content.markets && (
+        <section className="section detail-markets">
+          <div className="container detail-markets__inner">
+            <h3 className="detail-markets__heading">{content.markets.heading}</h3>
+            <ul className="detail-markets__list">
+              {content.markets.countries.map((country) => (
+                <li key={country}>{country}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {(Array.isArray(content.deliver) ? content.deliver : content.deliver ? [content.deliver] : []).map(
+        (block) => (
+          <section className="section detail-deliver" key={block.heading}>
+            <div className="container detail-deliver__inner">
+              <img
+                className="detail-deliver__photo"
+                src={block.image}
+                alt={block.imageAlt || ""}
+              />
+              <div className="detail-deliver__content">
+                <span className="detail-about__eyebrow">{block.eyebrow}</span>
+                <h2 className="detail-deliver__heading">{block.heading}</h2>
+                <DeliverAccordion items={block.items} defaultOpen={block.defaultOpen} />
+              </div>
+            </div>
+          </section>
+        )
+      )}
+
+      {hasDetailBody && (
       <section className="section detail">
         <div className="container detail__inner">
           <div className="detail__body">
@@ -191,6 +298,7 @@ export default function DetailPage({ content, parent, current }) {
           </aside>
         </div>
       </section>
+      )}
 
       <CTASection />
     </>

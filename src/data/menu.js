@@ -77,7 +77,25 @@ export const menu = [
           },
         ],
       },
-      { label: "Recruitment Services", path: "/talent-solutions/recruitment-services" },
+      {
+        label: "Recruitment Services",
+        path: "/talent-solutions/recruitment-services",
+        children: [
+          { label: "RPO", path: "/talent-solutions/recruitment-services/rpo" },
+          {
+            label: "Permanent Recruitment",
+            path: "/talent-solutions/recruitment-services/permanent-recruitment",
+          },
+          {
+            label: "Global Capability Center",
+            path: "/talent-solutions/recruitment-services/global-capability-center",
+          },
+          {
+            label: "Global Mobility Service",
+            path: "/talent-solutions/recruitment-services/global-mobility-service",
+          },
+        ],
+      },
     ],
   },
   {

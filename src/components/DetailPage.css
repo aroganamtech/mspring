@@ -17,6 +17,178 @@
   margin-top: 8px;
 }
 
+/* Optional full-width hero photo strip directly under the page header
+   (rendered only when a page's content defines `heroImage`). */
+.detail-hero-photo {
+  display: block;
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+}
+
+/* Optional "What We Deliver" section with photo + accordion (rendered only
+   when a page's content defines `deliver`). */
+.detail-deliver__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detail-deliver__photo {
+  width: 100%;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.detail-deliver__heading {
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.35;
+  margin: 10px 0 28px;
+}
+
+.detail-deliver__item {
+  border-top: 1px solid rgba(13, 18, 38, 0.12);
+}
+
+.detail-deliver__item:last-child {
+  border-bottom: 1px solid rgba(13, 18, 38, 0.12);
+}
+
+.detail-deliver__item-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: none;
+  border: none;
+  padding: 18px 0;
+  text-align: left;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--navy-900);
+  cursor: pointer;
+}
+
+.detail-deliver__item-head svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.detail-deliver__item--open .detail-deliver__item-head {
+  color: #1a9bd7;
+}
+
+.detail-deliver__item--open .detail-deliver__item-head svg {
+  transform: rotate(180deg);
+}
+
+.detail-deliver__item-body {
+  padding: 0 0 20px;
+}
+
+.detail-deliver__item-body p {
+  font-size: 15.5px;
+  margin-bottom: 12px;
+}
+
+.detail-deliver__item-body ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.detail-deliver__item-body li {
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.detail-deliver__item-body li::marker {
+  color: #1a9bd7;
+}
+
+.detail-deliver__cta {
+  margin-top: 8px;
+}
+
+/* Optional "key markets" band (rendered only when a page's content defines
+   `markets`) — heading on the left, country list in columns on the right. */
+.detail-markets {
+  padding: 48px 0;
+}
+
+.detail-markets__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: center;
+  background: linear-gradient(135deg, #f4f9fc 0%, #e2eef7 100%);
+  border-radius: var(--radius-md);
+  padding: 44px 48px;
+}
+
+.detail-markets__heading {
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.detail-markets__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 28px;
+}
+
+.detail-markets__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--navy-800);
+  font-weight: 500;
+}
+
+.detail-markets__list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #1a9bd7;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .detail-markets__inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .detail-markets__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-deliver__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .detail-deliver__photo {
+    max-height: 320px;
+  }
+}
+
 /* Optional "About This Service" section (rendered only when a page's
    content defines `about`) — eyebrow + big heading on the left, rounded
    photo on the right, divider, then full-width paragraphs. */

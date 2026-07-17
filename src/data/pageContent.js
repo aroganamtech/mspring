@@ -12,6 +12,9 @@ import leadershipArrowYellow from "../assets/leadership-arrow-yellow.jpg";
 import leadershipArrowBlue from "../assets/leadership-arrow-blue.jpg";
 import aiBrainNetwork from "../assets/ai-brain-network.jpg";
 import teamworkLightbulbs from "../assets/teamwork-lightbulbs.jpg";
+import staffingMeeting from "../assets/staffing-meeting.jpg";
+import recruitmentProcess from "../assets/recruitment-process.jpg";
+import ctaConnect from "../assets/cta-connect.jpg";
 import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
 
 export const pageContent = {
@@ -544,70 +547,223 @@ export const pageContent = {
   "/talent-solutions/it-solutions/digital-engineering-rd": {
     type: "detail",
     eyebrow: "IT Solutions",
-    title: "Digital Engineering and R&D Solutions",
-    description:
-      "Product engineering and R&D talent that accelerates your innovation roadmap.",
-    body: [
-      "From concept to launch, our digital engineering practice supplies the specialized talent and delivery capability behind modern product development — software engineering, embedded systems, data platforms, QA automation and DevOps.",
-      "Whether you're modernizing a legacy platform or building something entirely new, we assemble engineering pods that plug into your R&D organization and deliver against your roadmap with full accountability.",
-    ],
-    highlights: [
-      "Product & platform engineering across the full stack",
-      "Embedded, IoT & device engineering capability",
-      "QA automation, DevOps & SRE built into delivery",
-      "Dedicated engineering pods aligned to your roadmap",
-    ],
+    title: "Innovation-led Digital Engineering and R&D",
+    headerCtaLabel: "Talk to our experts",
+    heroImage: aiHumanCollaboration,
+    heroImageAlt: "Hands working on a laptop with digital document icons overlaid",
+    about: {
+      eyebrow: "About This Service",
+      heading: "Engineering the next generation of products with the right talent.",
+      image: aiBrainNetwork,
+      imageAlt: "A profile silhouette overlaid with a glowing digital network",
+      paragraphs: [
+        "As products become increasingly intelligent, engineering organizations face growing pressure to innovate faster while maintaining compliance and cost efficiency. Product development today requires deep engineering expertise, digital technologies, and the ability to scale specialized talent quickly.",
+        "Digital Engineering and R&D staffing solutions help organizations design, build, and evolve next-generation products through specialized, flexible engineering talent. Mspring Infotech brings together engineering expertise to support innovation across the product lifecycle.",
+      ],
+    },
+    deliver: {
+      eyebrow: "What We Deliver Through Digital Engineering Solutions",
+      heading:
+        "Mspring Infotech's Digital Engineering and R&D Solutions support complex product development programs through integrated engineering services and scalable execution.",
+      image: teamOfficeWindow,
+      imageAlt: "A professional consulting a tablet in a bright office",
+      items: [
+        {
+          title: "End-to-End Engineering Solutions",
+          intro:
+            "Complete engineering services covering the full product development lifecycle.",
+          bullets: [
+            "Concept-to-launch product engineering across software and hardware",
+            "Design, simulation, validation and testing under one delivery umbrella",
+            "Scalable execution that grows with your program's needs",
+          ],
+        },
+        {
+          title: "Engineering Talent and Delivery Integration",
+          intro:
+            "Access to specialized engineering talent, integrated seamlessly into delivery programs.",
+          bullets: [
+            "Pre-vetted engineers across mechanical, electrical, electronics, and embedded systems",
+            "Agile engineering teams supporting product development, prototyping, and manufacturing workflows",
+            "Collaborative delivery models that integrate with internal engineering and R&D teams",
+          ],
+          outro:
+            "This enables organizations to scale engineering capacity without long hiring cycles or operational disruption.",
+        },
+      ],
+    },
   },
   "/talent-solutions/it-solutions/managed-services": {
     type: "detail",
     eyebrow: "IT Solutions",
     title: "Managed Services",
-    description:
-      "Outcome-driven management of your IT functions, so your team can focus on the core business.",
-    body: [
-      "We take end-to-end ownership of defined IT functions — application support, infrastructure operations, service desk, monitoring and more — delivering them against agreed SLAs with transparent reporting.",
-      "Our managed services model converts unpredictable staffing overhead into a reliable, outcome-based engagement, with continuous improvement built into every review cycle.",
-    ],
-    highlights: [
-      "SLA-backed ownership of defined IT functions",
-      "Application support, infra ops & service desk coverage",
-      "Transparent reporting & governance cadence",
-      "Continuous improvement baked into the engagement",
-    ],
+    headerCtaLabel: "Talk to our experts",
+    heroImage: officeTeamCulture,
+    heroImageAlt: "A team of professionals standing together in a bright office",
+    about: {
+      eyebrow: "About This Service",
+      heading:
+        "Empowering your technology transformation with flexible, outcome-driven managed services.",
+      image: teamworkLightbulbs,
+      imageAlt: "Colleagues collaborating around a table in a modern office",
+      paragraphs: [
+        "As enterprises navigate digital transformation, over 40% of their workforce now comprises contingent or project-based talent. This shift makes managed staffing services essential for maintaining agility, controlling costs, and ensuring compliance across geographies.",
+        "Mspring Infotech's Managed Services model tackles this complexity through structured governance, predictable service delivery, and transparent performance management. Our approach supports milestone-based and outcome-based execution, ensuring accountability at every stage.",
+        "With flexible engagement models, from co-owned deliverables to 100% Mspring-owned execution, clients can align solutions to their strategic needs. Services are delivered either on-site or through Mspring Offshore Development Centres (ODCs), enabling scalability and consistent service quality globally.",
+      ],
+    },
+    deliver: {
+      eyebrow: "What We Deliver Through Managed Services",
+      heading: "Flexible and comprehensive technology transformation to meet your business goals.",
+      image: cloudAbstractSphere,
+      imageAlt: "An abstract digital illustration of business figures shaking hands",
+      defaultOpen: 0,
+      items: [
+        {
+          title: "Project Delivery and Engagement Models",
+          intro:
+            "Flexible delivery structures that align with business needs and ensure clear accountability and ownership.",
+          bullets: [
+            "Milestone and outcome-based delivery aligned to KPIs",
+            "Co-owned delivery models for shared responsibility among internal teams",
+            "Delivery flexibility across client locations or Mspring delivery centres",
+          ],
+        },
+        {
+          title: "Integrated Staffing and Consulting",
+          intro:
+            "Staffing and consulting expertise combined into a single, accountable engagement.",
+          bullets: [
+            "Specialized technology talent embedded within managed delivery programs",
+            "Consulting-led solutioning to shape the right team and approach",
+            "Seamless scaling of capacity as program needs evolve",
+          ],
+        },
+        {
+          title: "Delivery Governance and Enablement",
+          intro:
+            "Structured governance that keeps every engagement transparent and on track.",
+          bullets: [
+            "Defined SLAs, KPIs and review cadences for every engagement",
+            "Transparent performance reporting and continuous improvement",
+            "Tooling, processes and enablement that mature your delivery organization",
+          ],
+        },
+      ],
+    },
   },
   "/talent-solutions/it-solutions/managed-service-provider": {
     type: "detail",
     eyebrow: "IT Solutions",
-    title: "Managed Solutions Provider (MSP)",
-    description:
-      "A single accountable partner to manage your entire contingent workforce program.",
-    body: [
-      "As your Managed Solutions Provider, we run the complete contingent workforce program — vendor management, requisition-to-onboarding workflows, compliance, rate governance and consolidated reporting — through a single point of accountability.",
-      "The result is faster fulfilment, consistent quality across suppliers, and full visibility into the cost and performance of your extended workforce.",
-    ],
-    highlights: [
-      "Single point of accountability for contingent hiring",
-      "Vendor management & rate governance",
-      "Compliance and onboarding workflows handled end to end",
-      "Consolidated reporting across your entire program",
-    ],
+    title: "Managed Service Provider (MSP) – Enterprise Workforce Solutions",
+    headerCtaLabel: "Talk to our experts",
+    heroImage: staffingMeeting,
+    heroImageAlt: "Colleagues reviewing work together on a monitor in an office",
+    about: {
+      eyebrow: "About This Service",
+      heading: "Centralized workforce, supplier, and technology governance.",
+      image: teamOfficeWindow,
+      imageAlt: "A professional working on a laptop by a bright office window",
+      paragraphs: [
+        "As enterprises scale and diversify their workforce models, a Managed Service Provider (MSP) approach becomes essential. Managing multiple staffing partners, technology platforms, and workforce operations in isolation leads to fragmentation, inefficiency, and limited visibility.",
+        "A Managed Solutions Provider (MSP) model brings these elements together under a single, governed framework. Mspring Infotech's MSP offering centralizes supplier management, technology enablement, and workforce operations, providing enterprises with consistency, transparency, and control across their workforce ecosystem.",
+      ],
+    },
+    deliver: {
+      eyebrow: "What We Deliver Through MSP",
+      heading:
+        "Mspring Infotech's Managed Service Provider (MSP) services help enterprises manage scale, complexity, and compliance through an integrated operating model.",
+      image: officeTeamCulture,
+      imageAlt: "A professional consulting a tablet in a bright office",
+      defaultOpen: 0,
+      items: [
+        {
+          title: "Supplier Management",
+          intro:
+            "Centralized governance of staffing partners and vendors to ensure consistency, performance, and compliance across multi-supplier environments.",
+          bullets: [
+            "Empanelment and structured onboarding of suppliers",
+            "Contract creation, governance frameworks, and SLA management",
+            "Training and capability development for vendor partners",
+            "Commercial negotiations, pricing governance, and vendor payments",
+            "Performance appraisals and ongoing supplier governance",
+          ],
+          outro:
+            "This reduces fragmentation and drives consistent outcomes across large, diverse supplier networks. Our Managed Service Provider approach to supplier management delivers consistent governance across your entire vendor ecosystem.",
+        },
+        {
+          title: "Technology Enablement",
+          intro:
+            "A unified technology backbone for your entire contingent workforce program.",
+          bullets: [
+            "VMS platform selection, configuration and administration",
+            "Integrated workflows from requisition through onboarding",
+            "Real-time dashboards and analytics across the program",
+          ],
+        },
+        {
+          title: "Workforce Operations",
+          intro:
+            "Day-to-day operational management that keeps your extended workforce running smoothly.",
+          bullets: [
+            "End-to-end requisition, fulfilment and onboarding operations",
+            "Compliance, documentation and audit-readiness management",
+            "Consolidated reporting, billing and program governance",
+          ],
+        },
+      ],
+    },
   },
   "/talent-solutions/it-solutions/hire-train-deploy": {
     type: "detail",
     eyebrow: "IT Solutions",
-    title: "Hire-Train-Deploy | Hire-Deploy-Train",
-    description:
-      "Custom-skilled talent pipelines — trained on your stack before (or right after) they join your team.",
-    body: [
-      "Our Hire-Train-Deploy model sources high-potential candidates, puts them through an intensive training program built around your technology stack and ways of working, and deploys them ready to contribute from day one.",
-      "Prefer speed? The Hire-Deploy-Train variant places candidates immediately and runs structured upskilling on the job — either way, you get a predictable pipeline of talent shaped precisely to your requirements.",
-    ],
-    highlights: [
-      "Training curriculum built around your technology stack",
-      "Job-ready talent from day one of deployment",
-      "Flexible HTD or HDT sequencing to match your timelines",
-      "A predictable, scalable pipeline of custom-skilled talent",
-    ],
+    title: "Hire Train Deploy Model for IT Talent",
+    headerCtaLabel: "Talk to our experts",
+    heroImage: recruitmentProcess,
+    heroImageAlt: "A professional presenting analytics on a large screen",
+    about: {
+      eyebrow: "About This Service",
+      heading:
+        "Deployment-ready talent for immediate technology delivery through structured skilling programs.",
+      image: staffingMeeting,
+      imageAlt: "A team meeting around a table in a modern office",
+      paragraphs: [
+        "Enterprises today face a persistent challenge in bridging the gap between available talent and project-ready skills. Fresh graduates and lateral hires often require targeted upskilling before they can contribute effectively to technology programs, creating delays in onboarding and delivery.",
+        "Hire–Train–Deploy and Hire–Deploy–Train are outcome-focused workforce models designed to address this gap. Mspring Infotech combines recruitment, structured skilling, and deployment readiness to ensure talent is prepared for staff augmentation and project execution from day one.",
+      ],
+    },
+    deliver: {
+      eyebrow: "What We Deliver Through Hire–Train–Deploy",
+      heading:
+        "Hire–Train–Deploy and Hire–Deploy–Train programs are designed to prepare talent for real-world technology environments through integrated recruitment and skilling.",
+      image: ctaConnect,
+      imageAlt: "Two professionals shaking hands",
+      defaultOpen: 0,
+      items: [
+        {
+          title: "Outcome-Based IT Skilling Programs",
+          intro:
+            "Structured training programs focused on deployment readiness rather than generic learning.",
+          bullets: [
+            "6–8 week upskilling and reskilling programs for freshers and lateral hires",
+            "Outcome-based training delivered through on-site, virtual, or hybrid models",
+            "Virtual lab environments for hands-on, practical learning",
+            "Pre-deployment skilling aligned to staff augmentation and project requirements",
+          ],
+          outro: "This ensures candidates are prepared to contribute effectively upon deployment.",
+        },
+        {
+          title: "Integrated Recruitment and Skilling",
+          intro:
+            "Recruitment and training combined into one accountable pipeline, from sourcing to deployment.",
+          bullets: [
+            "High-potential candidates sourced and screened against your requirements",
+            "Training curriculum built around your technology stack and ways of working",
+            "Flexible HTD or HDT sequencing — train before deployment, or upskill on the job",
+          ],
+        },
+      ],
+    },
   },
   "/talent-solutions/recruitment-services": {
     type: "detail",
@@ -624,6 +780,269 @@ export const pageContent = {
       "Offer negotiation & resignation follow-up support",
       "Post-joining check-ins to confirm a strong fit",
     ],
+  },
+  "/talent-solutions/recruitment-services/rpo": {
+    type: "detail",
+    eyebrow: "Recruitment Services",
+    title: "RPO",
+    headerCtaLabel: "Talk to our experts",
+    about: {
+      eyebrow: "About Recruitment Process Outsourcing",
+      heading:
+        "Governed recruitment solutions built around your workforce plans and business demand for scalable outcomes.",
+      image: cloudAbstractSphere,
+      imageAlt: "A hand touching a glowing world map connected by people icons",
+      paragraphs: [
+        "Scale recruitment with a forecast-led operational program, supported by 200+ dedicated Recruitment Process Outsourcing (RPO) recruiters, leveraging experience across multiple engagements to provide governance-driven hiring solutions that meet the needs of the workforce with visibility and discipline.",
+        "Hiring demand today is shaped by expansion cycles, GCC setups, and business transformation, creating uneven, time-bound needs. Mspring Recruitment Services' RPO model manages delivery through SLAs, ensuring process discipline across locations. With 200+ dedicated recruiters and extensive experience, Mspring delivers scalable, governance-led recruitment solutions aligned to workforce priorities.",
+      ],
+    },
+    deliver: {
+      eyebrow: "RPO Services",
+      heading:
+        "RPO delivery meets workforce demand, role complexity, and hiring velocity by emphasizing continuity, visibility, and structured execution, for long-term recruitment that aligns with business growth and priorities.",
+      image: leadershipArrowYellow,
+      imageAlt: "A magnifying glass highlighting a candidate among silhouettes",
+      defaultOpen: 0,
+      items: [
+        {
+          title: "Program-Based Recruitment Delivery",
+          intro:
+            "RPO is delivered as an ongoing program aligned to hiring plans, not as isolated mandates. This creates continuity and institutional understanding of business needs.",
+          bullets: [
+            "Dedicated recruiters mapped to business units or skills",
+            "Hiring plans translated into recruitment roadmaps",
+            "Defined ownership across the recruitment lifecycle",
+            "Stable delivery teams to reduce restart cycles",
+          ],
+          outro:
+            "RPO is delivered as an ongoing program aligned with hiring plans, creating continuity and understanding of business needs. Dedicated recruiters are mapped to business units or skills, with hiring plans translated into roadmaps. Ownership is defined throughout the recruitment lifecycle to ensure stable delivery.",
+        },
+        {
+          title: "Governance and Performance Management",
+          intro:
+            "SLA-driven governance that keeps recruitment delivery disciplined, measurable and transparent.",
+          bullets: [
+            "Defined SLAs and KPIs for every stage of the funnel",
+            "Regular governance reviews with pipeline and performance reporting",
+            "Process discipline maintained consistently across locations",
+          ],
+        },
+        {
+          title: "Scalable Capacity Models",
+          intro:
+            "Recruitment capacity that flexes with your hiring cycles instead of straining your internal team.",
+          bullets: [
+            "Ramp recruiter capacity up or down with demand",
+            "Forecast-led planning for expansion cycles and GCC setups",
+            "Surge support for time-bound, high-volume hiring drives",
+          ],
+        },
+      ],
+    },
+  },
+  "/talent-solutions/recruitment-services/permanent-recruitment": {
+    type: "detail",
+    eyebrow: "Recruitment Services",
+    title: "Permanent Recruitment",
+    headerCtaLabel: "Talk to our experts",
+    about: {
+      eyebrow: "About Permanent Hiring",
+      heading:
+        "Hiring for permanent roles builds institutional knowledge and stability, and as organizations grow, each hire shapes long-term performance and culture.",
+      image: leadershipArrowBlue,
+      imageAlt: "Executives in a boardroom facing a bright presentation screen",
+      paragraphs: [
+        "Effective recruitment for permanent positions requires structured evaluation, market insight, and alignment with business goals. It's not just about filling a position but strengthening teams for sustainable growth. With over 15+ years of experience across 250+ organizations, Mspring Recruitment Services ensures relevance, thorough evaluation, and reliable delivery.",
+      ],
+    },
+    deliver: {
+      eyebrow: "Permanent Recruitment Services",
+      heading:
+        "Through a structured search, rigorous evaluation, and demand-aligned execution, Mspring delivers permanent recruitment to businesses. The approach prioritizes finding the right fit, ensuring consistency and practical hiring outcomes rather than focusing on volume-led sourcing.",
+      image: teamworkLightbulbs,
+      imageAlt: "A softly blurred view of a team meeting in a glass-walled office",
+      defaultOpen: 0,
+      items: [
+        {
+          title: "Structured Talent Identification",
+          intro:
+            "Search efforts are aligned to role requirements and business context to ensure relevant talent discovery.",
+          bullets: [
+            "Multi-channel sourcing across databases and networks",
+            "Access to active and passive talent pools",
+            "Role-specific sourcing strategies",
+            "Focus on skill and contextual fit",
+          ],
+          outro:
+            "Identify the right talent by aligning search efforts with role requirements and business context. The Mspring permanent staffing approach leverages access to active and passive talent pools and candidate networks, uses role-specific sourcing strategies, and focuses on skill and contextual fit to ensure comprehensive talent coverage for full-time positions.",
+        },
+        {
+          title: "Evaluation and Screening Discipline",
+          intro:
+            "Rigorous, consistent evaluation so every shortlisted candidate is genuinely ready for the role.",
+          bullets: [
+            "Structured screening against role and culture criteria",
+            "Skills validation and background alignment before shortlisting",
+            "Consistent evaluation standards across every mandate",
+          ],
+        },
+        {
+          title: "Demand-Aligned Execution",
+          intro:
+            "Delivery that follows your hiring priorities and timelines instead of volume-led sourcing.",
+          bullets: [
+            "Priorities and timelines agreed up front for every role",
+            "Interview coordination and offer management handled end to end",
+            "Post-offer follow-through to make sure every joiner lands well",
+          ],
+        },
+      ],
+    },
+  },
+  "/talent-solutions/recruitment-services/global-capability-center": {
+    type: "detail",
+    eyebrow: "Recruitment Services",
+    title: "Global Capability Center",
+    headerCtaLabel: "Talk to our experts",
+    about: {
+      eyebrow: "About Mspring GCC Services",
+      heading:
+        "Grow your business with Mspring, your go-to partner for seamless global expansion and optimization.",
+      image: aiHumanCollaboration,
+      imageAlt: "Hands holding a tablet surrounded by a glowing digital network",
+      paragraphs: [
+        "Mspring GCC Services is a dedicated Global Capability Center platform built to help enterprises set up, run, and scale high-impact GCCs. It brings together strategy, talent, infrastructure, technology, compliance, and operations under one integrated model. Mspring's GCC services platform enables companies to scale and optimize their global capability centers in India through integrated talent, workspace, and operational support services delivered through a single partner.",
+        "Backed by experience of supporting 350+ GCCs across 8 countries, Mspring offers a structured, low-risk path from entry to scale. Whether you are launching your first GCC or expanding an existing one, you move forward with proven playbooks and execution support.",
+        "The GCC model is now a strategic growth lever globally. There are 3,200+ GCCs operating worldwide, and 55% of enterprise tech products are built in GCCs. India alone hosts 1,700+ GCCs, with 120 new centers added in 2024. Mspring helps you tap this momentum with a model designed for speed, compliance, and long-term value.",
+      ],
+    },
+    deliver: [
+      {
+        eyebrow: "GCC Offerings",
+        heading:
+          "A complete ecosystem for building, managing, and scaling your global business with talent, workspace, and operations support.",
+        image: officeTeamCulture,
+        imageAlt: "A team gathered around a laptop in a bright office",
+        defaultOpen: 0,
+        items: [
+          {
+            title: "Talent Solutions",
+            intro:
+              "Build high-quality, scalable teams across technology, digital, analytics, shared services, and domain roles. Services span workforce planning, sourcing, onboarding, skilling, and compliance. With access to one of the largest talent engines in India, Mspring helps you hire faster, reduce risk, and improve retention.",
+            outro:
+              "Mspring's GCC talent services include workforce planning, talent sourcing and acquisition, competency mapping, campus partnerships, skill assessment centers, onboarding programs, L&D frameworks, retention strategies, and employer branding. We provide access to specialized talent pools across software engineering, data science, AI/ML, cloud, cybersecurity, analytics, finance, and shared services functions with typical time-to-hire of 15-30 days for technology roles.",
+            ctaLabel: "Know more",
+            ctaPath: "/contact",
+          },
+          {
+            title: "Workplace Solutions",
+            intro:
+              "Ready-to-operate workspaces designed around your GCC's needs — from location strategy and fit-out to facilities and day-to-day workplace operations, delivered through a single partner.",
+            ctaLabel: "Know more",
+            ctaPath: "/contact",
+          },
+          {
+            title: "Business Operations",
+            intro:
+              "Operational support that keeps your center running smoothly — payroll, compliance, vendor and facilities management, and back-office operations, so your teams stay focused on the work that matters.",
+            ctaLabel: "Know more",
+            ctaPath: "/contact",
+          },
+        ],
+      },
+      {
+        eyebrow: "Why Mspring",
+        heading:
+          "Mspring simplifies your global expansion with its deep expertise, integrated services, and proven scalability.",
+        image: ctaConnect,
+        imageAlt: "Two professionals shaking hands across a desk",
+        defaultOpen: 0,
+        items: [
+          {
+            title: "One Integrated Partner",
+            intro:
+              "A single partner across advisory, setup, talent, infrastructure, and managed operations. This reduces handoffs, simplifies governance, and speeds up execution.",
+          },
+          {
+            title: "Deep GCC Experience at Scale",
+            intro:
+              "Proven playbooks built from supporting hundreds of capability centers — so your center benefits from what already works.",
+          },
+          {
+            title: "Built for Scale from Day One",
+            intro:
+              "Entry models designed to grow — from a first small team to a full-scale center — without re-platforming along the way.",
+          },
+          {
+            title: "Outcome-led Delivery",
+            intro:
+              "Engagements measured on outcomes — speed to launch, quality of talent, cost and compliance — with transparent reporting throughout.",
+          },
+        ],
+      },
+    ],
+  },
+  "/talent-solutions/recruitment-services/global-mobility-service": {
+    type: "detail",
+    eyebrow: "Recruitment Services",
+    title: "Global Mobility Service",
+    headerCtaLabel: "Talk to our experts",
+    about: {
+      eyebrow: "About This Service",
+      heading:
+        "Connecting global employers with skilled Indian talent through efficient, compliant, and seamless cross-border workforce solutions.",
+      image: ctaConnect,
+      imageAlt: "Two professionals shaking hands in a bright office",
+      paragraphs: [
+        "Mspring Global Mobility Services, a specialized vertical of Mspring Infotech, connects global employers with India's skilled workforce through efficient, ethical, and compliant solutions. The vertical acts as a structured link between international employers and qualified Indian professionals, providing end-to-end staffing support from sourcing to deployment.",
+        "With cross-border experience and a custom-built talent marketplace, Mspring Global Mobility Services streamlines international hiring, aligning job-ready candidates with relevant overseas opportunities in a secure, timely manner, supporting global talent needs and international career pathways.",
+      ],
+    },
+    markets: {
+      heading: "Supporting global workforce mobility across key global markets.",
+      countries: ["Saudi Arabia", "United Arab Emirates", "Qatar", "Japan", "Germany", "Italy"],
+    },
+    deliver: {
+      eyebrow: "Our Services",
+      heading:
+        "Mspring drives growth by scaling cross-border workforce deployment, offering fast, compliant, and reliable solutions to meet the hiring needs of businesses.",
+      image: aiBrainNetwork,
+      imageAlt: "A hand with a pen over a glowing world map of connected talent",
+      defaultOpen: 0,
+      items: [
+        {
+          title: "Access to Large, Job-Ready Talent Pool",
+          intro:
+            "We are one of India's widest sourcing networks, backed by Mspring Infotech's offices and workforce across the country. Direct access to talent across regions and industries allows us to fulfill higher volumes of specialized hiring needs.",
+        },
+        {
+          title: "Licensed and Compliant Hiring",
+          intro:
+            "Recruitment conducted through licensed, ethical channels — with documentation, emigration formalities and destination-country regulations handled correctly at every step.",
+        },
+        {
+          title: "Cross-Border Recruitment Expertise",
+          intro:
+            "Experience across key corridors — the Gulf, Japan and Europe — with an understanding of each market's skill demands, regulations and cultural expectations.",
+        },
+        {
+          title: "Operational Flexibility",
+          intro:
+            "Engagement models that flex with your hiring plans — from single specialized roles to large deployment programs — without compromising speed or compliance.",
+        },
+        {
+          title: "Specialized Recruiters and Assessors",
+          intro:
+            "Dedicated recruiters and technical assessors who screen for skills, experience and readiness, so only genuinely deployment-ready candidates reach you.",
+        },
+        {
+          title: "End-to-End Support",
+          intro:
+            "From sourcing and screening through visas, travel and onboarding — one accountable partner supporting both employer and candidate until deployment is complete.",
+        },
+      ],
+    },
   },
   "/talent-solutions/staff-augmentation": {
     type: "detail",

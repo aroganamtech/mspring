@@ -4,8 +4,8 @@
 .visitor-badge {
   position: fixed;
   right: 24px;
-  bottom: 220px;
-  transform: translateX(-200px);
+  bottom: 170px;
+  transform: translateX(-150px);
   z-index: 60;
   width: 88px;
   height: 88px;
@@ -84,23 +84,26 @@
 
 @media (max-width: 640px) {
   .visitor-badge {
-    width: 70px;
-    height: 70px;
-    bottom: 100px;
+    width: 56px;
+    height: 56px;
+    right: 14px;
+    bottom: 14px;
+    transform: none;
   }
 
   .visitor-badge__inner {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
+    gap: 2px;
   }
 
   .visitor-badge__count {
-    font-size: 8.5px;
+    font-size: 7.5px;
   }
 
   .visitor-badge__icon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 }
 
