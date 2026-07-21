@@ -374,7 +374,7 @@ export const journey = [
     description: "Built an experienced team, established an offshore center in Tamil Nadu, and began catering to global requirements from India.",
   },
   {
-    period: "2025",
+    period: "2025 - 2026",
     title: "AI & Cloud Empowerment",
     description: "Formed strategic alliances with complementary services partners, adopting new skilled hires in AI/ML, Multi-Cloud and Data Engineering.",
   },
