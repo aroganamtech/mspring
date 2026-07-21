@@ -112,7 +112,7 @@ export default function Home() {
             </p>
             <div className="hm-experience__stats">
               <div>
-                <strong>14</strong>
+                <strong>14+</strong>
                 <span>Years of experience</span>
               </div>
               <div>

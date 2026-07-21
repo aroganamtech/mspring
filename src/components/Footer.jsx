@@ -1,5 +1,5 @@
 import "./Footer.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-f.png";
 import { company } from "../data/content";
 import Icon from "./Icons";
 import { Link } from "../router";

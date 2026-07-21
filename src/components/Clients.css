@@ -2,14 +2,14 @@
 
 /* ---------- Clients Marquee ---------- */
 .clients {
-  background: #0d1226;
+  background: #ffffff;
   overflow: hidden;
 }
 
 .clients .section-head h2 {
   display: inline-block;
   background: none;
-  color: #fff;
+  color: var(--navy-900);
   padding: 0;
   margin: 16px 0;
   font-size: clamp(32px, 4vw, 48px);
@@ -25,7 +25,7 @@
 }
 
 .clients .section-lede {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-soft);
   margin-top: 24px;
 }
 
@@ -45,8 +45,8 @@
   justify-content: center;
   min-height: 100px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,7 +78,7 @@
 .client-logo-fallback {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--navy-800);
   text-align: center;
   display: none;
   line-height: 1.3;
