@@ -1,0 +1,69 @@
+/* Custom animated cursor — split from App.css, content unchanged */
+
+/* ==================================================================
+   Custom animated cursor (white dot + trailing ring)
+   Only active when body has .has-custom-cursor (fine pointer, motion OK)
+   Subtle dark outline/shadow keeps the white cursor visible on the
+   site's light sections as well as the dark hero/header bands.
+   ================================================================== */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none;
+}
+
+/* Keep the text caret on editable fields for usability */
+.has-custom-cursor input,
+.has-custom-cursor textarea,
+.has-custom-cursor select {
+  cursor: auto;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.25s ease, width 0.22s ease, height 0.22s ease,
+    margin 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+
+/* Grows and fills faintly over interactive elements */
+.cursor-ring--active {
+  width: 62px;
+  height: 62px;
+  margin: -31px 0 0 -31px;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #ffffff;
+}
+
+/* Quick press feedback */
+.cursor-ring--down {
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  background: rgba(255, 255, 255, 0.28);
+}
+

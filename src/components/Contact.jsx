@@ -1,7 +1,9 @@
+import "./ContactForm.css";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { company } from "../data/content";
 import Icon from "./Icons";
+import { saveContactMessage } from "../utils/cookies";
 
 /* Same EmailJS account as the Apply Job form (service + public key are
    shared across every form on the site) but a DIFFERENT template — this

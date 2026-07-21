@@ -1,3 +1,4 @@
+import "./About.css";
 import { aboutFacts, company } from "../data/content";
 import Icon from "./Icons";
 
@@ -50,7 +51,7 @@ export default function About() {
             <span className="ring-block__ring ring-block__ring--3" />
             <div className="about__ring-core">
               <Icon name="sparkle" size={30} />
-              <p>12+ Years</p>
+              <p>14+ Years</p>
               <span>of Digital Excellence</span>
             </div>
           </div>

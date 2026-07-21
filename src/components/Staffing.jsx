@@ -1,5 +1,9 @@
+import "./Staffing.css";
 import {
   accountManagement,
+  aiOutcomes,
+  aiOutcomesIntro,
+  aiProcessSteps,
   recruitmentProcess,
   staffingIntro,
   staffingServices,
@@ -61,6 +65,40 @@ export default function Staffing() {
 
           <div className="process__visual">
             <img src={recruitmentProcessGraphic} alt="Mspring Infotech recruitment process steps: Brief, Strategy & Search, Screening & Interview, Presentation & First Interview, Second Interview, Selection" />
+          </div>
+        </div>
+
+        <div className="ai-outcomes">
+          <div className="section-head section-head--compact">
+            <span className="section-eyebrow">AI, Built Around Your Outcomes</span>
+            <h3>We Deliver AI Outcomes.</h3>
+            {aiOutcomesIntro.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+          <div className="ai-outcomes__grid">
+            {aiOutcomes.map((item) => (
+              <div className="ai-outcomes-card" key={item.title}>
+                <Icon name={item.icon} size={26} />
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="ai-process">
+          <h3>How We Build AI That Actually Gets Used</h3>
+          <div className="ai-process__grid">
+            {aiProcessSteps.map((step) => (
+              <div className="ai-process-step" key={step.title}>
+                <div className="ai-process-step__icon">
+                  <Icon name={step.icon} size={30} />
+                </div>
+                <h4>{step.title}</h4>
+                <p>{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 

@@ -1,3 +1,4 @@
+import "./DynamicPage.css";
 import CVForm from "../components/CVForm";
 import DetailPage from "../components/DetailPage";
 import HubPage from "../components/HubPage";

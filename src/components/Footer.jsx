@@ -1,4 +1,5 @@
-import logo from "../assets/logo.png";
+import "./Footer.css";
+import logo from "../assets/logo-f.png";
 import { company } from "../data/content";
 import Icon from "./Icons";
 import { Link } from "../router";
@@ -86,9 +87,9 @@ export default function Footer() {
         <div className="container footer__bottom-inner">
           <span>Copyright {year}, {company.name}. All Rights Reserved.</span>
           <div className="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">ISMS Policy</a>
-            <a href="#">Cookies Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/isms-policy">ISMS Policy</Link>
+            <Link to="/cookie-policy">Cookies Policy</Link>
           </div>
         </div>
       </div>

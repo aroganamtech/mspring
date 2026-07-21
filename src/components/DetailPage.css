@@ -1,0 +1,893 @@
+/* Detail pages (service / industry sub-pages) — split from App.css, content unchanged */
+
+/* ---------- Detail pages (service / industry sub-pages) ---------- */
+.detail__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detail__body p {
+  font-size: 15.5px;
+  margin-bottom: 18px;
+}
+
+.detail__body .btn {
+  margin-top: 8px;
+}
+
+/* Optional full-width hero photo strip directly under the page header
+   (rendered only when a page's content defines `heroImage`). */
+.detail-hero-photo {
+  display: block;
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+}
+
+/* Optional "What We Deliver" section with photo + accordion (rendered only
+   when a page's content defines `deliver`). */
+.detail-deliver__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.detail-deliver__photo {
+  width: 100%;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.detail-deliver__heading {
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.35;
+  margin: 10px 0 28px;
+}
+
+.detail-deliver__item {
+  border-top: 1px solid rgba(13, 18, 38, 0.12);
+}
+
+.detail-deliver__item:last-child {
+  border-bottom: 1px solid rgba(13, 18, 38, 0.12);
+}
+
+.detail-deliver__item-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: none;
+  border: none;
+  padding: 18px 0;
+  text-align: left;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--navy-900);
+  cursor: pointer;
+}
+
+.detail-deliver__item-head svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.detail-deliver__item--open .detail-deliver__item-head {
+  color: #1a9bd7;
+}
+
+.detail-deliver__item--open .detail-deliver__item-head svg {
+  transform: rotate(180deg);
+}
+
+.detail-deliver__item-body {
+  padding: 0 0 20px;
+}
+
+.detail-deliver__item-body p {
+  font-size: 15.5px;
+  margin-bottom: 12px;
+}
+
+.detail-deliver__item-body ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.detail-deliver__item-body li {
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.detail-deliver__item-body li::marker {
+  color: #1a9bd7;
+}
+
+.detail-deliver__cta {
+  margin-top: 8px;
+}
+
+/* Certification badge grid in the aside (rendered only when a page's
+   content defines `certBadges`) — each logo in its own uniform white tile. */
+.detail__panel--certs {
+  padding: 16px;
+  background: var(--bg-alt);
+}
+
+.detail__certs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.detail__cert {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail__cert img {
+  max-width: 100%;
+  max-height: 84px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Optional alternating feature rows (rendered only when a page's content
+   defines `features`) — two-tone heading + paragraphs, photo on the other
+   side, sides alternating row by row. */
+.detail-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.detail-feature + .detail-feature {
+  margin-top: 72px;
+}
+
+.detail-feature:nth-child(even) .detail-feature__img {
+  order: -1;
+}
+
+.detail-feature__title {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.12;
+  margin-bottom: 22px;
+}
+
+.detail-feature__title strong {
+  display: block;
+  color: #111827;
+  font-weight: 800;
+}
+
+.detail-feature__title span {
+  display: block;
+  color: #4b5563;
+  font-weight: 400;
+}
+
+.detail-feature__text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.detail-feature__img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 900px) {
+  .detail-feature {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .detail-feature:nth-child(even) .detail-feature__img {
+    order: 0;
+  }
+
+  .detail-feature + .detail-feature {
+    margin-top: 48px;
+  }
+}
+
+/* Optional centered "Partner with us" section with icon cards (rendered
+   only when a page's content defines `partner`). */
+.detail-partner__heading {
+  text-align: center;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.detail-partner__lede {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.detail-partner__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.detail-partner__card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 32px 30px;
+}
+
+.detail-partner__card h3 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.detail-partner__card svg {
+  color: var(--navy-800);
+  margin-bottom: 18px;
+}
+
+.detail-partner__card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .detail-partner__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Optional service-cards section (rendered only when a page's content
+   defines `serviceCards`) — heading + lede, then a dark band with gradient
+   title tiles. */
+.detail-service-cards {
+  padding-bottom: 0;
+}
+
+.detail-service-cards__heading {
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.detail-service-cards__lede {
+  max-width: 900px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 44px;
+}
+
+.detail-service-cards__band {
+  background: #1b1b23;
+  padding: 72px 0;
+}
+
+.detail-service-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.detail-service-cards__card {
+  border-radius: 6px;
+  min-height: 180px;
+  padding: 30px 28px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail-service-cards__card:nth-child(3n + 1) {
+  background: linear-gradient(135deg, #1d2bd8 0%, #3a0ca3 100%);
+}
+
+.detail-service-cards__card:nth-child(3n + 2) {
+  background: linear-gradient(135deg, #2b46e8 0%, #4361ee 100%);
+}
+
+.detail-service-cards__card:nth-child(3n) {
+  background: linear-gradient(135deg, #274bdb 0%, #123a8f 100%);
+}
+
+.detail-service-cards__card h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Optional gradient banner rows (rendered only when a page's content
+   defines `bands`). */
+.detail-bands__heading {
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.detail-bands__lede {
+  max-width: 820px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+.detail-bands__item {
+  border-radius: 4px;
+  padding: 48px 52px;
+  color: #fff;
+}
+
+.detail-bands__item + .detail-bands__item {
+  margin-top: 32px;
+}
+
+.detail-bands__item:nth-child(odd) {
+  background: linear-gradient(90deg, #0b24c4 0%, #4b0f9e 65%, #800080 100%);
+}
+
+.detail-bands__item:nth-child(even) {
+  background: linear-gradient(90deg, #06b6d4 0%, #2563eb 60%, #7c3aed 100%);
+}
+
+.detail-bands__item h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.detail-bands__item p {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Left-aligned variant of the partner section (cards without icons) */
+.detail-partner--left .detail-partner__heading,
+.detail-partner--left .detail-partner__lede {
+  text-align: left;
+  margin-left: 0;
+}
+
+.detail-partner--left .detail-partner__card {
+  background: #f8f9fb;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .detail-service-cards__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-bands__item {
+    padding: 32px 26px;
+  }
+}
+
+/* Optional "key markets" band (rendered only when a page's content defines
+   `markets`) — heading on the left, country list in columns on the right. */
+.detail-markets {
+  padding: 48px 0;
+}
+
+.detail-markets__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: center;
+  background: linear-gradient(135deg, #f4f9fc 0%, #e2eef7 100%);
+  border-radius: var(--radius-md);
+  padding: 44px 48px;
+}
+
+.detail-markets__heading {
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.detail-markets__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 28px;
+}
+
+.detail-markets__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--navy-800);
+  font-weight: 500;
+}
+
+.detail-markets__list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #1a9bd7;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .detail-markets__inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .detail-markets__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-deliver__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .detail-deliver__photo {
+    max-height: 320px;
+  }
+}
+
+/* Optional "About This Service" section (rendered only when a page's
+   content defines `about`) — eyebrow + big heading on the left, rounded
+   photo on the right, divider, then full-width paragraphs. */
+.detail-about {
+  background: linear-gradient(135deg, #e9f2ee 0%, #f7faf8 55%, #f4f8f6 100%);
+  padding-bottom: 24px;
+}
+
+.detail-about__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.detail-about__eyebrow {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+
+.detail-about__intro h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+.detail-about__photo {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.detail-about__divider {
+  border: none;
+  border-top: 1px solid rgba(13, 18, 38, 0.12);
+  margin: 40px 0 34px;
+}
+
+.detail-about__text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.detail-about__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .detail-about__top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* Optional "Why ... Matter" section (rendered only when a page's content
+   defines `why`) — eyebrow + heading, a row of key features with check
+   marks, then two tinted "value" columns side by side. */
+.detail-why {
+  padding-top: 24px;
+}
+
+.detail-why__heading {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.3;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.detail-why__features-label {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy-900);
+  margin-bottom: 14px;
+}
+
+.detail-why__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.detail-why__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.detail-why__feature svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.detail-why__values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.detail-why__col {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.detail-why__col-title {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--navy-900);
+  text-align: center;
+  padding: 22px 18px;
+  margin: 0;
+}
+
+.detail-why__cell {
+  text-align: center;
+  padding: 20px 18px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.5;
+  border-top: 1px solid rgba(13, 18, 38, 0.06);
+}
+
+.detail-why__col:nth-child(1) .detail-why__col-title {
+  background: #b3cfee;
+}
+
+.detail-why__col:nth-child(1) .detail-why__cell {
+  background: #e3eefb;
+}
+
+.detail-why__col:nth-child(2) .detail-why__col-title {
+  background: #a4d6cd;
+}
+
+.detail-why__col:nth-child(2) .detail-why__cell {
+  background: #ddf0ec;
+}
+
+@media (max-width: 900px) {
+  .detail-why__features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .detail-why__values {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Optional data table (rendered only when a page's content defines `table`) */
+.detail__table-wrap {
+  margin: 28px 0;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.detail__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.detail__table th,
+.detail__table td {
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+.detail__table th {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy-900);
+}
+
+.detail__table th:nth-child(1) {
+  background: #d9e8f2;
+}
+
+.detail__table th:nth-child(2) {
+  background: #b3cfee;
+}
+
+.detail__table th:nth-child(3) {
+  background: #a4cfcb;
+}
+
+.detail__table td {
+  color: var(--text);
+  border-top: 1px solid rgba(13, 18, 38, 0.06);
+}
+
+.detail__table td:nth-child(1) {
+  background: #f4f8fb;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.detail__table td:nth-child(2) {
+  background: #e3eefb;
+}
+
+.detail__table td:nth-child(3) {
+  background: #e0f0ee;
+}
+
+.detail__clients {
+  margin: 28px 0;
+  padding: 20px 22px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.detail__clients-label {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--navy-800);
+  margin-bottom: 12px;
+}
+
+.detail__clients-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail__aside {
+  display: grid;
+  gap: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.detail__panel {
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  padding: 26px;
+}
+
+.detail__panel--badge {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.detail__panel--badge img {
+  width: 100%;
+  display: block;
+}
+
+.detail__panel h4 {
+  font-size: 14.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--olive-dark);
+  margin-bottom: 16px;
+}
+
+.detail__panel ul {
+  display: grid;
+  gap: 12px;
+}
+
+.detail__panel li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.detail__panel li svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail__tags .chip {
+  background: #fff;
+}
+
+
+@media (max-width: 900px) {
+    .detail__inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px) {
+    .detail__aside {
+    position: static;
+  }
+}
+
+/* Careers "Current Openings" role list — rendered only when a page's
+   content sets showOpenings: true (currently /careers/openings). Same
+   information as the Apply Job page's role panel, styled for the site's
+   light page background instead of that page's dark navy panel. */
+.detail-openings__list {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-openings__card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 22px 24px;
+}
+
+.detail-openings__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.detail-openings__num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--olive);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-openings__role {
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+.detail-openings__exp {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--olive-dark);
+  background: rgba(164, 176, 72, 0.14);
+  border: 1px solid rgba(164, 176, 72, 0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.detail-openings__desc {
+  color: var(--text);
+  font-size: 14.5px;
+  margin: 0 0 12px;
+}
+
+.detail-openings__meta {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 16px;
+}
+
+.detail-openings__meta dt {
+  display: inline;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--olive-dark);
+}
+
+.detail-openings__meta dt::after {
+  content: ": ";
+}
+
+.detail-openings__meta dd {
+  display: inline;
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.detail-openings__apply {
+  font-size: 13.5px;
+  padding: 10px 20px;
+}
+
+@media (max-width: 640px) {
+  .detail-openings__top {
+    flex-wrap: wrap;
+  }
+}

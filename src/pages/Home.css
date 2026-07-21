@@ -1,0 +1,670 @@
+/* Home page — split from App.css, content unchanged */
+
+/* ---------- Home: About teaser ---------- */
+.home-about {
+  padding-top: 0;
+}
+
+.home-about__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
+  align-items: center;
+  background: var(--bg-alt);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+}
+
+.home-about__inner p {
+  font-size: 15.5px;
+  margin-bottom: 22px;
+}
+
+.home-about__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.home-about__facts > div {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-about__facts strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 20px;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+
+.home-about__facts span {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+
+/* ---------- Home: highlights ---------- */
+.highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.highlight-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.highlight-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--navy-800), var(--navy));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.highlight-card h3 {
+  font-size: 16.5px;
+  margin-bottom: 8px;
+}
+
+.highlight-card p {
+  font-size: 13.5px;
+  margin-bottom: 14px;
+}
+
+.highlight-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--olive-dark);
+}
+
+
+@media (max-width: 1080px) {
+    .highlights__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 900px) {
+    .home-about__inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px) {
+    .home-about__inner {
+    padding: 32px 24px;
+  }
+}
+@media (max-width: 720px) {
+    .highlights__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+    .home-about__facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hm-hero {
+  position: relative;
+  overflow: hidden;
+  background: #0d1226;
+  color: #fff;
+  padding: 96px 0 84px;
+}
+
+.hm-hero__arc {
+  position: absolute;
+  top: -270px;
+  right: -140px;
+  width: 560px;
+  height: 560px;
+  border: 74px solid var(--olive);
+  border-radius: 50%;
+  clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.hm-hero__inner {
+  position: relative;
+}
+
+.hm-hero h1 {
+  color: #fff;
+  font-size: clamp(40px, 5.4vw, 64px);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hm-hero__sub {
+  color: #fff;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+.hm-hero__arrows {
+  width: 130px;
+  margin-bottom: 88px;
+}
+
+.hm-hero__arrows svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hm-hero__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hm-hero__lede {
+  color: #fff;
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 720px;
+  margin: 0;
+}
+
+/* Hero CTA — olive pill, dark navy label, sits at the right end */
+.hm-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 16px;
+  color: #0d1226;
+  background: var(--olive);
+  padding: 15px 34px;
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(164, 176, 72, 0.28);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hm-hero__btn:hover {
+  background: #b6c25a;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(164, 176, 72, 0.42);
+}
+
+/* ---------- Expertise ---------- */
+.hm-expertise__head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 44px;
+}
+
+.hm-expertise__head h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.hm-expertise__head p {
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.hm-expertise__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.hm-exp-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  padding: 30px 28px 26px;
+  color: #fff;
+  min-height: 430px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hm-exp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hm-exp-card--indigo { background: linear-gradient(180deg, #0b0b10 0%, #191a30 34%, #3b3576 100%); }
+.hm-exp-card--green { background: linear-gradient(180deg, #0b0e0c 0%, #1c2420 34%, #4e6354 100%); }
+.hm-exp-card--crimson { background: linear-gradient(180deg, #150608 0%, #43121a 40%, #c22434 100%); }
+.hm-exp-card--red { background: linear-gradient(180deg, #150608 0%, #3c1017 40%, #93303c 100%); }
+.hm-exp-card--blue { background: linear-gradient(180deg, #0a0d10 0%, #17222d 36%, #3f6285 100%); }
+.hm-exp-card--graphite { background: linear-gradient(180deg, #0a0a0b 0%, #232427 40%, #77787c 100%); }
+
+.hm-exp-card h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.hm-exp-card__rule {
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
+  margin-bottom: 18px;
+}
+
+.hm-exp-card p {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 26px;
+}
+
+.hm-exp-card__icon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0.95;
+}
+
+.hm-exp-card__icon img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.hm-exp-card__more {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 22px;
+}
+
+.hm-exp-card:hover .hm-exp-card__more {
+  text-decoration: underline;
+}
+
+/* ---------- 13 Years Experience ---------- */
+.hm-experience__inner {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hm-experience__badge img {
+  width: 245px;
+  margin: 0 auto;
+}
+
+.hm-experience__copy p {
+  font-size: clamp(17px, 1.8vw, 21px);
+  font-weight: 700;
+  line-height: 1.65;
+  color: var(--navy-800);
+  text-align: justify;
+  margin-bottom: 34px;
+}
+
+.hm-experience__copy p span {
+  color: #8faf3c;
+}
+
+.hm-experience__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.hm-experience__stats strong {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111;
+}
+
+.hm-experience__stats span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ---------- Client logo strip ---------- */
+.hm-logostrip {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: none;
+  border-right: none;
+  padding: 26px 0;
+}
+
+.hm-logostrip__track {
+  display: flex;
+  gap: 64px;
+  width: max-content;
+  animation: hm-scroll 45s linear infinite;
+}
+
+.hm-logostrip__track span {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 19px;
+  color: #9aa0ab;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+@keyframes hm-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Benefits / Case studies ---------- */
+.hm-benefits__head {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.hm-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.hm-case-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hm-case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hm-case-card--photo .hm-case-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hm-case-card__pill {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 2;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 9px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(2px);
+}
+
+.hm-case-card__pill--dark {
+  border-color: var(--navy-800);
+  color: var(--navy-900);
+  background: transparent;
+}
+
+.hm-case-card__plate {
+  position: relative;
+  z-index: 2;
+  margin: auto 24px 24px 0;
+  background: #fff;
+  color: var(--navy-900);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  padding: 18px 22px;
+  border-radius: 0 6px 6px 0;
+  max-width: 92%;
+}
+
+.hm-case-card--panel {
+  background: #e8ecf1;
+  padding: 22px;
+}
+
+.hm-case-card__paneltitle {
+  margin-top: 190px;
+  color: var(--navy-900);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.hm-case-card__panelimg {
+  width: 100%;
+  border-radius: 4px;
+  margin-top: auto;
+}
+
+/* ---------- Trending Insights ---------- */
+.hm-insights__head {
+  font-size: 28px;
+  margin-bottom: 34px;
+}
+
+.hm-insights__rule {
+  border: none;
+  border-top: 1px solid var(--navy-800);
+  margin: 34px 0;
+}
+
+.hm-insights .hm-insight {
+  display: grid;
+  grid-template-columns: 348px 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.hm-insight__thumb {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.hm-insight__title {
+  font-size: clamp(20px, 2.2vw, 27px);
+  line-height: 1.25;
+  margin: 4px 0 0;
+}
+
+.hm-insight__body p {
+  font-size: 15px;
+  color: #222;
+  margin-bottom: 22px;
+}
+
+.hm-insight__link {
+  font-weight: 700;
+  font-size: 14.5px;
+  color: #8faf3c;
+}
+
+.hm-insight__link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Industries (dark) ---------- */
+.hm-industries {
+  background: #1e2745;
+  color: #fff;
+}
+
+.hm-industries h2 {
+  color: #fff;
+  text-align: center;
+  font-size: clamp(24px, 2.8vw, 32px);
+  margin-bottom: 44px;
+}
+
+.hm-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hm-industry-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin: -0.5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.hm-industry-tile:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hm-industry-tile__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.6px solid rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ---------- Bottom CTA cards ---------- */
+.hm-ctas__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.hm-cta-card {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hm-cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hm-cta-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Home responsive ---------- */
+@media (max-width: 1100px) {
+  .hm-industries__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hm-expertise__grid,
+  .hm-benefits__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hm-exp-card {
+    min-height: 360px;
+  }
+
+  .hm-case-card {
+    min-height: 420px;
+  }
+
+  .hm-experience__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hm-experience__copy p {
+    text-align: left;
+  }
+
+  .hm-insights .hm-insight {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .hm-insight__thumb {
+    max-width: 420px;
+  }
+
+  .hm-industries__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hm-ctas__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hm-hero {
+    padding: 72px 0 64px;
+  }
+
+  .hm-hero__arc {
+    width: 380px;
+    height: 380px;
+    top: -200px;
+    right: -140px;
+    border-width: 52px;
+  }
+
+  .hm-hero__arrows {
+    margin-bottom: 56px;
+  }
+
+  .hm-hero__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+}
+

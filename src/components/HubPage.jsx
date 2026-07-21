@@ -1,3 +1,4 @@
+import "./HubPage.css";
 import AIDataServicesShowcase from "./AIDataServicesShowcase";
 import CareersServicesShowcase from "./CareersServicesShowcase";
 import CloudServicesShowcase from "./CloudServicesShowcase";

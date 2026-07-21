@@ -1,3 +1,4 @@
+import "./Clients.css";
 import { CLIENTS } from "../data/clients";
 
 /* "Our Clienteles" logo wall — 6 × 4 grid matching the reference design.
@@ -24,7 +25,7 @@ export default function Clients() {
     <section className="section clients">
       <div className="container">
         <div className="section-head">
-          <h2>Our Clienteles</h2>
+          <h2 className="ourclients">Our Clientele</h2>
           <p className="section-lede">
             From Fortune-listed enterprises to fast-growing tech leaders — 100+ happy customers
             have partnered with Mspring Infotech.

@@ -1,0 +1,441 @@
+/* Apply Job page — split from App.css, content unchanged */
+
+/* ---------- Apply Job page ---------- */
+.apply-page {
+  background: var(--navy-900);
+  padding: 118px 0 64px; /* clears the fixed navbar */
+  min-height: 100vh;
+}
+
+.apply-page__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ---------- Current openings panel (opens from the Job Filters rail) ---------- */
+.apply-jobs {
+  max-width: 1200px;
+  margin: 0 auto 44px;
+  padding: 0 24px;
+}
+
+.apply-jobs__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.apply-jobs__head .apply-page__heading {
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.apply-jobs__count {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.apply-jobs__close {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.apply-jobs__list {
+  max-height: 520px;
+  overflow-y: auto;
+  display: grid;
+  gap: 14px;
+  padding-right: 6px;
+}
+
+.apply-job {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.apply-job__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.apply-job__num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--olive);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-job__role {
+  color: #fff;
+  font-size: 16.5px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+.apply-job__exp {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--olive-light);
+  background: rgba(164, 176, 72, 0.16);
+  border: 1px solid rgba(164, 176, 72, 0.4);
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.apply-job__desc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.apply-job__meta {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.apply-job__meta dt {
+  display: inline;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--olive-light);
+}
+
+.apply-job__meta dt::after {
+  content: ": ";
+}
+
+.apply-job__meta dd {
+  display: inline;
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
+.apply-job__apply {
+  background: var(--olive);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 13px;
+  transition: background 0.2s ease;
+}
+
+.apply-job__apply:hover {
+  background: var(--olive-dark);
+}
+
+@media (max-width: 640px) {
+  .apply-job__top {
+    flex-wrap: wrap;
+  }
+}
+
+.apply-page__heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 20px;
+  padding-bottom: 6px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-underline-offset: 6px;
+}
+
+/* --- Left rail: job filters --- */
+.apply-filters__list {
+  background: var(--surface);
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+  padding: 14px 0;
+}
+
+.apply-filters__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 18px;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s ease;
+}
+
+.apply-filters__item:hover {
+  color: var(--navy-900);
+}
+
+.apply-filters__item--active {
+  color: var(--olive-dark);
+  font-weight: 600;
+}
+
+.apply-page__submit-resume {
+  display: block;
+  width: 100%;
+  margin-top: 26px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 100px;
+  background: var(--olive);
+  color: var(--navy-900);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.apply-page__submit-resume:hover {
+  background: var(--olive-light);
+  transform: translateY(-2px);
+}
+
+/* --- Center: personal information form --- */
+.apply-form {
+  display: grid;
+  gap: 16px;
+}
+
+.apply-form__field {
+  display: grid;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.apply-form__field input,
+.apply-form__field textarea,
+.apply-form__field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.apply-form__field textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.apply-form__field input:focus,
+.apply-form__field textarea:focus,
+.apply-form__field select:focus {
+  outline: none;
+  border-color: var(--navy-soft);
+  box-shadow: 0 0 0 3px rgba(51, 69, 106, 0.12);
+}
+
+.apply-form__field input::placeholder,
+.apply-form__field textarea::placeholder {
+  color: #9aa0a6;
+}
+
+.apply-form__experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.apply-form__file {
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.apply-form__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.apply-form__send {
+  padding: 10px 30px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--olive);
+  color: var(--navy-900);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.apply-form__send:hover {
+  background: var(--olive-light);
+  transform: translateY(-2px);
+}
+
+.apply-form__send:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.apply-form__status {
+  margin: 0;
+  font-size: 13.5px;
+  text-align: right;
+}
+
+.apply-form__status--ok {
+  color: var(--olive-light);
+}
+
+.apply-form__status--error {
+  color: #ff9b8a;
+}
+
+/* --- Right rail: clients --- */
+.apply-clients__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  perspective: 1000px;
+}
+
+.apply-clients__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  padding: 14px;
+  background: var(--surface);
+  border: 1.5px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(19, 28, 48, 0.05);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: logoFadeIn 0.6s ease-out both;
+  position: relative;
+}
+
+.apply-clients__tile:nth-child(1) { animation-delay: 0.05s; }
+.apply-clients__tile:nth-child(2) { animation-delay: 0.1s; }
+.apply-clients__tile:nth-child(3) { animation-delay: 0.15s; }
+.apply-clients__tile:nth-child(4) { animation-delay: 0.2s; }
+.apply-clients__tile:nth-child(5) { animation-delay: 0.25s; }
+.apply-clients__tile:nth-child(6) { animation-delay: 0.3s; }
+.apply-clients__tile:nth-child(n+7) { animation-delay: 0.35s; }
+
+.apply-clients__tile:hover {
+  border-color: var(--olive-light);
+  box-shadow: 0 8px 24px rgba(19, 28, 48, 0.12), 0 0 16px rgba(132, 147, 53, 0.1);
+  transform: translateY(-4px);
+}
+
+.apply-clients__logo {
+  max-height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.apply-clients__tile:hover .apply-clients__logo {
+  transform: scale(1.06);
+}
+
+.apply-clients__fallback {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  text-align: center;
+  display: none;
+  line-height: 1.2;
+}
+
+.apply-clients__fallback--visible {
+  display: block;
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive ---
+   Matched to the navbar's 1150px hamburger breakpoint (see the navbar
+   section above) so the page layout switches to its compact form at the
+   same width the nav does — otherwise you get a mobile-style hamburger nav
+   sitting above a still-3-column desktop grid on tablet-ish widths. */
+@media (max-width: 1150px) {
+  .apply-page__inner {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+
+  .apply-page__clients {
+    grid-column: 1 / -1;
+  }
+
+  .apply-clients__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .apply-page__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-form__experience {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-clients__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

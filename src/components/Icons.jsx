@@ -50,13 +50,11 @@ export function Icon({ name, className = "", size = 22 }) {
       );
     case "users":
       return (
-        <svg {...props}>
-          <circle cx="9" cy="8" r="3.2" />
-          <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-          <path d="M16 5.2a3.2 3.2 0 0 1 0 6.1" />
-          <path d="M21 20c0-2.6-1.7-4.8-4-5.6" />
-        </svg>
-      );
+  <svg {...props}>
+    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
     case "userCheck":
       return (
         <svg {...props}>
@@ -287,6 +285,14 @@ export function Icon({ name, className = "", size = 22 }) {
           <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
           <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
           <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+        </svg>
+      );
+    case "alertTriangle":
+      return (
+        <svg {...props}>
+          <path d="M12 3.5 21.5 20h-19L12 3.5Z" />
+          <path d="M12 9.75v4.5" />
+          <path d="M12 17.25h.01" />
         </svg>
       );
     default:

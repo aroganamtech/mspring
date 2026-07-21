@@ -1,4 +1,6 @@
+import "./ShowcaseCard.css";
 import Icon from "./Icons";
+import { Link } from "../router";
 
 import bgConsulting from "../assets/cloud-services/cloud-consulting.svg";
 import bgMigration from "../assets/cloud-services/cloud-migration.svg";
@@ -17,36 +19,42 @@ const cloudServices = [
     title: "Cloud Consulting",
     text: "Strategic guidance to help you choose the right cloud model, architecture, and roadmap for your business.",
     bg: bgConsulting,
+    path: "/cloud/consulting",
   },
   {
     icon: "layers",
     title: "Cloud Migration & Infrastructure",
     text: "End-to-end migration of applications, data and infrastructure to the cloud with minimal downtime.",
     bg: bgMigration,
+    path: "/cloud/migration",
   },
   {
     icon: "settings",
     title: "DevOps & Automation",
     text: "CI/CD pipelines, containerization and automation that help engineering teams ship faster and more reliably.",
     bg: bgDevops,
+    path: "/cloud/devops",
   },
   {
     icon: "clock",
     title: "Managed Cloud Services",
     text: "Ongoing monitoring, optimization and support so your cloud environment stays secure, performant and cost-efficient.",
     bg: bgManaged,
+    path: "/cloud/managed-services",
   },
   {
     icon: "code",
     title: "Cloud Native Development",
     text: "Scalable, resilient applications built with cloud-native architecture, microservices and container orchestration.",
     bg: bgNative,
+    path: "/cloud/native-development",
   },
   {
     icon: "shield",
     title: "Cloud Security & Compliance",
     text: "Vulnerability assessment, penetration testing (VAPT) and compliance reviews that keep your environment audit-ready.",
     bg: bgSecurity,
+    path: "/cloud/security-compliance",
   },
 ];
 
@@ -65,7 +73,8 @@ export default function CloudServicesShowcase() {
 
         <div className="cloud-showcase__grid">
           {cloudServices.map((s) => (
-            <div
+            <Link
+              to={s.path}
               className="cloud-showcase-card"
               key={s.title}
               style={{ backgroundImage: `url("${s.bg}")` }}
@@ -78,7 +87,7 @@ export default function CloudServicesShowcase() {
                 <h3>{s.title}</h3>
                 <p className="cloud-showcase-card__text">{s.text}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,0 +1,97 @@
+/* Contact (shared: Contact.jsx + CVForm.jsx) — split from App.css, content unchanged */
+
+/* ---------- Contact ---------- */
+.contact {
+  background: var(--navy-900);
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.contact__info h2 {
+  color: #fff;
+  font-size: clamp(26px, 3vw, 34px);
+}
+
+.contact__info p {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.contact__details {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.contact__visual {
+  margin-top: 28px;
+  width: 100%;
+  max-width: 320px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.contact__detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+}
+
+.contact__detail svg {
+  color: var(--olive-light);
+  flex-shrink: 0;
+}
+
+.contact__form {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: grid;
+  gap: 18px;
+  box-shadow: var(--shadow-lg);
+  align-content: start;
+}
+
+.contact__form label {
+  display: grid;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--navy-800);
+}
+
+.contact__form input,
+.contact__form textarea {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 14.5px;
+  color: var(--text);
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  outline: none;
+  border-color: var(--olive);
+  box-shadow: 0 0 0 3px rgba(164, 176, 72, 0.18);
+}
+
+.contact__form .btn {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+
+@media (max-width: 900px) {
+    .contact__inner {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,142 @@
+/* Policy page shared content (JobScamAlertPage, PrivacyPolicyPage, IsmsPolicyPage, CookiePolicyPage) — split from App.css, content unchanged */
+
+/* ---------- Job Scam Alert page (recruitment fraud advisory) ---------- */
+.section.scam-alert {
+  background-color: #a3af48;
+}
+
+.scam-alert__container {
+  max-width: 880px;
+}
+
+.scam-alert__container > p,
+.scam-alert h2,
+.scam-alert h3 {
+  color: var(--navy-900);
+}
+
+.scam-alert__container > p {
+  font-size: 15.5px;
+}
+
+.scam-alert__container a:not(.btn) {
+  color: var(--navy-900);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 700;
+}
+
+.scam-alert__heading {
+  margin-top: 48px;
+}
+
+.scam-alert__items {
+  display: grid;
+  gap: 28px;
+  margin: 24px 0 8px;
+}
+
+.scam-alert__item {
+  display: flex;
+  gap: 18px;
+  padding: 22px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.scam-alert__num {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--navy-900);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scam-alert__item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.scam-alert__item p {
+  font-size: 14.5px;
+  margin-bottom: 10px;
+}
+
+.scam-alert__item p:last-child {
+  margin-bottom: 0;
+}
+
+.scam-alert__steps {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 8px;
+  padding-left: 22px;
+}
+
+.scam-alert__steps li {
+  font-size: 15px;
+  color: var(--text);
+  padding-left: 6px;
+}
+
+.scam-alert__checklist {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 8px;
+}
+
+.scam-alert__checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.scam-alert__checklist li svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.scam-alert__report {
+  margin-top: 48px;
+  padding: 32px;
+  background: var(--navy-900);
+  border-radius: var(--radius-lg);
+}
+
+.scam-alert__report h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.scam-alert__report p {
+  color: var(--olive-light);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .scam-alert__item {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+/* ---------- Cookie policy page ---------- */
+.policy-page__container {
+  max-width: 820px;
+}
+
+.policy-page__list li span {
+  flex: 1;
+}
+

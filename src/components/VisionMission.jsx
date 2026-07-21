@@ -1,3 +1,4 @@
+import "./VisionMission.css";
 import { mission, vision } from "../data/content";
 import Icon from "./Icons";
 
