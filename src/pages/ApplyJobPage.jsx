@@ -1,10 +1,10 @@
 import "./ApplyJobPage.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CLIENTS } from "../data/clients";
 import { JOBS } from "../data/jobs";
 import { usePageTitle } from "../router";
-import { saveJobApplication } from "../utils/cookies";
+import { saveJobApplication, takePendingJobTitle } from "../utils/cookies";
 
 /* EmailJS credentials — set in .env (VITE_ prefix required by Vite).
    Service ID / Template ID come from the EmailJS dashboard; the Public Key
@@ -89,6 +89,17 @@ export default function ApplyJobPage() {
   const [fileName, setFileName] = useState("");
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const formRef = useRef(null);
+
+  // Picks up a role handed off from the Careers → Current Openings page
+  // (/careers/openings), where "Apply for this role" stores the role title
+  // via setPendingJobTitle() before navigating here.
+  useEffect(() => {
+    const pendingTitle = takePendingJobTitle();
+    if (pendingTitle) {
+      setForm((prev) => ({ ...prev, title: pendingTitle }));
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
 
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);

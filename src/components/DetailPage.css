@@ -792,3 +792,102 @@
     position: static;
   }
 }
+
+/* Careers "Current Openings" role list — rendered only when a page's
+   content sets showOpenings: true (currently /careers/openings). Same
+   information as the Apply Job page's role panel, styled for the site's
+   light page background instead of that page's dark navy panel. */
+.detail-openings__list {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-openings__card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 22px 24px;
+}
+
+.detail-openings__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.detail-openings__num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--olive);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-openings__role {
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+}
+
+.detail-openings__exp {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--olive-dark);
+  background: rgba(164, 176, 72, 0.14);
+  border: 1px solid rgba(164, 176, 72, 0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.detail-openings__desc {
+  color: var(--text);
+  font-size: 14.5px;
+  margin: 0 0 12px;
+}
+
+.detail-openings__meta {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 16px;
+}
+
+.detail-openings__meta dt {
+  display: inline;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--olive-dark);
+}
+
+.detail-openings__meta dt::after {
+  content: ": ";
+}
+
+.detail-openings__meta dd {
+  display: inline;
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.detail-openings__apply {
+  font-size: 13.5px;
+  padding: 10px 20px;
+}
+
+@media (max-width: 640px) {
+  .detail-openings__top {
+    flex-wrap: wrap;
+  }
+}

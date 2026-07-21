@@ -27,12 +27,6 @@ export const leadershipTeam = [
     title: "Founder & CEO",
     photo: "team-founder",
   },
-  {
-    slug: "talent-head",
-    name: null,
-    title: "",
-    photo: "team-leadership-2",
-  },
 ];
 
 export const aboutFacts = [

@@ -10,7 +10,7 @@
 .job-scam-alert {
   position: fixed;
   top: 230px;
-  right: 80px;
+  right: 40px;
   z-index: 90;
   display: inline-flex;
   align-items: center;

@@ -14,7 +14,7 @@
   
   background-image: 
     /* 1. THE CURVE: Placed exactly at 220px */
-    radial-gradient(ellipse 200px 120px at 220px 50%, #ffffff 49.5%, transparent 50.5%),
+    radial-gradient(ellipse 300px 120px at 220px 50%, #ffffff 49.5%, transparent 50.5%),
     
     /* 2. THE SOLID LEFT: Fills exactly 220px with white for the logo */
     linear-gradient(90deg, #ffffff 0%, #ffffff 220px, transparent 220px);

@@ -106,6 +106,42 @@ export const pageContent = {
     ],
     tags: ["AWS", "Azure", "Google Cloud", "Kubernetes"],
   },
+  "/cloud/native-development": {
+    type: "detail",
+    eyebrow: "Cloud",
+    title: "Cloud Native Development",
+    description:
+      "Scalable, resilient applications built with cloud-native architecture, microservices and container orchestration.",
+    body: [
+      "We design and build applications the cloud-native way from the outset — decomposed into independently deployable microservices, packaged in containers, and orchestrated for elastic scale.",
+      "Our engineers apply twelve-factor principles, API-first design and automated testing so the systems we ship stay resilient, observable and easy to extend as your product grows.",
+    ],
+    highlights: [
+      "Microservices architecture & API design",
+      "Containerized workloads with Docker & Kubernetes",
+      "Event-driven and serverless application patterns",
+      "Automated testing, CI/CD and observability built in",
+    ],
+    tags: ["Kubernetes", "Docker", "Microservices", "Serverless", "API Gateway"],
+  },
+  "/cloud/security-compliance": {
+    type: "detail",
+    eyebrow: "Cloud",
+    title: "Cloud Security & Compliance",
+    description:
+      "Vulnerability assessment, penetration testing (VAPT) and compliance reviews that keep your environment audit-ready.",
+    body: [
+      "Security and compliance are built into every cloud engagement, not bolted on afterward. We assess your environment for misconfigurations, exposed data and access-control gaps, then remediate against recognized frameworks.",
+      "From vulnerability assessments and penetration testing to ongoing compliance monitoring, our team helps you stay audit-ready across the standards your business and customers expect.",
+    ],
+    highlights: [
+      "Vulnerability assessment & penetration testing (VAPT)",
+      "Identity, access management & least-privilege review",
+      "Compliance mapping (ISO 27001, SOC 2, GDPR, HIPAA)",
+      "Continuous security monitoring & incident readiness",
+    ],
+    tags: ["VAPT", "IAM", "ISO 27001", "SOC 2", "Cloud Security Posture Management"],
+  },
 
   /* ---------------- AI & Data ---------------- */
   "/ai-data": {
@@ -507,6 +543,7 @@ export const pageContent = {
     eyebrow: "Careers",
     title: "Current Openings",
     description: "We're growing across engineering, delivery and staffing functions.",
+    showOpenings: true,
     body: [
       "We don't always have every open role listed here — hiring needs shift with client demand across cloud, AI/data, ERP, cybersecurity and staffing delivery. If you don't see a specific listing, that doesn't mean we're not hiring for it.",
       "The fastest way to be considered is to send us your CV directly. We review every application against current and upcoming client requirements and will reach out when there's a fit.",

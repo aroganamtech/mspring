@@ -125,3 +125,30 @@ export function saveContactMessage(entry) {
 export function saveJobApplication(entry) {
   appendToLocalList(APPLICATIONS_KEY, entry);
 }
+
+/* ---------------- pending job title handoff ----------------
+   Lets "Apply for this role" on the Careers → Current Openings page
+   (/careers/openings) hand the chosen role over to the Apply Job page
+   (/careers/apply), which lives in a separate component with its own
+   local state. Session-only and not gated by cookie consent — this is
+   just transient UI state, not anything persisted about the visitor. */
+const PENDING_JOB_TITLE_KEY = "mspring_pending_job_title";
+
+export function setPendingJobTitle(title) {
+  try {
+    sessionStorage.setItem(PENDING_JOB_TITLE_KEY, title);
+  } catch {
+    // sessionStorage unavailable (private mode, quota, etc.) — the visitor
+    // can still type the role into the form manually.
+  }
+}
+
+export function takePendingJobTitle() {
+  try {
+    const title = sessionStorage.getItem(PENDING_JOB_TITLE_KEY);
+    if (title) sessionStorage.removeItem(PENDING_JOB_TITLE_KEY);
+    return title || "";
+  } catch {
+    return "";
+  }
+}

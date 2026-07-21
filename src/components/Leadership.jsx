@@ -1,11 +1,9 @@
 import "./Leadership.css";
 import { leadershipTeam } from "../data/content";
 import teamFounder from "../assets/team-founder.jpg";
-import teamLeadership2 from "../assets/team-leadership-2.jpg";
 
 const photos = {
   "team-founder": teamFounder,
-  "team-leadership-2": teamLeadership2,
 };
 
 export default function Leadership() {

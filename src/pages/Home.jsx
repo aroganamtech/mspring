@@ -83,11 +83,6 @@ export default function Home() {
               >
                 <h3>{e.title}</h3>
                 <span className="hm-exp-card__rule" aria-hidden="true" />
-                <p>
-                  Robust Software,
-                  <br />
-                  Seamless Integration
-                </p>
                 <div className="hm-exp-card__icon">
                   <img src={e.icon} alt="" />
                 </div>
@@ -98,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- 13 Years Experience ---------- */}
+      {/* ---------- 14 Years Experience ---------- */}
       <section className="section hm-experience">
         <div className="container hm-experience__inner">
           <div className="hm-experience__badge">

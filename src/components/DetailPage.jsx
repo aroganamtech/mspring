@@ -3,6 +3,8 @@ import { useState } from "react";
 import CTASection from "./CTASection";
 import Icon from "./Icons";
 import PageHeader from "./PageHeader";
+import { JOBS } from "../data/jobs";
+import { setPendingJobTitle } from "../utils/cookies";
 import { Link } from "../router";
 
 // Accordion used by the optional "deliver" section — one item open at a
@@ -390,6 +392,50 @@ export default function DetailPage({ content, parent, current }) {
           </aside>
         </div>
       </section>
+      )}
+
+      {content.showOpenings && (
+        <section className="section detail-openings">
+          <div className="container">
+            <div className="section-head section-head--compact">
+              <span className="section-eyebrow">Open Roles</span>
+              <h3>Current Openings ({JOBS.length} roles)</h3>
+            </div>
+            <div className="detail-openings__list">
+              {JOBS.map((job, i) => (
+                <article className="detail-openings__card" key={job.role}>
+                  <div className="detail-openings__top">
+                    <span className="detail-openings__num">{i + 1}</span>
+                    <h4 className="detail-openings__role">{job.role}</h4>
+                    <span className="detail-openings__exp">{job.experience}</span>
+                  </div>
+                  <p className="detail-openings__desc">{job.description}</p>
+                  <dl className="detail-openings__meta">
+                    <div>
+                      <dt>Role-Specific Skills</dt>
+                      <dd>{job.roleSkills}</dd>
+                    </div>
+                    <div>
+                      <dt>Common Skills</dt>
+                      <dd>{job.commonSkills}</dd>
+                    </div>
+                    <div>
+                      <dt>Preferred Locations</dt>
+                      <dd>{job.locations}</dd>
+                    </div>
+                  </dl>
+                  <Link
+                    to="/careers/apply"
+                    className="btn btn--primary detail-openings__apply"
+                    onClick={() => setPendingJobTitle(job.role)}
+                  >
+                    Apply for this role <Icon name="arrowRight" size={16} />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       <CTASection />

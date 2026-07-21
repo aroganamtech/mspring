@@ -14,6 +14,8 @@ export const menu = [
       { label: "Cloud Migration & Infrastructure", path: "/cloud/migration" },
       { label: "DevOps & Automation", path: "/cloud/devops" },
       { label: "Managed Cloud Services", path: "/cloud/managed-services" },
+      { label: "Cloud Native Development", path: "/cloud/native-development" },
+      { label: "Cloud Security & Compliance", path: "/cloud/security-compliance" },
     ],
   },
   {
