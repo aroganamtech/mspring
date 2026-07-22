@@ -63,6 +63,14 @@
   object-fit: cover;
 }
 
+.staffing__spotlight--no-photo {
+  grid-template-columns: 1fr;
+}
+
+.staffing__spotlight--no-photo .staffing__spotlight-copy {
+  max-width: 720px;
+}
+
 .staffing__spotlight-copy h3 {
   font-size: clamp(22px, 2.6vw, 30px);
   margin: 10px 0 16px;

@@ -19,7 +19,6 @@ import badgeSsl from "../assets/badge-ssl.jpg";
 import badgeIso from "../assets/badge-iso.jpg";
 import dnbSeal from "../assets/dnb-seal.png";
 import aiDataHero from "../assets/WhatsApp Image 2026-07-21 at 4.25.33 PM.jpeg";
-import recruitmentServicesHero from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM (1).jpeg";
 import aiInnovationHand from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM.jpeg";
 import aiIdeasBrain from "../assets/WhatsApp Image 2026-07-21 at 4.35.07 PM.jpeg";
 import lifeAtMspringCare from "../assets/WhatsApp Image 2026-07-21 at 4.35.05 PM.jpeg";
@@ -27,6 +26,11 @@ import dataScienceSpheres from "../assets/WhatsApp Image 2026-07-21 at 4.35.06 P
 import gccGlobalReach from "../assets/WhatsApp Image 2026-07-21 at 4.35.06 PM (1).jpeg";
 import permanentRecruitmentFocus from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM (2).jpeg";
 import dataEngineeringOrbit from "../assets/WhatsApp Image 2026-07-21 at 4.25.33 PM (1).jpeg";
+import aiRobotHumanCorridor from "../assets/WhatsApp Image 2026-07-16 at 1.13.30 PM (1).jpeg";
+import lifeThumbsUp from "../assets/WhatsApp Image 2026-07-15 at 12.17.18 PM.jpeg";
+import lifeOfficeTeam from "../assets/WhatsApp Image 2026-07-16 at 1.13.30 PM (3).jpeg";
+import lifeRooftopUnwind from "../assets/WhatsApp Image 2026-07-16 at 1.13.30 PM (2).jpeg";
+import lifeTeamPortrait from "../assets/WhatsApp Image 2026-07-13 at 1.38.59 PM (1).jpeg";
 
 export const pageContent = {
   /* ---------------- Cloud ---------------- */
@@ -205,6 +209,13 @@ export const pageContent = {
         text: "Behind every model is a clear question worth answering. Our team pairs data science with product thinking so machine learning translates into features people actually use.",
         image: aiIdeasBrain,
         imageAlt: "A colorful illustration of a human head made of fractured shapes with a glowing lightbulb, representing ideas generated from data",
+      },
+      {
+        titleBold: "Human Expertise,",
+        titleLight: "AI Powered",
+        text: "We build AI to work alongside your teams, not replace their judgment — pairing automation with the human oversight that keeps outcomes accurate, accountable and aligned with your business.",
+        image: aiRobotHumanCorridor,
+        imageAlt: "A humanoid robot and a businessman walking side by side down a bright corridor, representing AI working alongside people",
       },
     ],
     highlights: [
@@ -463,24 +474,6 @@ export const pageContent = {
     eyebrow: "Oracle Services",
     title: "Siebel CRM",
     description:
-      "Siebel CRM consulting, implementation, customization and support that help you get the most out of your customer relationship management investment.",
-    body: [
-      "Oracle's Siebel CRM remains one of the most powerful platforms for managing sales, marketing, and customer service at enterprise scale. Getting the most from it takes more than a standard install — it takes a partner who understands both the platform and your business processes.",
-      "Our Siebel CRM team works with you across the full lifecycle — from initial strategy and roadmap through implementation, customization, and ongoing support — so the system keeps pace with how your business actually operates.",
-    ],
-    highlights: [
-      "Siebel CRM strategy, consulting & roadmap planning",
-      "Implementation & configuration across sales, service and marketing modules",
-      "Customization, integration & data migration",
-      "Ongoing support, maintenance & performance tuning",
-    ],
-    tags: ["Siebel CRM", "Oracle", "Customer Management"],
-  },
-  "/erp/salesforce": {
-    type: "detail",
-    eyebrow: "ERP",
-    title: "Salesforce CRM",
-    description:
       "Siebel CRM consulting, implementation, customization and support that make the most of your CRM investment.",
     features: [
       {
@@ -500,7 +493,7 @@ export const pageContent = {
       {
         titleBold: "Siebel",
         titleLight: "Customization",
-        text: "We understand that each business has unique needs. Our Customization and Migration services cater to this uniqueness, tailoring Salesforce to suit your specific requirements. We facilitate a smooth transition from your existing CRM to Salesforce, managing the complex process of data migration while ensuring complete data security.",
+        text: "We understand that each business has unique needs. Our Customization and Migration services cater to this uniqueness, tailoring Siebel CRM to suit your specific requirements. We facilitate a smooth transition from your existing CRM to Siebel, managing the complex process of data migration while ensuring complete data security.",
         image: aiHumanCollaboration,
         imageAlt: "Hands typing on a laptop with digital service icons",
       },
@@ -515,6 +508,64 @@ export const pageContent = {
     partner: {
       heading: "Partner with Mspring Infotech for Siebel CRM Services",
       text: "Partnering with Mspring Infotech for Siebel CRM consulting services ensures you are working with a team that blends deep technical expertise with strategic insights. We understand the critical role that Siebel CRM plays in your business. Our unique approach to consulting, implementation, customization, and support ensures your CRM solution is tailored to your needs, enhancing productivity and driving business growth. Choose Mspring Infotech, and make the most of your Siebel CRM investment.",
+      cards: [
+        {
+          icon: "code",
+          title: "Experienced Developers",
+          text: "We have a team of experienced professionals to fulfil your niche requirements and deliver on every engagement.",
+        },
+        {
+          icon: "handshake",
+          title: "Collaborative Approach",
+          text: "We follow a very open and collaborative way of working with clients, keeping you involved at every stage.",
+        },
+        {
+          icon: "shield",
+          title: "Decade long experience",
+          text: "A decade long experience in delivering top-grade solutions across industries and technologies.",
+        },
+      ],
+    },
+  },
+  "/erp/salesforce": {
+    type: "detail",
+    eyebrow: "ERP",
+    title: "Salesforce CRM",
+    description:
+      "Salesforce CRM consulting, implementation, customization and support that make the most of your CRM investment.",
+    features: [
+      {
+        titleBold: "Salesforce",
+        titleLight: "Consulting",
+        text: "Our Salesforce Consulting services provide expert guidance at every stage of your CRM journey, helping businesses align their CRM strategy with their overall business goals. Our team assists in defining the roadmap for Salesforce CRM integration, ensuring optimal utilization of the platform's capabilities to drive business growth.",
+        image: aiBrainNetwork,
+        imageAlt: "A digital profile overlaid with a connected network",
+      },
+      {
+        titleBold: "Salesforce",
+        titleLight: "Implementation",
+        text: "Our Salesforce Implementation services focus on setting up and configuring the Salesforce CRM system according to your business needs. We guide you through the entire implementation process, from planning and designing to deployment, ensuring a smooth and efficient transition.",
+        image: cloudAbstractSphere,
+        imageAlt: "A connected cloud hovering over a digital city",
+      },
+      {
+        titleBold: "Salesforce",
+        titleLight: "Customization",
+        text: "We understand that each business has unique needs. Our Customization and Migration services cater to this uniqueness, tailoring Salesforce to suit your specific requirements. We facilitate a smooth transition from your existing CRM to Salesforce, managing the complex process of data migration while ensuring complete data security.",
+        image: aiHumanCollaboration,
+        imageAlt: "Hands typing on a laptop with digital service icons",
+      },
+      {
+        titleBold: "Salesforce Support and",
+        titleLight: "Maintenance",
+        text: "Our Salesforce Support and Maintenance services ensure that your Salesforce CRM system remains updated and continues to perform at its best. We provide proactive maintenance, troubleshoot issues, and offer continuous support to keep your system running smoothly and efficiently.",
+        image: teamOfficeWindow,
+        imageAlt: "A professional working on a laptop in a bright office",
+      },
+    ],
+    partner: {
+      heading: "Partner with Mspring Infotech for Salesforce CRM Services",
+      text: "Partnering with Mspring Infotech for Salesforce CRM consulting services ensures you are working with a team that blends deep technical expertise with strategic insights. We understand the critical role that Salesforce CRM plays in your business. Our unique approach to consulting, implementation, customization, and support ensures your CRM solution is tailored to your needs, enhancing productivity and driving business growth. Choose Mspring Infotech, and make the most of your Salesforce CRM investment.",
       cards: [
         {
           icon: "code",
@@ -630,6 +681,34 @@ export const pageContent = {
         text: "We look out for our people the way we look out for our clients — with steady support, clear structure, and room to focus on the work instead of worrying about what isn't covered.",
         image: lifeAtMspringCare,
         imageAlt: "An illustration of a person working at a desk sheltered under an umbrella, protected from falling rain",
+      },
+      {
+        titleBold: "Team Spirit,",
+        titleLight: "Built In",
+        text: "Good work rarely happens alone. Our culture is built on people showing up for each other — celebrating wins together and backing one another through the tough deliveries.",
+        image: lifeThumbsUp,
+        imageAlt: "A row of arms and hands giving thumbs up, representing team spirit and collaboration",
+      },
+      {
+        titleBold: "A Workplace",
+        titleLight: "Built to Grow In",
+        text: "From collaborative open floors to focused project rooms, our offices are designed for the way modern delivery teams actually work — together, in the open, and close to the people they support.",
+        image: lifeOfficeTeam,
+        imageAlt: "A professional standing in a modern open-plan office with a team collaborating in the background",
+      },
+      {
+        titleBold: "Work That Respects",
+        titleLight: "Your Time",
+        text: "We believe good delivery work and a good life outside of it aren't in competition. Flexible schedules and a genuine respect for downtime mean our people can switch off and recharge.",
+        image: lifeRooftopUnwind,
+        imageAlt: "A professional relaxing on a rooftop lounge with a city skyline in the background",
+      },
+      {
+        titleBold: "Real People,",
+        titleLight: "Real Careers",
+        text: "Behind every project is a person building a career, not just clocking hours. We invest in our team's growth so the people who join us today become the leaders of tomorrow.",
+        image: lifeTeamPortrait,
+        imageAlt: "A professional portrait of a smiling Mspring Infotech team member",
       },
     ],
     highlights: [
@@ -771,7 +850,7 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Innovation-led Digital Engineering and R&D",
     headerCtaLabel: "Talk to our experts",
-    heroImage: aiHumanCollaboration,
+    // heroImage: aiHumanCollaboration,
     heroImageAlt: "Hands working on a laptop with digital document icons overlaid",
     about: {
       eyebrow: "About This Service",
@@ -820,7 +899,7 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Managed Services",
     headerCtaLabel: "Talk to our experts",
-    heroImage: officeTeamCulture,
+    // heroImage: officeTeamCulture,
     heroImageAlt: "A team of professionals standing together in a bright office",
     about: {
       eyebrow: "About This Service",
@@ -879,7 +958,7 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Managed Service Provider (MSP) – Enterprise Workforce Solutions",
     headerCtaLabel: "Talk to our experts",
-    heroImage: staffingMeeting,
+    // heroImage: staffingMeeting,
     heroImageAlt: "Colleagues reviewing work together on a monitor in an office",
     about: {
       eyebrow: "About This Service",
@@ -941,8 +1020,6 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Hire Train Deploy Model for IT Talent",
     headerCtaLabel: "Talk to our experts",
-    heroImage: recruitmentProcess,
-    heroImageAlt: "A professional presenting analytics on a large screen",
     about: {
       eyebrow: "About This Service",
       heading:
@@ -1002,8 +1079,8 @@ export const pageContent = {
       "Offer negotiation & resignation follow-up support",
       "Post-joining check-ins to confirm a strong fit",
     ],
-    badgeImage: recruitmentServicesHero,
-    badgeImageAlt: "A hand presenting connected recruitment icons — sourcing, screening, vetting and hiring",
+    badgeImage: recruitmentProcess,
+    badgeImageAlt: "An infographic showing the Mspring Infotech recruitment process steps — brief, strategy & search, screening & interview, presentation, second interview and selection",
   },
   "/talent-solutions/recruitment-services/rpo": {
     type: "detail",

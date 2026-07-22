@@ -9,7 +9,6 @@ import {
   staffingServices,
 } from "../data/content";
 import staffingMeeting from "../assets/staffing-meeting.jpg";
-import recruitmentProcessGraphic from "../assets/recruitment-process.jpg";
 import Icon from "./Icons";
 import { Link } from "../router";
 
@@ -61,10 +60,6 @@ export default function Staffing() {
                 <p>{step.description}</p>
               </div>
             ))}
-          </div>
-
-          <div className="process__visual">
-            <img src={recruitmentProcessGraphic} alt="Mspring Infotech recruitment process steps: Brief, Strategy & Search, Screening & Interview, Presentation & First Interview, Second Interview, Selection" />
           </div>
         </div>
 
