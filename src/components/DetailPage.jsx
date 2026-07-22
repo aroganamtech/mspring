@@ -274,6 +274,14 @@ export default function DetailPage({ content, parent, current }) {
               <p key={i}>{para}</p>
             ))}
 
+            {content.bodyImage && (
+              <img
+                className="detail-body-image"
+                src={content.bodyImage}
+                alt={content.bodyImageAlt || ""}
+              />
+            )}
+
             {content.complianceStrip && content.complianceStrip.length > 0 && (
               <div className="detail-compliance-strip">
                 {content.complianceStrip.map((badge) => {
@@ -454,6 +462,18 @@ export default function DetailPage({ content, parent, current }) {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {content.gallery && content.gallery.length > 0 && (
+        <section className="section detail-gallery">
+          <div className="container detail-gallery__grid">
+            {content.gallery.map((img, i) => (
+              <div className="detail-gallery__item" key={img.alt || i}>
+                <img src={img.image} alt={img.alt || ""} />
+              </div>
+            ))}
           </div>
         </section>
       )}

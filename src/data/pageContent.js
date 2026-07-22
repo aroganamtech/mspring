@@ -10,7 +10,6 @@ import leadershipArrowBlue from "../assets/leadership-arrow-blue.jpg";
 import aiBrainNetwork from "../assets/ai-brain-network.jpg";
 import teamworkLightbulbs from "../assets/teamwork-lightbulbs.jpg";
 import staffingMeeting from "../assets/staffing-meeting.jpg";
-import recruitmentProcess from "../assets/recruitment-process.jpg";
 import ctaConnect from "../assets/cta-connect.jpg";
 import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
 import badgeHipaa from "../assets/badge-hipaa.png";
@@ -31,6 +30,24 @@ import lifeThumbsUp from "../assets/WhatsApp Image 2026-07-15 at 12.17.18 PM.jpe
 import lifeOfficeTeam from "../assets/WhatsApp Image 2026-07-16 at 1.13.30 PM (3).jpeg";
 import lifeRooftopUnwind from "../assets/WhatsApp Image 2026-07-16 at 1.13.30 PM (2).jpeg";
 import lifeTeamPortrait from "../assets/WhatsApp Image 2026-07-13 at 1.38.59 PM (1).jpeg";
+import recruitmentProcessSteps from "../assets/image.png";
+import docCloudMigration1 from "../assets/doc-cloud-migration-1.jpeg";
+import docCloudMigration2 from "../assets/doc-cloud-migration-2.jpeg";
+import docCloudConsulting1 from "../assets/doc-cloud-consulting-1.jpeg";
+import docCloudConsulting2 from "../assets/doc-cloud-consulting-2.jpeg";
+import docCloudConsulting3 from "../assets/doc-cloud-consulting-3.png";
+import docDevopsAutomation from "../assets/doc-devops-automation.gif";
+import docCloudManagedServices from "../assets/doc-cloud-managed-services.jpeg";
+import docDataScience from "../assets/doc-data-science.jpeg";
+import docDataEngineering from "../assets/doc-data-engineering.jpeg";
+import docChatbotAutomation from "../assets/doc-chatbot-automation.jpeg";
+import docOracleOssBss from "../assets/doc-oracle-oss-bss.jpeg";
+import docSiebelCrm1 from "../assets/doc-siebel-crm-1.png";
+import docSiebelCrm2 from "../assets/doc-siebel-crm-2.jpeg";
+import docSalesforceCrmCpq1 from "../assets/doc-salesforce-crm-cpq-1.png";
+import docSalesforceCrmCpq2 from "../assets/doc-salesforce-crm-cpq-2.jpeg";
+import docSalesforceCrmCpq3 from "../assets/doc-salesforce-crm-cpq-3.jpeg";
+import docSalesforceCpq from "../assets/doc-salesforce-cpq.jpeg";
 
 export const pageContent = {
   /* ---------------- Cloud ---------------- */
@@ -63,6 +80,11 @@ export const pageContent = {
     tags: ["AWS", "Microsoft Azure", "Google Cloud", "Well-Architected Reviews"],
     badgeImage: leadershipArrowYellow,
     badgeImageAlt: "One path breaking away from the crowd, representing a clear cloud strategy",
+    gallery: [
+      { image: docCloudConsulting1, alt: "An abstract flowing swirl of blue and teal lines" },
+      { image: docCloudConsulting2, alt: "Two consultants discussing cloud strategy beside a laptop with a cloud icon" },
+      { image: docCloudConsulting3, alt: "An abstract spiral of glowing blue lines representing cloud strategy" },
+    ],
   },
   "/cloud/migration": {
     type: "detail",
@@ -83,6 +105,10 @@ export const pageContent = {
     tags: ["AWS (EC2, S3, Lambda, RDS)", "Terraform", "Ansible", "Azure", "Google Cloud"],
     badgeImage: cloudAbstractSphere,
     badgeImageAlt: "Abstract flowing cloud infrastructure visual",
+    gallery: [
+      { image: docCloudMigration1, alt: "A glowing cloud network connected to rows of data center servers" },
+      { image: docCloudMigration2, alt: "Dark cloud shapes above a glowing circuit board, representing cloud migration" },
+    ],
   },
   "/cloud/devops": {
     type: "detail",
@@ -103,6 +129,12 @@ export const pageContent = {
     tags: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Terraform"],
     badgeImage: leadershipArrowBlue,
     badgeImageAlt: "A gold paper plane leading the way, representing pioneering DevOps practices",
+    gallery: [
+      {
+        image: docDevopsAutomation,
+        alt: "An infographic showing DevOps automation pillars: Cloud Native Development, Observability, Cloud Automation, DevSecOps, DevOps Services, and SRE & Chaos Engineering",
+      },
+    ],
   },
   "/cloud/managed-services": {
     type: "detail",
@@ -121,6 +153,9 @@ export const pageContent = {
       "Backup, disaster recovery and SLA-backed support",
     ],
     tags: ["AWS", "Azure", "Google Cloud", "Kubernetes"],
+    gallery: [
+      { image: docCloudManagedServices, alt: "A hand presenting cloud service icons above an open laptop" },
+    ],
   },
   "/cloud/native-development": {
     type: "detail",
@@ -247,6 +282,9 @@ export const pageContent = {
     tags: ["Python", "PySpark", "Data Modeling", "Predictive Analytics"],
     badgeImage: dataScienceSpheres,
     badgeImageAlt: "An abstract illustration of connected spheres representing linked data points and analytics",
+    gallery: [
+      { image: docDataScience, alt: "A laptop and phones displaying colorful analytics dashboards and charts" },
+    ],
   },
   "/ai-data/data-engineering": {
     type: "detail",
@@ -267,6 +305,9 @@ export const pageContent = {
     tags: ["PySpark", "Cloud Data Warehouses", "Machine Learning Pipelines"],
     badgeImage: dataEngineeringOrbit,
     badgeImageAlt: "An abstract illustration of orbiting spheres connected by elliptical rings, representing interconnected data systems",
+    gallery: [
+      { image: docDataEngineering, alt: "Isometric blue data cubes connected along a pipeline" },
+    ],
   },
   "/ai-data/automation": {
     type: "detail",
@@ -287,6 +328,9 @@ export const pageContent = {
     tags: ["Chatbots", "Dialogflow", "Rasa", "RPA", "NLP"],
     badgeImage: teamworkLightbulbs,
     badgeImageAlt: "Two lightbulbs coming together, representing collaborative automation ideas",
+    gallery: [
+      { image: docChatbotAutomation, alt: "A cube made of small blocks in the shape of a brain, representing AI automation" },
+    ],
   },
 
   /* ---------------- ERP ---------------- */
@@ -378,6 +422,9 @@ export const pageContent = {
     description:
       "What if you could get access to OSS/BSS solutions that enhance your core business value by uplifting enterprise service levels? Yes, Oracle OSS/BSS does that and much more by minimizing cost, improving focus on communication affiliates, extending the focus on communication affiliates, exploring the scope and depth of Mspring's solution architecture, and much more.",
     headerCtaLabel: "Lets Talk",
+    gallery: [
+      { image: docOracleOssBss, alt: "A cube labeled OSS and BSS surrounded by a cloud icon, server rack and analytics dashboard" },
+    ],
     serviceCards: {
       heading: "OSS/BSS Services",
       text: "Oracle OSS can also help you simplify industrial design, technical implementations, and test the complexity of business use cases. Besides, you can stay miles ahead of our competitors and improve customer experience by bracing yourself for the 5G era and taking your Telecom expertise to a whole new level.",
@@ -475,6 +522,10 @@ export const pageContent = {
     title: "Siebel CRM",
     description:
       "Siebel CRM consulting, implementation, customization and support that make the most of your CRM investment.",
+    gallery: [
+      { image: docSiebelCrm1, alt: "Unlock the full potential of Siebel CRM banner with a server rack illustration" },
+      { image: docSiebelCrm2, alt: "Siebel CRM 25.9 New Features banner with a DNA helix illustration" },
+    ],
     features: [
       {
         titleBold: "Siebel",
@@ -533,6 +584,12 @@ export const pageContent = {
     title: "Salesforce CRM",
     description:
       "Salesforce CRM consulting, implementation, customization and support that make the most of your CRM investment.",
+    gallery: [
+      { image: docSalesforceCrmCpq1, alt: "Icons representing Salesforce CRM capabilities arranged around the Salesforce logo" },
+      { image: docSalesforceCrmCpq2, alt: "Key Features of CRM Managed Salesforce Services infographic" },
+      { image: docSalesforceCrmCpq3, alt: "Salesforce product cloud icons including Sales Cloud, Service Cloud, Marketing Cloud and Salesforce CPQ" },
+      { image: docSalesforceCpq, alt: "Salesforce CPQ wheel diagram showing product selection, quote, configuration, proposal, approval and bundling steps" },
+    ],
     features: [
       {
         titleBold: "Salesforce",
@@ -850,7 +907,7 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Innovation-led Digital Engineering and R&D",
     headerCtaLabel: "Talk to our experts",
-    // heroImage: aiHumanCollaboration,
+    heroImage: aiHumanCollaboration,
     heroImageAlt: "Hands working on a laptop with digital document icons overlaid",
     about: {
       eyebrow: "About This Service",
@@ -899,7 +956,7 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Managed Services",
     headerCtaLabel: "Talk to our experts",
-    // heroImage: officeTeamCulture,
+    heroImage: officeTeamCulture,
     heroImageAlt: "A team of professionals standing together in a bright office",
     about: {
       eyebrow: "About This Service",
@@ -958,7 +1015,7 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Managed Service Provider (MSP) – Enterprise Workforce Solutions",
     headerCtaLabel: "Talk to our experts",
-    // heroImage: staffingMeeting,
+    heroImage: staffingMeeting,
     heroImageAlt: "Colleagues reviewing work together on a monitor in an office",
     about: {
       eyebrow: "About This Service",
@@ -1073,14 +1130,14 @@ export const pageContent = {
       "Our recruitment services cover the complete hiring lifecycle — sourcing through headhunting, job portals and social channels, first-level screening, interview coordination, offer management and post-joining follow-up.",
       "You only meet candidates who are genuinely qualified and interested, and we stay involved after the offer to make sure every placement sticks.",
     ],
+    bodyImage: recruitmentProcessSteps,
+    bodyImageAlt: "An infographic showing the Mspring Infotech recruitment process steps — brief, strategy & search, AI screening & social media checks, presentation & initial interview, second interview & deep-dive checks, and selection",
     highlights: [
       "Headhunting, job portal & social sourcing",
       "Rigorous first-level screening before client interviews",
       "Offer negotiation & resignation follow-up support",
       "Post-joining check-ins to confirm a strong fit",
     ],
-    badgeImage: recruitmentProcess,
-    badgeImageAlt: "An infographic showing the Mspring Infotech recruitment process steps — brief, strategy & search, screening & interview, presentation, second interview and selection",
   },
   "/talent-solutions/recruitment-services/rpo": {
     type: "detail",

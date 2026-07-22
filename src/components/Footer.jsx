@@ -4,7 +4,12 @@ import { company } from "../data/content";
 import Icon from "./Icons";
 import { Link } from "../router";
 
-const socials = ["facebook", "instagram", "linkedin", "youtube"];
+const socials = [
+  { name: "facebook", url: "https://www.facebook.com/mspringit/" },
+  { name: "instagram", url: "https://www.instagram.com/mspringinfotech?igsh=eWE3MDg2Y2Jkczlm" },
+  { name: "linkedin", url: "https://in.linkedin.com/company/mspring-infotech" },
+  { name: "youtube", url: "https://m.youtube.com/watch?v=lkm6NCFgTPM" },
+];
 
 const solutionsLinks = [
   { label: "Cloud", path: "/cloud" },
@@ -35,8 +40,15 @@ export default function Footer() {
           </p>
           <div className="footer__socials">
             {socials.map((s) => (
-              <a href="#" key={s} aria-label={s} className="footer__social">
-                <Icon name={s} size={18} />
+              <a
+                href={s.url}
+                key={s.name}
+                aria-label={s.name}
+                className="footer__social"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name={s.name} size={18} />
               </a>
             ))}
           </div>
