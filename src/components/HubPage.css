@@ -44,6 +44,12 @@
   margin-bottom: 40px;
 }
 
+/* Cloud hub intro paragraph only — bold, dark heading color. */
+.hub--cloud .hub__intro {
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
 .hub__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

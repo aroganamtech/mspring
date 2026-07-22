@@ -142,6 +142,36 @@
   }
 }
 
+/* Variant used only when a page passes an `image` to PageHeader (currently
+   just /contact) — the banner's fixed height/overflow-hidden is built for
+   text-only content, so this modifier lets it grow to fit the image
+   instead of clipping it, and returns the button to normal flow below
+   the image rather than pinning it to the bottom-right corner. */
+.page-header--has-image {
+  height: auto;
+  overflow: visible;
+  padding-bottom: 64px;
+}
+
+.page-header--has-image .page-header__inner {
+  height: auto;
+}
+
+.page-header--has-image .page-header__btn {
+  position: static;
+  margin-top: 28px;
+}
+
+.page-header__image {
+  display: block;
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  margin-top: 28px;
+}
+
 .page-header p {
   font-size: clamp(20px, 2.4vw, 30px);
   font-weight: 700;

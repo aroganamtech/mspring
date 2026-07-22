@@ -58,7 +58,13 @@ function DeliverAccordion({ items, defaultOpen }) {
   );
 }
 
-export default function DetailPage({ content, parent, current }) {
+export default function DetailPage({ content, parent, current, path }) {
+  // Optional per-page hook for page-specific styling overrides (mirrors
+  // HubPage's hubSlug) — pages that don't need it are unaffected since
+  // no CSS currently targets a `detail--*` class other than the ones
+  // explicitly opted into.
+  const detailSlug = path ? path.replace(/^\//, "").replace(/\//g, "-") : "";
+
   // The classic two-column body (paragraphs + "What We Deliver" aside) only
   // renders when the page actually defines any of its content — pages built
   // entirely from the optional sections (about / why / deliver) skip it.
@@ -267,7 +273,7 @@ export default function DetailPage({ content, parent, current }) {
       )}
 
       {hasDetailBody && (
-      <section className="section detail">
+      <section className={`section detail ${detailSlug ? `detail--${detailSlug}` : ""}`}>
         <div className="container detail__inner">
           <div className="detail__body">
             {content.body?.map((para, i) => (
@@ -280,6 +286,14 @@ export default function DetailPage({ content, parent, current }) {
                 src={content.bodyImage}
                 alt={content.bodyImageAlt || ""}
               />
+            )}
+
+            {content.bodyImages && content.bodyImages.length > 0 && (
+              <div className="detail-body-images">
+                {content.bodyImages.map((img, i) => (
+                  <img key={img.alt || i} src={img.image} alt={img.alt || ""} />
+                ))}
+              </div>
             )}
 
             {content.complianceStrip && content.complianceStrip.length > 0 && (
@@ -475,6 +489,13 @@ export default function DetailPage({ content, parent, current }) {
               </div>
             ))}
           </div>
+          {content.galleryText && content.galleryText.length > 0 && (
+            <div className="container detail-gallery__text">
+              {content.galleryText.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          )}
         </section>
       )}
 

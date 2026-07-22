@@ -17,14 +17,46 @@
   margin-top: 8px;
 }
 
+/* Data Science & Analytics page only — body paragraphs bold. */
+.detail--ai-data-data-science .detail__body p {
+  font-weight: 700;
+}
+
 /* Full-width image rendered under the body paragraphs (e.g. a process
    diagram or infographic) when a page's content defines `bodyImage`. */
 .detail-body-image {
   display: block;
   width: 100%;
+  max-height: 420px;
+  object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   margin: 8px 0 28px;
+}
+
+/* Two-or-more images rendered side by side under the body paragraphs
+   when a page's content defines `bodyImages`. */
+.detail-body-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 260px;
+  gap: 16px;
+  margin: 8px 0 28px;
+}
+
+.detail-body-images img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 720px) {
+  .detail-body-images {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Compliance/certification badge strip — rendered only when a page's
@@ -111,6 +143,7 @@ a.detail-compliance-strip__item:hover {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  height: 300px;
 }
 
 .detail-gallery__item img {
@@ -118,6 +151,18 @@ a.detail-compliance-strip__item:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.detail-gallery__text {
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+  max-width: 840px;
+}
+
+.detail-gallery__text p {
+  color: var(--text);
+  line-height: 1.7;
 }
 
 /* Optional "What We Deliver" section with photo + accordion (rendered only

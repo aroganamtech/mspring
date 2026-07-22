@@ -7,9 +7,14 @@ export default function PageHeader({
   description,
   ctaLabel = "Learn More",
   ctaPath = "/contact",
+  // Optional image rendered directly under the description text — only
+  // used by pages that pass it in (currently just /contact), so pages
+  // that don't pass `image` render exactly as before.
+  image,
+  imageAlt,
 }) {
   return (
-    <section className="page-header">
+    <section className={`page-header ${image ? "page-header--has-image" : ""}`}>
       <div className="container page-header__inner">
         <h1>{title}</h1>
 
@@ -23,10 +28,21 @@ export default function PageHeader({
 
         <div className="page-header__footer">
           {description && <p>{description}</p>}
-          <Link to={ctaPath} className="page-header__btn">
-            {ctaLabel} <Icon name="arrowRight" size={18} />
-          </Link>
+          {!image && (
+            <Link to={ctaPath} className="page-header__btn">
+              {ctaLabel} <Icon name="arrowRight" size={18} />
+            </Link>
+          )}
         </div>
+
+        {image && (
+          <>
+            <img className="page-header__image" src={image} alt={imageAlt || ""} />
+            <Link to={ctaPath} className="page-header__btn">
+              {ctaLabel} <Icon name="arrowRight" size={18} />
+            </Link>
+          </>
+        )}
       </div>
     </section>
   );

@@ -36,5 +36,5 @@ export default function DynamicPage({ path }) {
     return <CVForm content={content} parent={menuInfo?.parent} current={menuInfo?.label} />;
   }
 
-  return <DetailPage content={content} parent={menuInfo?.parent} current={menuInfo?.label} />;
+  return <DetailPage content={content} parent={menuInfo?.parent} current={menuInfo?.label} path={path} />;
 }

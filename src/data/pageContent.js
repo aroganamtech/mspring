@@ -12,11 +12,7 @@ import teamworkLightbulbs from "../assets/teamwork-lightbulbs.jpg";
 import staffingMeeting from "../assets/staffing-meeting.jpg";
 import ctaConnect from "../assets/cta-connect.jpg";
 import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
-import badgeHipaa from "../assets/badge-hipaa.png";
-import badgeGdpr from "../assets/badge-gdpr.png";
-import badgeSsl from "../assets/badge-ssl.jpg";
-import badgeIso from "../assets/badge-iso.jpg";
-import dnbSeal from "../assets/dnb-seal.png";
+import complianceBadgesBanner from "../assets/compliance-badges-banner.svg";
 import aiDataHero from "../assets/WhatsApp Image 2026-07-21 at 4.25.33 PM.jpeg";
 import aiInnovationHand from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM.jpeg";
 import aiIdeasBrain from "../assets/WhatsApp Image 2026-07-21 at 4.35.07 PM.jpeg";
@@ -32,15 +28,12 @@ import lifeRooftopUnwind from "../assets/WhatsApp Image 2026-07-16 at 1.13.30 PM
 import lifeTeamPortrait from "../assets/WhatsApp Image 2026-07-13 at 1.38.59 PM (1).jpeg";
 import recruitmentProcessSteps from "../assets/image.png";
 import docCloudMigration1 from "../assets/doc-cloud-migration-1.jpeg";
-import docCloudMigration2 from "../assets/doc-cloud-migration-2.jpeg";
 import docCloudConsulting1 from "../assets/doc-cloud-consulting-1.jpeg";
 import docCloudConsulting2 from "../assets/doc-cloud-consulting-2.jpeg";
-import docCloudConsulting3 from "../assets/doc-cloud-consulting-3.png";
 import docDevopsAutomation from "../assets/doc-devops-automation.gif";
 import docCloudManagedServices from "../assets/doc-cloud-managed-services.jpeg";
 import docDataScience from "../assets/doc-data-science.jpeg";
 import docDataEngineering from "../assets/doc-data-engineering.jpeg";
-import docChatbotAutomation from "../assets/doc-chatbot-automation.jpeg";
 import docOracleOssBss from "../assets/doc-oracle-oss-bss.jpeg";
 import docSiebelCrm1 from "../assets/doc-siebel-crm-1.png";
 import docSiebelCrm2 from "../assets/doc-siebel-crm-2.jpeg";
@@ -80,10 +73,9 @@ export const pageContent = {
     tags: ["AWS", "Microsoft Azure", "Google Cloud", "Well-Architected Reviews"],
     badgeImage: leadershipArrowYellow,
     badgeImageAlt: "One path breaking away from the crowd, representing a clear cloud strategy",
-    gallery: [
+    bodyImages: [
       { image: docCloudConsulting1, alt: "An abstract flowing swirl of blue and teal lines" },
       { image: docCloudConsulting2, alt: "Two consultants discussing cloud strategy beside a laptop with a cloud icon" },
-      { image: docCloudConsulting3, alt: "An abstract spiral of glowing blue lines representing cloud strategy" },
     ],
   },
   "/cloud/migration": {
@@ -96,6 +88,8 @@ export const pageContent = {
       "We plan and execute migrations for everything from individual applications to full data-center exits — rehosting, replatforming or refactoring workloads depending on what delivers the best long-term value.",
       "Post-migration, we help stand up resilient, right-sized infrastructure using infrastructure-as-code so environments stay consistent, auditable and easy to scale.",
     ],
+    bodyImage: docCloudMigration1,
+    bodyImageAlt: "A glowing cloud network connected to rows of data center servers",
     highlights: [
       "Application & database migration (rehost, replatform, refactor)",
       "Infrastructure-as-code with Terraform & Ansible",
@@ -105,10 +99,6 @@ export const pageContent = {
     tags: ["AWS (EC2, S3, Lambda, RDS)", "Terraform", "Ansible", "Azure", "Google Cloud"],
     badgeImage: cloudAbstractSphere,
     badgeImageAlt: "Abstract flowing cloud infrastructure visual",
-    gallery: [
-      { image: docCloudMigration1, alt: "A glowing cloud network connected to rows of data center servers" },
-      { image: docCloudMigration2, alt: "Dark cloud shapes above a glowing circuit board, representing cloud migration" },
-    ],
   },
   "/cloud/devops": {
     type: "detail",
@@ -120,6 +110,9 @@ export const pageContent = {
       "We build CI/CD pipelines and containerized deployment workflows that shorten release cycles without compromising stability — from source control through automated testing to production rollout.",
       "Our DevOps engineers also implement observability, alerting and infrastructure automation so teams spend less time firefighting and more time building.",
     ],
+    bodyImage: docDevopsAutomation,
+    bodyImageAlt:
+      "An infographic showing DevOps automation pillars: Cloud Native Development, Observability, Cloud Automation, DevSecOps, DevOps Services, and SRE & Chaos Engineering",
     highlights: [
       "CI/CD pipeline design (Jenkins, GitHub Actions)",
       "Containerization with Docker & Kubernetes",
@@ -129,12 +122,6 @@ export const pageContent = {
     tags: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Terraform"],
     badgeImage: leadershipArrowBlue,
     badgeImageAlt: "A gold paper plane leading the way, representing pioneering DevOps practices",
-    gallery: [
-      {
-        image: docDevopsAutomation,
-        alt: "An infographic showing DevOps automation pillars: Cloud Native Development, Observability, Cloud Automation, DevSecOps, DevOps Services, and SRE & Chaos Engineering",
-      },
-    ],
   },
   "/cloud/managed-services": {
     type: "detail",
@@ -273,6 +260,8 @@ export const pageContent = {
       "Our data scientists work with your existing data sources — however messy — to build clean, reliable analytics layers, from exploratory analysis through to production dashboards and reporting.",
       "We focus on insights tied to business outcomes: churn, conversion, operational efficiency, and revenue — not vanity metrics.",
     ],
+    bodyImage: dataScienceSpheres,
+    bodyImageAlt: "An abstract illustration of connected spheres representing linked data points and analytics",
     highlights: [
       "Exploratory data analysis & statistical modeling",
       "Business intelligence dashboards & reporting",
@@ -280,8 +269,6 @@ export const pageContent = {
       "A/B testing and experimentation frameworks",
     ],
     tags: ["Python", "PySpark", "Data Modeling", "Predictive Analytics"],
-    badgeImage: dataScienceSpheres,
-    badgeImageAlt: "An abstract illustration of connected spheres representing linked data points and analytics",
     gallery: [
       { image: docDataScience, alt: "A laptop and phones displaying colorful analytics dashboards and charts" },
     ],
@@ -328,9 +315,6 @@ export const pageContent = {
     tags: ["Chatbots", "Dialogflow", "Rasa", "RPA", "NLP"],
     badgeImage: teamworkLightbulbs,
     badgeImageAlt: "Two lightbulbs coming together, representing collaborative automation ideas",
-    gallery: [
-      { image: docChatbotAutomation, alt: "A cube made of small blocks in the shape of a brain, representing AI automation" },
-    ],
   },
 
   /* ---------------- ERP ---------------- */
@@ -522,24 +506,20 @@ export const pageContent = {
     title: "Siebel CRM",
     description:
       "Siebel CRM consulting, implementation, customization and support that make the most of your CRM investment.",
-    gallery: [
-      { image: docSiebelCrm1, alt: "Unlock the full potential of Siebel CRM banner with a server rack illustration" },
-      { image: docSiebelCrm2, alt: "Siebel CRM 25.9 New Features banner with a DNA helix illustration" },
-    ],
     features: [
       {
         titleBold: "Siebel",
         titleLight: "Consulting",
         text: "Our Siebel Consulting services provide expert guidance at every stage of your CRM journey, helping businesses align their CRM strategy with their overall business goals. Our team assists in defining the roadmap for Siebel CRM integration, ensuring optimal utilization of the platform's capabilities to drive business growth.",
-        image: aiBrainNetwork,
-        imageAlt: "A digital profile overlaid with a connected network",
+        image: docSiebelCrm1,
+        imageAlt: "Unlock the full potential of Siebel CRM banner with a server rack illustration",
       },
       {
         titleBold: "Siebel",
         titleLight: "Implementation",
         text: "Our Siebel Implementation services focus on setting up and configuring the Siebel CRM system according to your business needs. We guide you through the entire implementation process, from planning and designing to deployment, ensuring a smooth and efficient transition.",
-        image: cloudAbstractSphere,
-        imageAlt: "A connected cloud hovering over a digital city",
+        image: docSiebelCrm2,
+        imageAlt: "Siebel CRM 25.9 New Features banner with a DNA helix illustration",
       },
       {
         titleBold: "Siebel",
@@ -584,40 +564,34 @@ export const pageContent = {
     title: "Salesforce CRM",
     description:
       "Salesforce CRM consulting, implementation, customization and support that make the most of your CRM investment.",
-    gallery: [
-      { image: docSalesforceCrmCpq1, alt: "Icons representing Salesforce CRM capabilities arranged around the Salesforce logo" },
-      { image: docSalesforceCrmCpq2, alt: "Key Features of CRM Managed Salesforce Services infographic" },
-      { image: docSalesforceCrmCpq3, alt: "Salesforce product cloud icons including Sales Cloud, Service Cloud, Marketing Cloud and Salesforce CPQ" },
-      { image: docSalesforceCpq, alt: "Salesforce CPQ wheel diagram showing product selection, quote, configuration, proposal, approval and bundling steps" },
-    ],
     features: [
       {
         titleBold: "Salesforce",
         titleLight: "Consulting",
         text: "Our Salesforce Consulting services provide expert guidance at every stage of your CRM journey, helping businesses align their CRM strategy with their overall business goals. Our team assists in defining the roadmap for Salesforce CRM integration, ensuring optimal utilization of the platform's capabilities to drive business growth.",
-        image: aiBrainNetwork,
-        imageAlt: "A digital profile overlaid with a connected network",
+        image: docSalesforceCrmCpq1,
+        imageAlt: "Icons representing Salesforce CRM capabilities arranged around the Salesforce logo",
       },
       {
         titleBold: "Salesforce",
         titleLight: "Implementation",
         text: "Our Salesforce Implementation services focus on setting up and configuring the Salesforce CRM system according to your business needs. We guide you through the entire implementation process, from planning and designing to deployment, ensuring a smooth and efficient transition.",
-        image: cloudAbstractSphere,
-        imageAlt: "A connected cloud hovering over a digital city",
+        image: docSalesforceCrmCpq2,
+        imageAlt: "Key Features of CRM Managed Salesforce Services infographic",
       },
       {
         titleBold: "Salesforce",
         titleLight: "Customization",
         text: "We understand that each business has unique needs. Our Customization and Migration services cater to this uniqueness, tailoring Salesforce to suit your specific requirements. We facilitate a smooth transition from your existing CRM to Salesforce, managing the complex process of data migration while ensuring complete data security.",
-        image: aiHumanCollaboration,
-        imageAlt: "Hands typing on a laptop with digital service icons",
+        image: docSalesforceCrmCpq3,
+        imageAlt: "Salesforce product cloud icons including Sales Cloud, Service Cloud, Marketing Cloud and Salesforce CPQ",
       },
       {
         titleBold: "Salesforce Support and",
         titleLight: "Maintenance",
         text: "Our Salesforce Support and Maintenance services ensure that your Salesforce CRM system remains updated and continues to perform at its best. We provide proactive maintenance, troubleshoot issues, and offer continuous support to keep your system running smoothly and efficiently.",
-        image: teamOfficeWindow,
-        imageAlt: "A professional working on a laptop in a bright office",
+        image: docSalesforceCpq,
+        imageAlt: "Salesforce CPQ wheel diagram showing product selection, quote, configuration, proposal, approval and bundling steps",
       },
     ],
     partner: {
@@ -672,18 +646,9 @@ export const pageContent = {
       "As an ISO 27001 certified organization, security isn't an add-on for us — it's built into how we work. We help clients protect their systems and data with a mix of preventive controls, active testing and continuous monitoring.",
       "Our security engineers work across identity management, encryption, vulnerability testing and SIEM operations, tailored to your risk profile and compliance requirements.",
     ],
-    complianceStrip: [
-      { image: badgeHipaa, alt: "HIPAA Compliant" },
-      { image: badgeGdpr, alt: "GDPR Compliant" },
-      { image: badgeSsl, alt: "AES 256-bit SSL Secured" },
-      { image: badgeIso, alt: "ISO 27001 Certified" },
-      {
-        image: dnbSeal,
-        alt: "Dun & Bradstreet Seal",
-        caption: "Dun & Bradstreet Seal",
-        url: "https://www.dnb.com/business-directory/company-profiles.mspring_info_tech_india_private_limited.cd70563af56042d581bab312bb053ee5.html",
-      },
-    ],
+    bodyImage: complianceBadgesBanner,
+    bodyImageAlt:
+      "HIPAA compliant, GDPR compliant, AES 256-bit SSL secured, ISO 27001 certified, and Dun & Bradstreet sealed badges",
     highlights: [
       "Identity & Access Management (OAuth2, SAML)",
       "Penetration testing & vulnerability scanning",
