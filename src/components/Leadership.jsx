@@ -1,6 +1,6 @@
 import "./Leadership.css";
 import { leadershipTeam } from "../data/content";
-import teamFounder from "../assets/team-founder.jpg";
+import teamFounder from "../assets/WhatsApp Image 2026-07-21 at 10.23.20 AM.jpeg";
 
 const photos = {
   "team-founder": teamFounder,

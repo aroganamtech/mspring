@@ -31,9 +31,9 @@ export default function VisitorBadge() {
   }
 
   return (
-    <div className="visitor-badge" role="status" aria-label={`${count.toLocaleString()} members`}>
+    <div className="visitor-badge" role="status" aria-label={`${count} members`}>
       <div className="visitor-badge__inner">
-        <span className="visitor-badge__count">{count.toLocaleString()}</span>
+        <span className="visitor-badge__count">{count}</span>
         <Icon name="users" size={18} className="visitor-badge__icon" />
       </div>
     </div>

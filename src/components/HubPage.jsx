@@ -26,7 +26,18 @@ export default function HubPage({ content, path, children: menuChildren }) {
 
       <section className={`section hub ${hubSlug ? `hub--${hubSlug}` : ""}`}>
         <div className="container">
-          {content.intro && <p className="hub__intro">{content.intro}</p>}
+          {(content.intro || content.heroImage) && (
+            <div className="hub__intro-row">
+              {content.intro && <p className="hub__intro">{content.intro}</p>}
+              {content.heroImage && (
+                <img
+                  className="hub__intro-photo"
+                  src={content.heroImage}
+                  alt={content.heroImageAlt || ""}
+                />
+              )}
+            </div>
+          )}
 
           {/* Cloud, AI & Data and ERP get a dedicated photo-card showcase
               instead of the plain text-link grid used by the other hubs. */}

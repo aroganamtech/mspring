@@ -2,7 +2,6 @@
 // Hub pages render an intro + cards linking to their children (pulled from menu.js).
 // Detail pages render an intro + highlight bullets + optional technology tags.
 
-import dnbBadge from "../assets/dun-and-bradstreet-badge.png";
 import aiHumanCollaboration from "../assets/ai-human-collaboration.jpg";
 import teamOfficeWindow from "../assets/team-office-window.jpg";
 import officeTeamCulture from "../assets/office-team-culture.jpg";
@@ -11,10 +10,23 @@ import leadershipArrowBlue from "../assets/leadership-arrow-blue.jpg";
 import aiBrainNetwork from "../assets/ai-brain-network.jpg";
 import teamworkLightbulbs from "../assets/teamwork-lightbulbs.jpg";
 import staffingMeeting from "../assets/staffing-meeting.jpg";
-import cyberBadges from "../assets/cyber-badges.png";
 import recruitmentProcess from "../assets/recruitment-process.jpg";
 import ctaConnect from "../assets/cta-connect.jpg";
 import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
+import badgeHipaa from "../assets/badge-hipaa.png";
+import badgeGdpr from "../assets/badge-gdpr.png";
+import badgeSsl from "../assets/badge-ssl.jpg";
+import badgeIso from "../assets/badge-iso.jpg";
+import dnbSeal from "../assets/dnb-seal.png";
+import aiDataHero from "../assets/WhatsApp Image 2026-07-21 at 4.25.33 PM.jpeg";
+import recruitmentServicesHero from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM (1).jpeg";
+import aiInnovationHand from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM.jpeg";
+import aiIdeasBrain from "../assets/WhatsApp Image 2026-07-21 at 4.35.07 PM.jpeg";
+import lifeAtMspringCare from "../assets/WhatsApp Image 2026-07-21 at 4.35.05 PM.jpeg";
+import dataScienceSpheres from "../assets/WhatsApp Image 2026-07-21 at 4.35.06 PM.jpeg";
+import gccGlobalReach from "../assets/WhatsApp Image 2026-07-21 at 4.35.06 PM (1).jpeg";
+import permanentRecruitmentFocus from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM (2).jpeg";
+import dataEngineeringOrbit from "../assets/WhatsApp Image 2026-07-21 at 4.25.33 PM (1).jpeg";
 
 export const pageContent = {
   /* ---------------- Cloud ---------------- */
@@ -150,6 +162,8 @@ export const pageContent = {
     title: "AI, Data Science & Intelligent Automation",
     description:
       "Harness AI & machine learning for smarter operations, data science for actionable insights, and automation for measurable efficiency gains.",
+    heroImage: aiDataHero,
+    heroImageAlt: "An abstract, colorful wireframe rendering of an open hand, representing AI and data intelligence",
     intro:
       "Data is only as valuable as the decisions it enables. We help organizations build the pipelines, models and intelligent applications that turn raw data into a genuine competitive advantage — from predictive analytics to production-grade AI features.",
     ctaLabel: "Learn More",
@@ -176,6 +190,22 @@ export const pageContent = {
     body: [
       "We design and deploy machine learning models for use cases like demand forecasting, recommendation, fraud detection and computer vision — grounded in your actual data rather than generic templates.",
       "Where a foundation model is the better fit, we integrate OpenAI/GPT-class models into your products through carefully engineered prompts, retrieval pipelines and guardrails.",
+    ],
+    features: [
+      {
+        titleBold: "Empowering Innovation.",
+        titleLight: "Elevating Possibilities.",
+        text: "We build AI systems designed to push past proof-of-concept — engineered for the accuracy, scale and reliability that production business use cases demand.",
+        image: aiInnovationHand,
+        imageAlt: "A robotic hand reaching toward a glowing, textured artifact, representing AI-driven innovation",
+      },
+      {
+        titleBold: "Turning Data",
+        titleLight: "Into Ideas",
+        text: "Behind every model is a clear question worth answering. Our team pairs data science with product thinking so machine learning translates into features people actually use.",
+        image: aiIdeasBrain,
+        imageAlt: "A colorful illustration of a human head made of fractured shapes with a glowing lightbulb, representing ideas generated from data",
+      },
     ],
     highlights: [
       "Predictive analytics & forecasting models",
@@ -204,6 +234,8 @@ export const pageContent = {
       "A/B testing and experimentation frameworks",
     ],
     tags: ["Python", "PySpark", "Data Modeling", "Predictive Analytics"],
+    badgeImage: dataScienceSpheres,
+    badgeImageAlt: "An abstract illustration of connected spheres representing linked data points and analytics",
   },
   "/ai-data/data-engineering": {
     type: "detail",
@@ -222,6 +254,8 @@ export const pageContent = {
       "Real-time and batch processing pipelines",
     ],
     tags: ["PySpark", "Cloud Data Warehouses", "Machine Learning Pipelines"],
+    badgeImage: dataEngineeringOrbit,
+    badgeImageAlt: "An abstract illustration of orbiting spheres connected by elliptical rings, representing interconnected data systems",
   },
   "/ai-data/automation": {
     type: "detail",
@@ -424,6 +458,24 @@ export const pageContent = {
     ],
     tags: ["Oracle BRM", "Billing", "Revenue Management"],
   },
+  "/erp/oracle/siebel": {
+    type: "detail",
+    eyebrow: "Oracle Services",
+    title: "Siebel CRM",
+    description:
+      "Siebel CRM consulting, implementation, customization and support that help you get the most out of your customer relationship management investment.",
+    body: [
+      "Oracle's Siebel CRM remains one of the most powerful platforms for managing sales, marketing, and customer service at enterprise scale. Getting the most from it takes more than a standard install — it takes a partner who understands both the platform and your business processes.",
+      "Our Siebel CRM team works with you across the full lifecycle — from initial strategy and roadmap through implementation, customization, and ongoing support — so the system keeps pace with how your business actually operates.",
+    ],
+    highlights: [
+      "Siebel CRM strategy, consulting & roadmap planning",
+      "Implementation & configuration across sales, service and marketing modules",
+      "Customization, integration & data migration",
+      "Ongoing support, maintenance & performance tuning",
+    ],
+    tags: ["Siebel CRM", "Oracle", "Customer Management"],
+  },
   "/erp/salesforce": {
     type: "detail",
     eyebrow: "ERP",
@@ -512,6 +564,18 @@ export const pageContent = {
       "As an ISO 27001 certified organization, security isn't an add-on for us — it's built into how we work. We help clients protect their systems and data with a mix of preventive controls, active testing and continuous monitoring.",
       "Our security engineers work across identity management, encryption, vulnerability testing and SIEM operations, tailored to your risk profile and compliance requirements.",
     ],
+    complianceStrip: [
+      { image: badgeHipaa, alt: "HIPAA Compliant" },
+      { image: badgeGdpr, alt: "GDPR Compliant" },
+      { image: badgeSsl, alt: "AES 256-bit SSL Secured" },
+      { image: badgeIso, alt: "ISO 27001 Certified" },
+      {
+        image: dnbSeal,
+        alt: "Dun & Bradstreet Seal",
+        caption: "Dun & Bradstreet Seal",
+        url: "https://www.dnb.com/business-directory/company-profiles.mspring_info_tech_india_private_limited.cd70563af56042d581bab312bb053ee5.html",
+      },
+    ],
     highlights: [
       "Identity & Access Management (OAuth2, SAML)",
       "Penetration testing & vulnerability scanning",
@@ -519,13 +583,6 @@ export const pageContent = {
       "SIEM monitoring & incident response (Splunk, IBM QRadar)",
     ],
     tags: ["IAM", "Penetration Testing", "SIEM", "Encryption (AES/RSA)"],
-    badgeImage: cyberBadges,
-    badgeImageAlt:
-      "HIPAA Compliant, GDPR Compliant, AES 256-bit SSL Secured and ISO 27001 Certified badges",
-    verificationBadge: dnbBadge,
-    verificationBadgeUrl:
-      "https://www.dnb.com/business-directory/company-profiles.mspring_info_tech_india_private_limited.cd70563af56042d581bab312bb053ee5.html",
-    verificationBadgeAlt: "View Mspring Infotech's verified Dun & Bradstreet company profile",
   },
 
   /* ---------------- Careers ---------------- */
@@ -565,6 +622,15 @@ export const pageContent = {
     body: [
       "Mspring Infotech was built by people who came up through IT staffing and delivery themselves — that shows in how the company is run. Teams are small enough that your work is visible, and structured enough that you're supported by experienced consultants and account managers.",
       "With a 50-seat training facility in Bangalore and an offshore delivery center in Tamil Nadu, we invest directly in upskilling — particularly in cloud, AI and multi-cloud data engineering as those practices continue to grow.",
+    ],
+    features: [
+      {
+        titleBold: "Support That",
+        titleLight: "Covers You",
+        text: "We look out for our people the way we look out for our clients — with steady support, clear structure, and room to focus on the work instead of worrying about what isn't covered.",
+        image: lifeAtMspringCare,
+        imageAlt: "An illustration of a person working at a desk sheltered under an umbrella, protected from falling rain",
+      },
     ],
     highlights: [
       "Direct exposure to enterprise clients across telecom, BFSI, retail & manufacturing",
@@ -936,6 +1002,8 @@ export const pageContent = {
       "Offer negotiation & resignation follow-up support",
       "Post-joining check-ins to confirm a strong fit",
     ],
+    badgeImage: recruitmentServicesHero,
+    badgeImageAlt: "A hand presenting connected recruitment icons — sourcing, screening, vetting and hiring",
   },
   "/talent-solutions/recruitment-services/rpo": {
     type: "detail",
@@ -1012,6 +1080,15 @@ export const pageContent = {
         "Effective recruitment for permanent positions requires structured evaluation, market insight, and alignment with business goals. It's not just about filling a position but strengthening teams for sustainable growth. With over 15+ years of experience across 250+ organizations, Mspring Recruitment Services ensures relevance, thorough evaluation, and reliable delivery.",
       ],
     },
+    features: [
+      {
+        titleBold: "Finding the",
+        titleLight: "Right Fit",
+        text: "Permanent hiring isn't about filling a pipeline — it's about identifying the one candidate who fits the role, the team and the business context. Our search process is built around that distinction from the start.",
+        image: permanentRecruitmentFocus,
+        imageAlt: "A magnifying glass highlighting one golden candidate silhouette among several gray ones, representing focused candidate selection",
+      },
+    ],
     deliver: {
       eyebrow: "Permanent Recruitment Services",
       heading:
@@ -1073,6 +1150,15 @@ export const pageContent = {
         "The GCC model is now a strategic growth lever globally. There are 3,200+ GCCs operating worldwide, and 55% of enterprise tech products are built in GCCs. India alone hosts 1,700+ GCCs, with 120 new centers added in 2024. Mspring helps you tap this momentum with a model designed for speed, compliance, and long-term value.",
       ],
     },
+    features: [
+      {
+        titleBold: "Global Reach,",
+        titleLight: "Built Locally",
+        text: "A GCC is your business operating without borders — the same standards, systems and accountability wherever the work happens. Mspring builds that foundation so your center runs as one extension of global operations, not a separate outpost.",
+        image: gccGlobalReach,
+        imageAlt: "An illustration of a glossy globe melting and dripping over the edge of a wall, representing borderless global operations",
+      },
+    ],
     deliver: [
       {
         eyebrow: "GCC Offerings",

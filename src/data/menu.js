@@ -36,8 +36,8 @@ export const menu = [
         label: "Oracle Services",
         path: "/erp/oracle",
         children: [
-          { label: "OSS", path: "/erp/oracle/oss" },
-          { label: "BSS", path: "/erp/oracle/bss" },
+          { label: "OSS/BSS", path: "/erp/oracle" },
+          { label: "Siebel CRM", path: "/erp/oracle/siebel" },
         ],
       },
       { label: "Salesforce CRM", path: "/erp/salesforce" },

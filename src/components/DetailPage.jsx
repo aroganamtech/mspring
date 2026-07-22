@@ -70,6 +70,7 @@ export default function DetailPage({ content, parent, current }) {
     content.badgeImage ||
     content.complianceBadge ||
     content.verificationBadge ||
+    (content.complianceStrip && content.complianceStrip.length > 0) ||
     (content.ctaLabel && content.ctaPath);
 
   return (
@@ -272,6 +273,25 @@ export default function DetailPage({ content, parent, current }) {
             {content.body?.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
+
+            {content.complianceStrip && content.complianceStrip.length > 0 && (
+              <div className="detail-compliance-strip">
+                {content.complianceStrip.map((badge) => {
+                  const Tag = badge.url ? "a" : "div";
+                  const linkProps = badge.url
+                    ? { href: badge.url, target: "_blank", rel: "noopener noreferrer" }
+                    : {};
+                  return (
+                    <Tag className="detail-compliance-strip__item" key={badge.alt} {...linkProps}>
+                      <img src={badge.image} alt={badge.alt} />
+                      {badge.caption && (
+                        <span className="detail-compliance-strip__caption">{badge.caption}</span>
+                      )}
+                    </Tag>
+                  );
+                })}
+              </div>
+            )}
 
             {content.table && (
               <div className="detail__table-wrap">
