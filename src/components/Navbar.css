@@ -31,7 +31,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url("../assets/logo.png");
+  /* background-image: url("../assets/logo.png"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 190px auto;
@@ -379,6 +379,16 @@
 
 /* Mobile Breakpoint */
 @media (max-width: 1150px) {
+  .navbar {
+    background-image: 
+      /* Smaller curve placed closer to the left */
+      radial-gradient(ellipse 200px 120px at 150px 50%, #ffffff 49.5%, transparent 50.5%),
+      /* Thinner solid white section for the logo */
+      linear-gradient(90deg, #ffffff 0%, #ffffff 150px, transparent 150px);
+  }
+
+  /* ... your existing mobile styles below ... */
+  
   .navbar__links {
     position: fixed;
     inset: 78px 0 0 0;

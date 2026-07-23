@@ -22,6 +22,38 @@
   font-weight: 700;
 }
 
+/* Cloud Migration page only — body paragraphs bold, and the image below
+   them pushed further down with extra spacing. */
+.detail--cloud-migration .detail__body p {
+  font-weight: 700;
+}
+
+.detail--cloud-migration .detail-body-image {
+  margin-top: 48px;
+}
+
+/* Cloud DevOps & Automation page only — body paragraphs bold, and the
+   image below them pushed further down with extra spacing. */
+.detail--cloud-devops .detail__body p {
+  font-weight: 700;
+}
+
+.detail--cloud-devops .detail-body-image {
+  margin-top: 48px;
+}
+
+/* Data Engineering page only — body paragraphs bold, image pushed down
+   with extra spacing and shown smaller instead of full body-column width. */
+.detail--ai-data-data-engineering .detail__body p {
+  font-weight: 700;
+}
+
+.detail--ai-data-data-engineering .detail-body-image {
+  width: 320px;
+  max-width: 100%;
+  margin: 48px auto 28px;
+}
+
 /* Full-width image rendered under the body paragraphs (e.g. a process
    diagram or infographic) when a page's content defines `bodyImage`. */
 .detail-body-image {
@@ -34,12 +66,12 @@
   margin: 8px 0 28px;
 }
 
-/* Two-or-more images rendered side by side under the body paragraphs
-   when a page's content defines `bodyImages`. */
+/* Two-or-more images rendered one under another (stacked) below the body
+   paragraphs when a page's content defines `bodyImages`. */
 .detail-body-images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 260px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 300px;
   gap: 16px;
   margin: 8px 0 28px;
 }
@@ -165,6 +197,116 @@ a.detail-compliance-strip__item:hover {
   line-height: 1.7;
 }
 
+/* Full sub-page content embedded inline (rendered only when a page's
+   content defines `subSections`) — used to surface a child page's entire
+   content (not just a link card) directly on a parent "Overview" page. */
+.detail-subsections {
+  padding-top: 8px;
+}
+
+.detail-subsection {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+
+.detail-subsection:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.detail-subsection__title {
+  margin-top: 10px;
+  font-size: clamp(24px, 2.8vw, 32px);
+}
+
+.detail-subsection__description {
+  font-size: 17px;
+  color: var(--text-soft);
+  max-width: 760px;
+  margin-bottom: 8px;
+}
+
+.detail-subsection p {
+  font-size: 15.5px;
+  margin-bottom: 18px;
+  max-width: 800px;
+}
+
+.detail-subsection__about {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 20px 0;
+}
+
+.detail-subsection__about img {
+  flex-shrink: 0;
+  width: 260px;
+  max-width: 40%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.detail-subsection__highlights {
+  display: grid;
+  gap: 12px;
+  margin: 8px 0 20px;
+}
+
+.detail-subsection__highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--text);
+}
+
+.detail-subsection__highlights li svg {
+  color: var(--olive-dark);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.detail-subsection__link {
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .detail-subsection__about {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-subsection__about img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Data Science & Analytics page only — the single gallery image shouldn't
+   stretch across the full container width; cap it and center it. */
+.detail-gallery--ai-data-data-science .detail-gallery__grid {
+  grid-template-columns: none;
+  justify-content: center;
+}
+
+.detail-gallery--ai-data-data-science .detail-gallery__item {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Oracle OSS/BSS page only — the single gallery image shouldn't stretch
+   across the full container width; cap it and center it. */
+.detail-gallery--erp-oracle .detail-gallery__grid {
+  grid-template-columns: none;
+  justify-content: center;
+}
+
+.detail-gallery--erp-oracle .detail-gallery__item {
+  width: 100%;
+  max-width: 420px;
+}
+
 /* Optional "What We Deliver" section with photo + accordion (rendered only
    when a page's content defines `deliver`). */
 .detail-deliver__inner {
@@ -172,6 +314,12 @@ a.detail-compliance-strip__item:hover {
   grid-template-columns: 1fr 1.4fr;
   gap: 48px;
   align-items: start;
+}
+
+/* When a `deliver` block has no `image`, let the text content fill the
+   full row instead of leaving an empty column where the photo would go. */
+.detail-deliver__inner--no-image {
+  grid-template-columns: 1fr;
 }
 
 .detail-deliver__photo {

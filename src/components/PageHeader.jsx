@@ -38,9 +38,11 @@ export default function PageHeader({
         {image && (
           <>
             <img className="page-header__image" src={image} alt={imageAlt || ""} />
-            <Link to={ctaPath} className="page-header__btn">
-              {ctaLabel} <Icon name="arrowRight" size={18} />
-            </Link>
+            <div className="page-header__btn-row">
+              <Link to={ctaPath} className="page-header__btn">
+                {ctaLabel} <Icon name="arrowRight" size={18} />
+              </Link>
+            </div>
           </>
         )}
       </div>

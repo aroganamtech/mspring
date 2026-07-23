@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 320" width="460" height="320">
+  <defs>
+    <style>
+      .lbl { font-family: 'Georgia', 'Times New Roman', serif; font-size: 20px; fill: #1a1a1a; text-anchor: middle; }
+      .arrow { stroke: #333333; stroke-width: 1.6; fill: none; }
+      .cloud { fill: #ffffff; stroke: #1f6fb2; stroke-width: 6; }
+      .center { font-family: 'Georgia', 'Times New Roman', serif; font-weight: 700; font-style: italic; font-size: 24px; fill: #111111; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#333333" />
+    </marker>
+  </defs>
+
+  <rect width="460" height="320" fill="#ffffff" />
+
+  <!-- Arrows (drawn first so the cloud sits on top of their tails) -->
+  <line class="arrow" x1="230" y1="150" x2="230" y2="34" marker-end="url(#arrowhead)" />
+  <line class="arrow" x1="185" y1="150" x2="88" y2="70" marker-end="url(#arrowhead)" />
+  <line class="arrow" x1="275" y1="150" x2="372" y2="70" marker-end="url(#arrowhead)" />
+  <line class="arrow" x1="180" y1="185" x2="70" y2="235" marker-end="url(#arrowhead)" />
+  <line class="arrow" x1="230" y1="200" x2="230" y2="285" marker-end="url(#arrowhead)" />
+  <line class="arrow" x1="280" y1="185" x2="388" y2="235" marker-end="url(#arrowhead)" />
+
+  <!-- Cloud shape -->
+  <path class="cloud" d="
+    M120,190
+    a45,45 0 0 1 8,-89
+    a58,58 0 0 1 112,-14
+    a48,48 0 0 1 60,46
+    a42,42 0 0 1 -6,57
+    Z" />
+
+  <text class="center" x="230" y="160">Integration</text>
+  <text class="center" x="230" y="186">Services</text>
+
+  <text class="lbl" x="230" y="26">Infrastructure</text>
+  <text class="lbl" x="60" y="58">Parallels</text>
+  <text class="lbl" x="400" y="58">Data</text>
+  <text class="lbl" x="45" y="252">SaaS</text>
+  <text class="lbl" x="230" y="306">Email</text>
+  <text class="lbl" x="415" y="252">Platform</text>
+</svg>

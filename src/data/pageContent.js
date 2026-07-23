@@ -13,6 +13,8 @@ import staffingMeeting from "../assets/staffing-meeting.jpg";
 import ctaConnect from "../assets/cta-connect.jpg";
 import cloudAbstractSphere from "../assets/cloud-abstract-sphere.jpg";
 import complianceBadgesBanner from "../assets/compliance-badges-banner.svg";
+import integrationServices from "../assets/integration-services.svg";
+import aiNetworkCubes from "../assets/ai-network-cubes.svg";
 import aiDataHero from "../assets/WhatsApp Image 2026-07-21 at 4.25.33 PM.jpeg";
 import aiInnovationHand from "../assets/WhatsApp Image 2026-07-21 at 4.25.34 PM.jpeg";
 import aiIdeasBrain from "../assets/WhatsApp Image 2026-07-21 at 4.35.07 PM.jpeg";
@@ -52,6 +54,8 @@ export const pageContent = {
       "Cloud-native architecture, migration, and managed services that deliver agility, scalability, and cost-efficiency across AWS, Azure and Google Cloud.",
     intro:
       "Mspring Infotech helps enterprises modernize their infrastructure and move workloads to the cloud with confidence. From first consultation to day-two operations, our team designs, migrates, automates and manages cloud environments so your business can scale without friction.",
+    heroImage: integrationServices,
+    heroImageAlt: "Integration Services diagram showing a cloud connected to Infrastructure, Data, Platform, Email, SaaS and Parallels",
     ctaPath: "/cloud-solutions",
   },
   "/cloud/consulting": {
@@ -217,6 +221,8 @@ export const pageContent = {
       "We design and deploy machine learning models for use cases like demand forecasting, recommendation, fraud detection and computer vision — grounded in your actual data rather than generic templates.",
       "Where a foundation model is the better fit, we integrate OpenAI/GPT-class models into your products through carefully engineered prompts, retrieval pipelines and guardrails.",
     ],
+    bodyImage: aiBrainNetwork,
+    bodyImageAlt: "A digital brain wrapped in orbiting data rings, representing AI and machine learning",
     features: [
       {
         titleBold: "Empowering Innovation.",
@@ -247,8 +253,6 @@ export const pageContent = {
       "Model deployment, monitoring & retraining pipelines",
     ],
     tags: ["Python (scikit-learn)", "TensorFlow", "PyTorch", "NLP", "Computer Vision", "OpenAI / GPT"],
-    badgeImage: aiBrainNetwork,
-    badgeImageAlt: "A digital brain wrapped in orbiting data rings, representing AI and machine learning",
   },
   "/ai-data/data-science": {
     type: "detail",
@@ -260,8 +264,10 @@ export const pageContent = {
       "Our data scientists work with your existing data sources — however messy — to build clean, reliable analytics layers, from exploratory analysis through to production dashboards and reporting.",
       "We focus on insights tied to business outcomes: churn, conversion, operational efficiency, and revenue — not vanity metrics.",
     ],
-    bodyImage: dataScienceSpheres,
-    bodyImageAlt: "An abstract illustration of connected spheres representing linked data points and analytics",
+    bodyImages: [
+      { image: dataScienceSpheres, alt: "An abstract illustration of connected spheres representing linked data points and analytics" },
+      { image: docDataScience, alt: "A laptop and phones displaying colorful analytics dashboards and charts" },
+    ],
     highlights: [
       "Exploratory data analysis & statistical modeling",
       "Business intelligence dashboards & reporting",
@@ -269,9 +275,6 @@ export const pageContent = {
       "A/B testing and experimentation frameworks",
     ],
     tags: ["Python", "PySpark", "Data Modeling", "Predictive Analytics"],
-    gallery: [
-      { image: docDataScience, alt: "A laptop and phones displaying colorful analytics dashboards and charts" },
-    ],
   },
   "/ai-data/data-engineering": {
     type: "detail",
@@ -283,6 +286,8 @@ export const pageContent = {
       "Good analytics and AI depend on good data plumbing. We design and build ETL/ELT pipelines, data lakes and warehouses that consolidate data from disparate systems into a single, trustworthy source of truth.",
       "Pipelines are built to scale — with monitoring, data quality checks, and clear ownership so data stays reliable as your organization grows.",
     ],
+    bodyImage: docDataEngineering,
+    bodyImageAlt: "Isometric blue data cubes connected along a pipeline",
     highlights: [
       "ETL / ELT pipeline design & orchestration",
       "Data lake & warehouse architecture",
@@ -292,9 +297,6 @@ export const pageContent = {
     tags: ["PySpark", "Cloud Data Warehouses", "Machine Learning Pipelines"],
     badgeImage: dataEngineeringOrbit,
     badgeImageAlt: "An abstract illustration of orbiting spheres connected by elliptical rings, representing interconnected data systems",
-    gallery: [
-      { image: docDataEngineering, alt: "Isometric blue data cubes connected along a pipeline" },
-    ],
   },
   "/ai-data/automation": {
     type: "detail",
@@ -306,6 +308,8 @@ export const pageContent = {
       "We build chatbots and virtual assistants for customer support and internal operations, integrated with your existing systems so they can actually resolve requests — not just answer FAQs.",
       "For repetitive back-office processes, we implement RPA workflows that free up your team's time for higher-value work.",
     ],
+    bodyImage: aiNetworkCubes,
+    bodyImageAlt: "A brain made of light cubes connected to a network of dark isometric cubes on a blue background, representing AI-driven automation",
     highlights: [
       "Chatbot design & deployment (Dialogflow, Rasa)",
       "Robotic Process Automation (RPA) for back-office workflows",
@@ -766,6 +770,89 @@ export const pageContent = {
       "Rapid turnaround on high-volume requirements",
       "End-to-end payroll & compliance management",
     ],
+    subSections: [
+      {
+        eyebrow: "General Staffing",
+        title: "Sourcing and Recruitment",
+        path: "/talent-solutions/general-staffing/sourcing-and-recruitment",
+        description: "Multi-channel sourcing and structured recruitment that keeps your talent pipeline full.",
+        body: [
+          "Our sourcing engine combines headhunting, job portals, social channels, referral networks and our own talent database to reach both active and passive candidates across locations and experience levels.",
+          "Every candidate is taken through structured screening — skills validation, background alignment and interest confirmation — before being presented, so your hiring managers spend time only on genuinely suitable profiles.",
+        ],
+        table: {
+          columns: ["Channel", "Description", "Best For"],
+          rows: [
+            ["Internal Database", "10+ lacs pre-screened candidates", "Quick turnaround requirements"],
+            ["Campus Recruitment", "100+ college partnerships", "Entry-level and fresher hiring"],
+            ["Job Fairs", "Large-scale hiring events", "Volume recruitment"],
+            ["Newspaper Ads", "Traditional media outreach", "Diverse demographic reach"],
+            ["Digital Portals", "Online job listings and applications", "Tech-savvy candidates"],
+            ["Field Recruitment", "Local market sourcing", "Location-specific hiring"],
+            ["Industry Networks", "Professional associations and groups", "Specialized skill sets"],
+            ["Education Camps", "Training center partnerships", "Skilled trade recruitment"],
+          ],
+        },
+        highlights: [
+          "Multi-channel sourcing: portals, social, referrals & database",
+          "Structured screening & skills validation before submission",
+          "Coverage across locations, functions and experience levels",
+          "Consistent pipeline reporting throughout the engagement",
+        ],
+      },
+      {
+        eyebrow: "General Staffing",
+        title: "Apprenticeship Program",
+        path: "/talent-solutions/general-staffing/apprenticeship-program",
+        description: "Structured apprenticeships that build job-ready talent while meeting your compliance goals.",
+        about: {
+          heading: "Future-ready workforce, developed through apprenticeship programs.",
+          image: officeTeamCulture,
+          imageAlt: "A team of professionals in conversation at a modern office",
+          paragraphs: [
+            "Mspring Infotech helps organizations build a steady pipeline of skilled talent through government-aligned apprenticeship programs. Employers benefit from cost-effective, work-ready talent, while apprentices gain paid, hands-on experience that enhances their career prospects.",
+            "With a focus on compliance and efficiency, we ensure seamless management of apprenticeship programs, empowering both employers and apprentices to succeed in today's dynamic workforce landscape.",
+          ],
+        },
+        why: {
+          heading:
+            "Create a steady pipeline of skilled talent while giving apprentices real-world experience and long-term career opportunities.",
+          features: [
+            "Nationwide reach across India's key sectors",
+            "Digital-first onboarding, payroll, and training on secure platforms",
+            "Smart compliance support on Acts, PF/ESI exemptions, and incentives",
+          ],
+          valueColumns: [
+            {
+              title: "Value for Employers",
+              items: [
+                "Reduce hiring and training costs",
+                "Build future-ready teams in manufacturing, retail, logistics, BFSI, and more",
+                "Simplified apprentice lifecycle management from sourcing to certification",
+              ],
+            },
+            {
+              title: "Value for Apprentices",
+              items: [
+                "Earn while you learn with paid, hands-on experience",
+                "Gain skills and credentials recognized by employers",
+                "Open pathways to jobs or further education",
+              ],
+            },
+          ],
+        },
+        body: [
+          "Our apprenticeship program helps organizations engage fresh talent through structured, on-the-job training engagements — building a pipeline of job-ready professionals while managing enrolment, stipends and statutory compliance end to end.",
+          "Apprentices are sourced, screened and matched to your requirements, and we handle the program administration throughout, giving you a low-risk way to develop and evaluate future permanent hires.",
+        ],
+        highlights: [
+          "End-to-end apprenticeship enrolment & administration",
+          "Sourcing & screening matched to your requirements",
+          "Stipend management & statutory compliance handled",
+          "A low-risk pathway to future permanent hires",
+        ],
+      },
+    ],
   },
   "/talent-solutions/general-staffing/sourcing-and-recruitment": {
     type: "detail",
@@ -921,8 +1008,6 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Managed Services",
     headerCtaLabel: "Talk to our experts",
-    heroImage: officeTeamCulture,
-    heroImageAlt: "A team of professionals standing together in a bright office",
     about: {
       eyebrow: "About This Service",
       heading:
@@ -980,8 +1065,6 @@ export const pageContent = {
     eyebrow: "IT Solutions",
     title: "Managed Service Provider (MSP) – Enterprise Workforce Solutions",
     headerCtaLabel: "Talk to our experts",
-    heroImage: staffingMeeting,
-    heroImageAlt: "Colleagues reviewing work together on a monitor in an office",
     about: {
       eyebrow: "About This Service",
       heading: "Centralized workforce, supplier, and technology governance.",
@@ -1296,8 +1379,6 @@ export const pageContent = {
         eyebrow: "Why Mspring",
         heading:
           "Mspring simplifies your global expansion with its deep expertise, integrated services, and proven scalability.",
-        image: ctaConnect,
-        imageAlt: "Two professionals shaking hands across a desk",
         defaultOpen: 0,
         items: [
           {

@@ -157,9 +157,14 @@
   height: auto;
 }
 
+.page-header__btn-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .page-header--has-image .page-header__btn {
   position: static;
-  margin-top: 28px;
+  margin-top: -12px;
 }
 
 .page-header__image {

@@ -234,12 +234,18 @@ export default function DetailPage({ content, parent, current, path }) {
       {(Array.isArray(content.deliver) ? content.deliver : content.deliver ? [content.deliver] : []).map(
         (block) => (
           <section className="section detail-deliver" key={block.heading}>
-            <div className="container detail-deliver__inner">
-              <img
-                className="detail-deliver__photo"
-                src={block.image}
-                alt={block.imageAlt || ""}
-              />
+            <div
+              className={`container detail-deliver__inner ${
+                !block.image ? "detail-deliver__inner--no-image" : ""
+              }`}
+            >
+              {block.image && (
+                <img
+                  className="detail-deliver__photo"
+                  src={block.image}
+                  alt={block.imageAlt || ""}
+                />
+              )}
               <div className="detail-deliver__content">
                 <span className="detail-about__eyebrow">{block.eyebrow}</span>
                 <h2 className="detail-deliver__heading">{block.heading}</h2>
@@ -481,7 +487,7 @@ export default function DetailPage({ content, parent, current, path }) {
       )}
 
       {content.gallery && content.gallery.length > 0 && (
-        <section className="section detail-gallery">
+        <section className={`section detail-gallery ${detailSlug ? `detail-gallery--${detailSlug}` : ""}`}>
           <div className="container detail-gallery__grid">
             {content.gallery.map((img, i) => (
               <div className="detail-gallery__item" key={img.alt || i}>
@@ -496,6 +502,108 @@ export default function DetailPage({ content, parent, current, path }) {
               ))}
             </div>
           )}
+        </section>
+      )}
+
+      {content.subSections && content.subSections.length > 0 && (
+        <section className="section detail-subsections">
+          <div className="container">
+            {content.subSections.map((sub) => (
+              <article className="detail-subsection" key={sub.title}>
+                <span className="detail-about__eyebrow">{sub.eyebrow || "More on this"}</span>
+                <h2 className="detail-subsection__title">{sub.title}</h2>
+                {sub.description && <p className="detail-subsection__description">{sub.description}</p>}
+
+                {sub.about && (
+                  <div className="detail-subsection__about">
+                    {sub.about.image && (
+                      <img src={sub.about.image} alt={sub.about.imageAlt || ""} />
+                    )}
+                    <div>
+                      {sub.about.heading && <h3>{sub.about.heading}</h3>}
+                      {sub.about.paragraphs?.map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {sub.body?.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+
+                {sub.why && (
+                  <div className="detail-subsection__why">
+                    {sub.why.heading && <h3>{sub.why.heading}</h3>}
+                    {sub.why.features && (
+                      <div className="detail-why__features">
+                        {sub.why.features.map((feature) => (
+                          <div className="detail-why__feature" key={feature}>
+                            <Icon name="checkCircle" size={16} />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {sub.why.valueColumns && (
+                      <div className="detail-why__values">
+                        {sub.why.valueColumns.map((col) => (
+                          <div className="detail-why__col" key={col.title}>
+                            <h5 className="detail-why__col-title">{col.title}</h5>
+                            {col.items.map((item) => (
+                              <div className="detail-why__cell" key={item}>
+                                {item}
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {sub.table && (
+                  <div className="detail__table-wrap">
+                    <table className="detail__table">
+                      <thead>
+                        <tr>
+                          {sub.table.columns.map((col) => (
+                            <th key={col}>{col}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {sub.table.rows.map((row, i) => (
+                          <tr key={i}>
+                            {row.map((cell, j) => (
+                              <td key={j}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {sub.highlights && (
+                  <ul className="detail-subsection__highlights">
+                    {sub.highlights.map((h) => (
+                      <li key={h}>
+                        <Icon name="checkCircle" size={18} />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {sub.path && (
+                  <Link to={sub.path} className="btn btn--ghost detail-subsection__link">
+                    View {sub.title} page <Icon name="arrowRight" size={16} />
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
         </section>
       )}
 
