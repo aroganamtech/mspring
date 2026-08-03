@@ -13,6 +13,28 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+/* Resume upload (free, no EmailJS attachment needed): the picked file is
+   uploaded to Cloudinary and a download link is included in the email. Set
+   these two values in .env (VITE_ prefix). Both are safe to expose client-side
+   — unsigned uploads are designed for exactly this. */
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+
+/* Uploads a resume file to Cloudinary (as a "raw" file so PDFs/DOCs download
+   cleanly) and returns its public URL. */
+async function uploadResume(file) {
+  const data = new FormData();
+  data.append("file", file);
+  data.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`,
+    { method: "POST", body: data }
+  );
+  if (!res.ok) throw new Error(`Cloudinary upload failed: ${res.status}`);
+  const json = await res.json();
+  return json.secure_url;
+}
+
 // One-time startup diagnostic: logs exactly which EmailJS env vars Vite
 // actually picked up, so a missing/misnamed/misplaced .env file is obvious
 // from the browser console instead of a generic "not configured" error.
@@ -87,6 +109,7 @@ export default function ApplyJobPage() {
   const [jobsOpen, setJobsOpen] = useState(false);
   const [form, setForm] = useState(EMPTY_FORM);
   const [fileName, setFileName] = useState("");
+  const [resumeFile, setResumeFile] = useState(null);
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const formRef = useRef(null);
 
@@ -116,14 +139,16 @@ export default function ApplyJobPage() {
   };
 
   const handleFileChange = (e) => {
-    setFileName(e.target.files?.[0]?.name || "");
+    const file = e.target.files?.[0] || null;
+    setResumeFile(file);
+    setFileName(file?.name || "");
   };
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
@@ -152,9 +177,25 @@ export default function ApplyJobPage() {
       expMonth: form.expMonth || "0",
       message: form.message || "—",
       availability: activeFilter,
+      time: new Date().toLocaleString(),
       resume_name: fileName || "No resume attached",
+      resume_link: "Not provided",
     };
 
+    // Upload the resume to Cloudinary (free) and put a download link in the
+    // email. Runs only when Cloudinary is configured and a file was attached;
+    // otherwise the form sends without a link, exactly as before.
+    if (CLOUDINARY_CLOUD_NAME && CLOUDINARY_UPLOAD_PRESET && resumeFile) {
+      try {
+        templateParams.resume_link = await uploadResume(resumeFile);
+      } catch (err) {
+        console.error("[ApplyJobPage] Resume upload failed —", err);
+        setStatus("error");
+        return;
+      }
+    }
+
+    const formEl = e.target;
     emailjs
       .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
         publicKey: EMAILJS_PUBLIC_KEY,
@@ -164,8 +205,9 @@ export default function ApplyJobPage() {
         setStatus("sent");
         setForm(EMPTY_FORM);
         setFileName("");
+        setResumeFile(null);
         setActiveFilter("Immediate");
-        e.target.reset();
+        formEl.reset();
       })
       .catch((error) => {
         // Log every detail EmailJS gives us — status code + message when the

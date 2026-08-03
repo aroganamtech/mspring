@@ -149,7 +149,6 @@
    the image rather than pinning it to the bottom-right corner. */
 .page-header--has-image {
   height: auto;
-  overflow: visible;
   padding-bottom: 64px;
 }
 

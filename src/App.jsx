@@ -24,8 +24,10 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import StaffingPage from "./pages/StaffingPage";
 import CookieConsent from "./components/CookieConsent";
 import JobScamAlert from "./components/JobScamAlert";
+import ServerDown from "./components/ServerDown";
 import VisitorBadge from "./components/VisitorBadge";
 import { useHashPath } from "./router";
+import { useServerStatus } from "./utils/serverStatus";
 
 const staticRoutes = {
   "/": Home,
@@ -44,10 +46,14 @@ const staticRoutes = {
 function App() {
   const path = useHashPath();
   const StaticPage = staticRoutes[path];
+  const serverStatus = useServerStatus();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [path]);
+
+  if (serverStatus === "checking") return <ServerDown mode="loading" />;
+  if (serverStatus === "down") return <ServerDown mode="down" />;
 
   return (
     <>

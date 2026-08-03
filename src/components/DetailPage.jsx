@@ -447,7 +447,7 @@ export default function DetailPage({ content, parent, current, path }) {
           <div className="container">
             <div className="section-head section-head--compact">
               <span className="section-eyebrow">Open Roles</span>
-              <h3>Current Openings ({JOBS.length} roles)</h3>
+              {/* <h3>Current Openings ({JOBS.length} roles)</h3> */}
             </div>
             <div className="detail-openings__list">
               {JOBS.map((job, i) => (

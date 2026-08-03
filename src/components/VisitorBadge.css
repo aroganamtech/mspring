@@ -3,9 +3,8 @@
 /* ---------- Visitor badge (fixed, bottom-right, every page) ---------- */
 .visitor-badge {
   position: fixed;
-  right: -30px;
+  right: 20px;
   bottom: 10px;
-  transform: translateX(-50px);
   z-index: 60;
   width: 66px;
   height: 66px;
@@ -106,4 +105,3 @@
     height: 10px;
   }
 }
-

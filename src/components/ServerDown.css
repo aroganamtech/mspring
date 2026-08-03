@@ -1,0 +1,56 @@
+/* Maintenance / loading screen — shown full-screen only when the site is
+   flagged down. Scoped entirely under .server-down so it never touches other UI. */
+.server-down {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #0d1226;
+  color: #fff;
+  text-align: center;
+}
+
+.server-down__inner {
+  max-width: 460px;
+}
+
+.server-down__logo {
+  display: block;
+  width: 300px;
+  max-width: 82%;
+  height: auto;
+  margin: 0 auto 30px;
+}
+
+.server-down__spinner {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 28px;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #a4b048;
+  border-radius: 50%;
+  animation: server-down-spin 0.9s linear infinite;
+}
+
+@keyframes server-down-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.server-down__title {
+  color: #fff;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+.server-down__text {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
